@@ -34,7 +34,7 @@ script:
     - touch IDB.log
     - make models.html
     - ls -al
-    - createdb intergalacticdb
+    - createdb dcdatabase
     - make test
     - ls -al
     - make check
