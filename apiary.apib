@@ -1,0 +1,377 @@
+FORMAT: 1A
+HOST: http://dcdatabase.me/
+
+# apiary.apib
+
+DC comics API. A collection of character, team, comic, movie, show, and creator information.
+
+## All Characters [/api/characters]
+Affiliation refers to the teams the character is/was a member of
+Links to Teams and Characters
+### List All Characters [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Bruce Wayne",
+                "alias": "Batman",
+                "image": "",
+                "alignment": "Good",
+                "affiliation": 6,
+                "creators": 2
+            },
+            
+            {
+                "name": "Clark Joseph Kent",
+                "alias": "Superman",
+                "image": "",
+                "alignment": "Good",
+                "affiliation": 6,
+                "creators": 2
+            },
+            
+            {
+                "name": "Diana of Themyscira",
+                "alias": "Wonder Woman",
+                "image": "",
+                "alignment": "Good",
+                "affiliation": 1,
+                "creators": 2
+            }
+        ]
+
+
+## Character [/api/characters/{name}]
+A single Character with all its details. 
+
++ Parameters
+    + name (string) - name of a character
+    
+
+### Retrieve a Character [GET]
++ Response 200 (application/json)
+    
+
+    + Body
+    
+            {
+                "name": "Bruce Wayne",
+                "alias": "Batman",
+                "image": "",
+                "alignment": "Good",
+                "affiliation": 6
+                "creators": 2
+            }
+            
++ Response 404
+
+
+
+## All Teams [/api/teams]
+Links to Characters and Comics
+### List All Teams [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Justice League of America",
+                "image": "",
+                "members": 7,
+                "allies": 16,
+                "first_appearance": "Brave and the Bold #28"
+                "base_of_operations": "Justice League Headquarters",
+            },
+            
+            {
+                "name": "The Injustice League",
+                "image": "",
+                "members": 50
+                "allies": 0,
+                "first_appearance": "Justice League of American Wedding Special (Volume 2) #1",
+                "base_of_operations": "Hall of Doom" 
+            },
+            
+            {
+                "name": "Green Lantern Corps",
+                "image": "",
+                "members": 31,
+                "allies": 4,
+                "first_appearance": "Showcase #22",
+                "base_of_operations": "Oa"
+            }
+        ]
+        
+## Team [/api/teams/{name}]
+A single Team with all its details. 
+
++ Parameters
+    + name (string) - name of a team
+    
+
+### Retrieve a Team [GET]
++ Response 200 (application/json)
+    
+
+    + Body
+    
+            {
+                "name": "Justice League of America",
+                "image": "",
+                "members": 7,
+                "allies": 16,
+                "first_appearance": "Brave and the Bold #28"
+                "base_of_operations": "Justice League Headquarters"
+            }
+            
++ Response 404
+
+
+
+## All Comics [/api/comics]
+Links to Characters and Creators
+### List All Comics [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "image": "",
+                "name": "Brave and the Bold Vol 1",
+                "issue": "#28",
+                "date": "March, 1960",
+                "writer": "Gardner Fox",
+                "featured_characters": 7
+            },
+            
+            {
+                "image": "",
+                "name": "Showcase Vol 1",
+                "issue": "#4",
+                "date": "October, 1956",
+                "writer": "Robert Kanigher",
+                "featured_characters": 1
+            },
+            
+            {
+                "image": "",
+                "name": "Superman Vol 1",
+                "issue": "#76",
+                "date": "June, 1952",
+                "writer": "Edmond Hamilton",
+                "featured_characters": 1
+            }
+        ]
+
+## Comic [/api/comics/{name}]
+A single Comic with all its details. 
+
++ Parameters
+    + name (string) - name of a team
+    
+
+### Retrieve a Comic [GET]
++ Response 200 (application/json)
+    
+
+    + Body
+    
+            {
+                "image": "",
+                "name": "Brave and the Bold Vol 1",
+                "issue": "#28",
+                "date": "March, 1960",
+                "writer": "Gardner Fox",
+                "featured_characters": 7
+            }
+            
++ Response 404
+
+
+        
+## All Movies [/api/movies]
+Links to Characters and Creators
+### List All Movies [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "image": "",
+                "name": "Watchmen",
+                "director": "Zack Snyder",
+                "date": "March 6, 2009",
+                "featured_characters": 5,
+                "distributors": "Warner Bros.",
+                "composers": "Tyler Bates"
+            },
+            
+            {
+                "image": "",
+                "name": "Batman v Superman: Dawn of Justice",
+                "director": "Zack Snyder",
+                "date": "March 25, 2016",
+                "featured_characters": 2,
+                "distributors": "Warner Bros.",
+                "composers": "Hans Zimmer"
+            },
+            
+            {
+                "image": "",
+                "name": "Justice League: The Flashpoint Paradox",
+                "director": "James Tucker",
+                "date": "July 30, 2013",
+                "featured_characters": 1,
+                "distributors": "Warner Bros.",
+                "composers": "Frederik Wiedmann"
+            }
+        ]
+
+## Movie [/api/movies/{name}]
+A single Movie with all its details. 
+
++ Parameters
+    + name (string) - name of a movie
+    
+
+### Retrieve a Movie [GET]
++ Response 200 (application/json)
+    
+
+    + Body
+    
+            {
+                "image": "",
+                "name": "Watchmen",
+                "director": "Zack Snyder",
+                "date": "March 6, 2009",
+                "featured_characters": 5,
+                "distributors": "Warner Bros.",
+                "composers": "Tyler Bates"
+            }
+            
++ Response 404
+
+
+        
+## All Television Series [/api/shows]
+Links to Characters and Creators
+### List All TV Shows [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "image": "",
+                "name": "Batman",
+                "characters": 6,
+                "creators": 2,
+                "network": "ABC",
+                "first_aired": "January 12, 1966"
+            },
+            
+            {
+                "image": "",
+                "name": "Young Justice",
+                "characters": 6,
+                "creators": 2,
+                "network": "Cartoon Network",
+                "first_aired": "November 2010"
+            },
+            
+            {
+                "image": "",
+                "name": "The Flash",
+                "characters": 1,
+                "creators": 3,
+                "network": "CW",
+                "first_aired": "October 7, 2014"
+            }
+        ]
+        
+
+## TV Show [/api/shows/{name}]
+A single Show with all its details. 
+
++ Parameters
+    + name (string) - name of a show
+    
+
+### Retrieve a Show [GET]
++ Response 200 (application/json)
+    
+
+    + Body
+    
+            {
+                "image": "",
+                "name": "Batman",
+                "characters": 6,
+                "creators": "Bill Finger & Bob Kane",
+                "network": "ABC",
+                "first_aired": "January 12, 1966"
+            }
+            
++ Response 404
+
+
+
+## All Creators [/api/creators]
+Links to Characters, Comics/Movies/Shows
+### List All Creators [GET]
+Should include writers, directors, screenwriters and the like
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Bob Kane",
+                "occupation": "Writer",
+                "birth_year": "October 24, 1915",
+                "birth_place": "New York City, New York, United States of America",
+                "creations": 8
+                "first_publication": "New Adventure Comics Vol 1 26"
+            },
+            
+            {
+                "name": "Grant Morrison",
+                "occupation": "Writer",
+                "birth_year": "January 31, 1960",
+                "birth_place": "Glasgow, Scotland",
+                "creations": 1,
+                "first_publication": "Animal Man #1"
+            },
+            
+            {
+                "name": "Zack Snyder",
+                "occupation": "Director",
+                "birth_year": "March 1, 1966",
+                "birth_place": "Green Bay, Wisconsin, United States of America",
+                "creations": 0,
+                "first_publication": "Wachmen (Movie)"
+            },
+        ]
+
+## Creator [/api/creators/{name}]
+A single Creator with all its details. 
+
++ Parameters
+    + name (string) - name of a creator
+    
+
+### Retrieve a Creator [GET]
++ Response 200 (application/json)
+    
+
+    + Body
+    
+            {
+                "name": "Bob Kane",
+                "occupation": "Writer",
+                "birth_year": "October 24, 1915",
+                "birth_place": "New York City, New York, United States of America",
+                "creations": 8
+                "first_publication": "New Adventure Comics Vol 1 26"
+            }
+            
++ Response 404
