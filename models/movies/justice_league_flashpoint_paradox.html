@@ -12,6 +12,8 @@
 
 
        <title>DC Comic</title>
+    <link rel="shortcut icon" href="../img/dc.jpg" type="image/png"/>
+
 
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
@@ -83,41 +85,97 @@
 
 <!-- page content -->
     <!-- Movie name -->
-    <div> 
-        <h1>Justice League: The Flashpoint Paradox</h1>
-    </div>
-    <div class = "row">
-        <div class = "img">  
-            <img src= "http://vignette4.wikia.nocookie.net/marvel_dc/images/8/82/Justice_League_The_Flashpoint_Paradox.jpg/revision/latest/scale-to-width-down/250?cb=20130721082303"/>
+
+        <link href="../css/movie.css" rel="stylesheet" type="text/css">
+    <div class="movie-container container">
+        <div class="movie-header">
+            <!-- name -->
+
+            <div class = "row">
+            <div class ="col-md-1"></div>
+            <div class="col-md-3">
+            <img class = "img-rounded" src = "http://vignette4.wikia.nocookie.net/marvel_dc/images/8/82/Justice_League_The_Flashpoint_Paradox.jpg/revision/latest/scale-to-width-down/250?cb=20130721082303">
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+            <div class="movie-name"><b>Justice League: The Flashpoint Paradox</b></div>
+            <table class="table">
+                <tr>
+                    <th>Release Date</th>
+                    <th>
+                    <p>July 30, 2013</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Directo</th>
+                    <th>
+                        <!-- <a href="../creators/zack_snyder.html"> -->
+                        <p>James Tucker</p>
+                        <!-- </a> -->
+                    </th>
+                </tr>
+                <tr>
+                    <th>Distributors</th>
+                    <th>
+                        <p>Warner Bros.</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Composers</th>
+                    <th>
+                        <p>Frederick Wiedmann</p>
+                    </th>
+                </tr>
+            </table>
+            <!-- data -->
+            </div>
+        </div>
+        <!-- basic info end -->
+
+        <!-- member -->
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+        <table class="table table-striped">
+        <caption>Featured Characters</caption>
+                <thread>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Alias</th>
+                        <th>Alignment</th>
+                        <th>Affiliation</th>
+                        <th>Creators</th>
+                    </tr>
+                </thread>
+                <tbody>
+                  <tr>
+                    <td><div class = "thumb">
+                        <img src = "http://vignette4.wikia.nocookie.net/marvel_dc/images/3/33/Batman_002.jpg/revision/latest/scale-to-width-down/270?cb=20130412165015"/></div></td>
+                    <td><a href = "characters/batman.html">Bruce Wayne</a></td>
+                    <td><a href = "characters/batman.html">Batman</a></td>
+                    <td>Good</td>
+                    <td>
+                    <a href = "teams/justice_league.html">
+                    <p>Justice League</p></a>
+                    </td>
+                    <td>
+                    <!-- <a href = "creators/bill_finger.html"> -->
+                    <p>Bill Finger</p>
+                    <!-- </a> -->
+                    <a href = "../creators/bob_kane.html">
+                    <p>Bob Kane</p></a>
+                    </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <!-- member ends -->
+        </div>
         </div>
 
-        <div class="about">
-            <h4>Director</hr>
-                <ul class = "table_list">
-                    <li> 
-                        <a href="../creators/james_tucker.html">James Tucker</a>
-                    </li>
-                </ul>
-            <h4>Release Date</hr>
-                <ul class = "table_list">
-                    <li>July 30, 2016</li>
-                </ul>   
-            <h4>Featured Characters</hr>
-                <ul class = "table_list">
-                    <li>
-                        <a href="../characters/flash.html"> Flash</a>
-                    </li>
-                </ul>
-            <h4>Distributors</hr>
-                <ul class = "table_list"> 
-                    <li> Warner Bros. </li>
-                </ul>
-            <h4>Composers</hr>
-                <ul class = "table_list"> 
-                    <li> Frederick Wiedmann </li>
-                </ul>
-        </div>
-    </div>
 
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>

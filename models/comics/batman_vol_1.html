@@ -12,6 +12,8 @@
 
 
        <title>DC Comic</title>
+    <link rel="shortcut icon" href="../img/dc.jpg" type="image/png"/>
+
 
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
@@ -83,37 +85,88 @@
 
 <!-- page content -->
     <!-- Comic name -->
-    <div> 
-        <h1> Batman Vol 1</h1>
-    </div>
-    <div class = "row">
-        <div class = "img">  
-            <img src="http://vignette2.wikia.nocookie.net/marvel_dc/images/0/06/Batman_1.jpg/revision/latest/scale-to-width-down/200?cb=20141004163644"/>   
+
+<link href="../css/comics.css" rel="stylesheet" type="text/css">
+    <div class="comics-container container">
+        <div class="comics-header">
+            <!-- name -->
+
+            <div class = "row">
+            <div class ="col-md-1"></div>
+            <div class="col-md-3">
+            <img class = "img-rounded" src = "http://vignette2.wikia.nocookie.net/marvel_dc/images/0/06/Batman_1.jpg/revision/latest/scale-to-width-down/200?cb=20141004163644">
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+            <div class="comics-name"><b>Batman Vol 1</b></div>
+            <table class="table">
+                <tr>
+                    <th>Date</th>
+                    <th>
+                        <p>March, 1940</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Writer</th>
+                    <th>
+                        <p>Gardner Fox</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Total Issues</th>
+                    <th>
+                        <p> 715 </p>
+                    </th>
+                </tr>
+            </table>
+            <!-- data -->
+            </div>
+        </div>
+        <!-- basic info end -->
+
+        <!-- member -->
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+        <table class="table table-striped">
+        <caption>Featured Characters</caption>
+                <thread>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Alias</th>
+                        <th>Alignment</th>
+                        <th>Affiliation</th>
+                        <th>Creators</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    <tr>
+                    <td><div class = "thumb">
+                        <img src = "http://vignette4.wikia.nocookie.net/marvel_dc/images/3/33/Batman_002.jpg/revision/latest/scale-to-width-down/270?cb=20130412165015"/></div></td>
+                    <td><a href = "characters/batman.html">Bruce Wayne</a></td>
+                    <td><a href = "characters/batman.html">Batman</a></td>
+                    <td>Good</td>
+                    <td>
+                    <a href = "teams/justice_league.html">
+                    <p>Justice League</p></a>
+                    </td>
+                    <td>
+                    <!-- <a href = "creators/bill_finger.html"> -->
+                    <p>Bill Finger</p>
+                    <!-- </a> -->
+                    <a href = "../creators/bob_kane.html">
+                    <p>Bob Kane</p></a>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <!-- member ends -->
+        </div>
         </div>
 
-        <div class="about">
-            <h4>Date</hr>
-                <ul class = "table_list">
-                    <li>March, 1940</li>
-                </ul>   
-            <h4>Writer</hr>
-                <ul class = "table_list">
-                    <li> 
-                        <a href="../creators/Gardner_Fox.html">Gardner Fox</a>
-                    </li>
-                </ul>
-            <h4>Featured Characters</hr>
-                <ul class = "table_list">
-                    <li>
-                        <a href="../characters/batman.html">Batman</a>
-                    </li>
-                </ul>
-            <h4>Total Issues</hr>
-                <ul class = "table_list"> 
-                    <li> 715 </li>
-                </ul>
-        </div>
-    </div>
 
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>

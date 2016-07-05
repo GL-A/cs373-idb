@@ -12,6 +12,8 @@
 
 
        <title>DC Comic</title>
+    <link rel="shortcut icon" href="../img/dc.jpg" type="image/png"/>
+
 
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
@@ -82,43 +84,89 @@
     </nav>
 
     <!-- Bio -->
-    <div class="container">
-        <div class = "row">
-            <div class="col-lg-12">
-                <h1>Bob Kane</h1>
+
+     <link href="../css/creator.css" rel="stylesheet" type="text/css">
+    <div class="creator-container container">
+        <div class="creator-header">
+            <!-- name -->
+
+            <div class = "row">
+            <div class ="col-md-1"></div>
+            <div class="col-md-3">
+            <img class = "img-rounded" src = "http://vignette1.wikia.nocookie.net/marvel_dc/images/2/2d/Bob_Kane.jpg/revision/latest?cb=20150517212752">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+            <div class="creator-name"><b>Bob Kane</b></div>
+            <table class="table">
+                <tr>
+                    <th>Occupation</th>
+                    <th>
+                        <p>Writer</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <th>
+                        <p>October 24, 1915</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Place of Birth</th>
+                    <th>
+                        <p>New York City, New York, United States of America</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>First Publication</th>
+                    <th>
+                    <!-- <a href = "../comics/new_adventure_comics_vol_1.html"> -->
+                    <p>New Adventure Comics Vol 1 26</p>
+                    <!-- </a> -->
+                    </th>
+                </tr>
+            </table>
+            <!-- data -->
             </div>
         </div>
+        <!-- basic info end -->
 
-    </div>
-    <div class = "row">
-        <div>
-            <img class = "img" src = "http://vignette1.wikia.nocookie.net/marvel_dc/images/2/2d/Bob_Kane.jpg/revision/latest?cb=20150517212752" alt = "error"></img>
+        <!-- member -->
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+        <table class="table table-striped">
+        <caption>Created Characters</caption>
+                <thread>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Alias</th>
+                        <th>Alignment</th>
+                        <th>Affiliation</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    <tr>
+                    <td><div class = "thumb">
+                        <img src = "http://vignette4.wikia.nocookie.net/marvel_dc/images/3/33/Batman_002.jpg/revision/latest/scale-to-width-down/270?cb=20130412165015"/></div></td>
+                    <td><a href = "characters/batman.html">Bruce Wayne</a></td>
+                    <td><a href = "characters/batman.html">Batman</a></td>
+                    <td>Good</td>
+                    <td>
+                    <a href = "teams/justice_league.html">
+                    <p>Justice League</p></a>
+                    </td>
+                    </tr>
+
+                </tbody>
+            </table>
         </div>
-        <div class="about">
-            <h4>About</hr>
-                <ul class = "table_list">
-                    <li>Occupation: Writer</li>
-                    <li>Date of Birth: October 24, 1915</li>
-                    <li>Place of Birth: New York City, New York, United States of America</li>
-                    <li>Bio:</li>
-                </ul>   
-            <h4>Creations</hr>
-                <ul class = "table_list">
-                    <li><a href = "../characters/batman.html">Batman</a></li>
-                    <li><a href = "../characters/robin.html">Robin</a></li>
-                    <li><a href = "../characters/joker.html">Joker</a></li>
-                    <li><a href = "../characters/two-face.html">Two-Face</a></li>
-                    <li><a href = "../characters/catwoman.html">Catwoman</a></li>
-                    <li><a href = "../characters/scarecrow.html">Scarecrow</a></li>
-                    <li><a href = "../characters/clayface.html">Clayface</a></li>
-                    <li><a href = "../characters/penguin.html">Penguin</a></li>
-                </ul>
-            <h4>First Publication</hr>
-                <ul class = "table_list">
-                    <li><a href = "../comics/new_adventure_comics_vol_1.html">New Adventure Comics Vol 1 26</a></li>
-                </ul>
         </div>
-    </div>
+        <!-- member ends -->
+        </div>
+        </div>
+
 
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>

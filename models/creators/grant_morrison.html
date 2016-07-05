@@ -12,6 +12,7 @@
 
 
        <title>DC Comic</title>
+    <link rel="shortcut icon" href="../img/dc.jpg" type="image/png"/>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
@@ -82,36 +83,76 @@
     </nav>
 
     <!-- Bio -->
-    <div class="container">
-        <div class = "row">
-            <div class="col-lg-12">
-                <h1>Grant Morrison</h1>
+
+    <link href="../css/creator.css" rel="stylesheet" type="text/css">
+    <div class="creator-container container">
+        <div class="creator-header">
+            <!-- name -->
+
+            <div class = "row">
+            <div class ="col-md-1"></div>
+            <div class="col-md-3">
+            <img class = "img-rounded" src = "http://vignette2.wikia.nocookie.net/marvel_dc/images/b/b6/Morrison_grant.jpg/revision/latest?cb=20060914051756">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+            <div class="creator-name"><b>Grant Morrison</b></div>
+            <table class="table">
+                <tr>
+                    <th>Occupation</th>
+                    <th>
+                        <p>Writer</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <th>
+                        <p>January 31, 1960</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Place of Birth</th>
+                    <th>
+                        <p>Glasgow, Scotland</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>First Publication</th>
+                    <th>
+                    <!-- <a href = "../comics/animal_man_vol_1.html"> -->
+                    <p>Animal Man #1</p>
+                    <!-- </a> -->
+                    </th>
+                </tr>
+            </table>
+            <!-- data -->
             </div>
         </div>
+        <!-- basic info end -->
 
-    </div>
-    <div class = "row">
-        <div>
-            <img class = "img" src = "http://vignette2.wikia.nocookie.net/marvel_dc/images/b/b6/Morrison_grant.jpg/revision/latest?cb=20060914051756" alt = "error"></img>
+        <!-- member -->
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+        <table class="table table-striped">
+        <caption>Created Characters</caption>
+                <thread>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Alias</th>
+                        <th>Alignment</th>
+                        <th>Affiliation</th>
+                    </tr>
+                </thread>
+                <tbody>
+                </tbody>
+            </table>
         </div>
-        <div class="about">
-            <h4>About</hr>
-                <ul class = "table_list">
-                    <li>Occupation: Writer</li>
-                    <li>Date of Birth: January 31, 1960</li>
-                    <li>Place of Birth: Glasgow, Scotland</li>
-                    <li>Bio:</li>
-                </ul>   
-            <h4>Creations</hr>
-                <ul class = "table_list">
-                    <li><a href = "../teams/brotherhood_of_dada.html">Brotherhood of Dada</a></li>
-                </ul>
-            <h4>First Publication</hr>
-                <ul class = "table_list">
-                    <li><a href = "../comics/animal_man_vol_1.html">Animal Man #1</a></li>
-                </ul>
         </div>
-    </div>
+        <!-- member ends -->
+        </div>
+        </div>
 
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>
