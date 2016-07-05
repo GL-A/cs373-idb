@@ -12,13 +12,13 @@
 
 
        <title>DC Comic</title>
-    <link rel="shortcut icon" href="../img/dc.jpg" type="image/png"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/dc.jpg') }}" type="image/png"/>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../css/full-slider.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/full-slider.css') }}" rel="stylesheet">
      <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
@@ -85,7 +85,7 @@
 
 
     <!-- Bio -->
-    <link href="../css/team.css" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/team.css') }}" rel="stylesheet" type="text/css">
     <div class="team-container container">
         <div class="team-header">
             <!-- name -->
@@ -199,10 +199,10 @@
 
 
     <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     
 </body>
 

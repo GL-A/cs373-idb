@@ -12,14 +12,14 @@
 
 
        <title>DC Comic</title>
-    <link rel="shortcut icon" href="img/dc.jpg" type="image/png" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/dc.jpg') }}" type="image/png" />
        
 
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/full-slider.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/full-slider.css') }}" rel="stylesheet">
      <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
@@ -93,19 +93,19 @@
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('img/Index-1.jpg');"></div>
+                <div class="fill" style="background-image:url('http://www.moviezgoing.com/wp-content/uploads/2016/03/IMG_3873.jpg');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('img/Index-3.jpg');"></div>
+                <div class="fill" style="background-image:url('https://i.ytimg.com/vi/D7nBPKGFxTs/maxresdefault.jpg');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('img/Index-2.jpg');"></div>
+                <div class="fill" style="background-image:url('http://images.freecreatives.com/wp-content/uploads/2016/03/Batman-Arkham-Knight-Wallpaper.jpg');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>
@@ -122,16 +122,16 @@
     </header>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 
     <!-- Script to Activate the Carousel -->
     <script>
     $('.carousel').carousel({
         interval: 4000 //changes the speed
-    })
+    });
     </script>
 
 </body>
