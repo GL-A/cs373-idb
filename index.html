@@ -93,19 +93,19 @@
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://www.moviezgoing.com/wp-content/uploads/2016/03/IMG_3873.jpg');"></div>
+                <div class="fill" style="background-image:url('{{ url_for('static', filename='img/Index-1') }}');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('https://i.ytimg.com/vi/D7nBPKGFxTs/maxresdefault.jpg');"></div>
+                <div class="fill" style="background-image:url('{{ url_for('static', filename='img/Index-3') }}');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://images.freecreatives.com/wp-content/uploads/2016/03/Batman-Arkham-Knight-Wallpaper.jpg');"></div>
+                <div class="fill" style="background-image:url('{{ url_for('static', filename='img/Index-2') }}');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>
@@ -122,7 +122,7 @@
     </header>
 
     <!-- jQuery -->
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
@@ -131,7 +131,7 @@
     <script>
     $('.carousel').carousel({
         interval: 4000 //changes the speed
-    });
+    })
     </script>
 
 </body>

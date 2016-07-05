@@ -12,13 +12,13 @@
 
 
        <title>DC Comic</title>
-    <link rel="shortcut icon" href="img/dc.jpg" type="image/png" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/dc.jpg') }}" type="image/png" />
 
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/full-slider.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/full-slider.css') }}" rel="stylesheet">
      <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
@@ -95,7 +95,7 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="team-member">
-                        <img src="img/team/sy.jpg" class="img-responsive img-circle"  height="220px" width="220px">
+                        <img src="{{ url_for('static', filename='team/sy.jpg') }}" class="img-responsive img-circle"  height="220px" width="220px">
                         <h4 class="">Shuoyi Yang</h4>
                         <br>
                         <p><b>Role: </b>Front End</p>
@@ -117,7 +117,7 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="team-member">
-                        <img src="img/team/darya.jpg" class="img-responsive img-circle"  height="220px" width="220px">
+                        <img src="{{ url_for('static', filename='css/full-slider.css') }}" class="img-responsive img-circle"  height="220px" width="220px">
                         <h4 class="">Darya Mylius</h4>
                         <br>
                         <p><b>Role: </b>Front end: HTML</p>
@@ -171,7 +171,7 @@
 
     <div class ="col-md-4">
     <div class ="team-footer">
-    <img src="img/icons/batman.jpg" >
+    <img src="{{ url_for('static', filename='icons/batman.jpg') }}">
     <br>
     <h2 class="">Team Stats</h2>
     <p><b># Commits: </b></p>
@@ -182,7 +182,7 @@
 
     <div class ="col-md-4">
     <div class ="team-footer">
-     <img src="img/icons/superman.jpg" >
+     <img src="{{ url_for('static', filename='icons/superman.jpg') }}">
     <br>
     <h2 class="">Tools</h2>
     <p>Bootstrap</p>
@@ -196,7 +196,7 @@
 
     <div class ="col-md-4">
     <div class ="team-footer">
-     <img src="img/icons/joker.jpg" >
+     <img src="{{ url_for('static', filename='icons/joker.jpg') }}">
     <br>
     <h2 class="">Links</h2>
     <a href="http://docs.apiaryapib2.apiary.io">
@@ -221,10 +221,10 @@
 
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 
 
 </body>
