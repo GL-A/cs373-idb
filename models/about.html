@@ -95,7 +95,7 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="team-member">
-                        <img src="{{ url_for('static', filename='team/sy.jpg') }}" class="img-responsive img-circle"  height="220px" width="220px">
+                        <img src="{{ url_for('static', filename='img/team/sy.jpg') }}" class="img-responsive img-circle"  height="220px" width="220px">
                         <h4 class="">Shuoyi Yang</h4>
                         <br>
                         <p><b>Role: </b>Front End</p>
@@ -117,7 +117,7 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="team-member">
-                        <img src="{{ url_for('static', filename='css/full-slider.css') }}" class="img-responsive img-circle"  height="220px" width="220px">
+                        <img src="{{ url_for('static', filename='img/team/darya.jpg') }}" class="img-responsive img-circle"  height="220px" width="220px">
                         <h4 class="">Darya Mylius</h4>
                         <br>
                         <p><b>Role: </b>Front end: HTML</p>
@@ -141,7 +141,7 @@
                 <div class="col-md-5">
                     <div class="team-member">
                         <!-- change image -->
-                        <img src="img/team/kcv.jpg" class="img-responsive img-circle"  height="220px" width="220px">
+                        <img src="{{ url_for('static', filename='img/team/kvc.jpg') }}" class="img-responsive img-circle"  height="220px" width="220px">
                         <h4 class="">Kiankris Villagonzalo</h4>
                         <br>
                         <p><b>Role: </b>Unknown</p>
@@ -159,6 +159,30 @@
                 </div>
             </div>
         </div>
+		<div class="container" id="team" name="team">
+            <hr>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="team-member">
+                        <!-- change image -->
+                        <img src="{{ url_for('static', filename='img/team/andrew.jpg') }}" class="img-responsive img-circle"  height="220px" width="220px">
+                        <h4 class="">Andrew Turner</h4>
+                        <br>
+                        <p><b>Role: </b>Back End, some Front End</p>
+                        <p><b>Git Commits: 9 </b></p>
+                        <p><b>Unit Tests: </b></p>
+                        <p><b>Issues: </b></p>
+                    </div>
+                </div>
+                <div class ="col-md-7">
+                    <div class = "jumbotron">
+                    <div class = "container">
+                    <p>UT senior, graduating in may. I lke swimming, video games, Netflix, movies and working out</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 
@@ -171,7 +195,7 @@
 
     <div class ="col-md-4">
     <div class ="team-footer">
-    <img src="{{ url_for('static', filename='icons/batman.jpg') }}">
+    <img src="{{ url_for('static', filename='img/icons/batman.jpg') }}">
     <br>
     <h2 class="">Team Stats</h2>
     <p><b># Commits: </b></p>
@@ -182,7 +206,7 @@
 
     <div class ="col-md-4">
     <div class ="team-footer">
-     <img src="{{ url_for('static', filename='icons/superman.jpg') }}">
+     <img src="{{ url_for('static', filename='img/icons/superman.jpg') }}">
     <br>
     <h2 class="">Tools</h2>
     <p>Bootstrap</p>
@@ -196,7 +220,7 @@
 
     <div class ="col-md-4">
     <div class ="team-footer">
-     <img src="{{ url_for('static', filename='icons/joker.jpg') }}">
+     <img src="{{ url_for('static', filename='img/icons/joker.jpg') }}">
     <br>
     <h2 class="">Links</h2>
     <a href="http://docs.apiaryapib2.apiary.io">
