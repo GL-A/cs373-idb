@@ -1,0 +1,22 @@
+.team-header img{
+	margin-top:40px;
+  	text-align: center;
+    border: 10px solid black;
+}
+
+.team-header .team-name{
+    margin-top:40px;
+    text-align:left;
+    font-size: 30px;
+    font-weight: 700px;
+}
+
+
+.thumb img{
+    text-align: left;
+    width:auto;
+    height:110px;
+    border: 0px;
+    margin-top:0px;
+
+}

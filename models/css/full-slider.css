@@ -60,10 +60,20 @@ h6 {
     text-align: center;
 }
 
-section h2.section-heading {
+h2.section-heading {
     font-family: "Raleway";
     font-weight: 300;
     color: #333;
+}
+
+.navbar-header .navbar-brand {
+  color: #fed136;
+}
+.navbar-header .navbar-brand:hover,
+.navbar-header .navbar-brand:focus,
+.navbar-header .navbar-brand:active,
+.navbar-header .navbar-brand.active {
+  color: #fec503;
 }
 
 .navbar-inverse .navbar-toggle {
@@ -73,22 +83,38 @@ section h2.section-heading {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+
 .navbar-inverse .nav li a {
+  line-height: 50px;
+  height: 50px;
+  padding-top: 0;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
 }
 
-.thumb {
-    width:100px;
-    height:100px;
-    
+
+.table > tbody > tr > td {
+     vertical-align: middle;
+
 }
 
-.thumb-imagfe {
-    width:100px;
-    height:100px;
+.box-table {
+text-align: center;
+}
+
+.box-table th{
+text-align: center;
+}
+.box-table p{
+margin-bottom: 0px;
+}
+
+.thumb img{
+    text-align: left;
+    width:auto;
+    height:110px;
 }
 
 
@@ -135,32 +161,45 @@ section h2.section-heading {
 }
 
 
-.icon-batman{
-  background-image: url("../img/batman.png");
-  background-position: center center; 
-  height: 14px; 
-  width: 14px;
+.team-footer{
+  text-align: center;
+  margin-bottom: 50px;
 }
+
+.team-footer img {
+  margin-top:30px;
+  width:auto;
+  height:70px;
+  /*margin: 0 auto;*/
+}
+
+.team-footer a{
+  color:black;
+  text-decoration:none 
+}
+
+.link img{
+  width:auto;
+  height:20px;
+}
+
+.footer hr:before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: #ccc;
+}
+
+
 
 .jumbotron{
     margin-top: 20px;
-    background-repeat: no-repeat;
     color: black;
     text-align: center;
 }
-
-/*.jumbotron-special2{
-    margin-top: 20px;
-    background-image: url(../img/jumbotronbackground2.jpg);
-    background-position: 0% 20%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: black;
-    text-align: center;
-}*/
-
-
-
 
 
 /* Background images are set within the HTML using inline CSS, not here */
