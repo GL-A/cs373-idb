@@ -1,3 +1,9 @@
+commit bf9825d5e9c505249386f4a80c18eaa6bfddff6d
+Author: Kevin Du <kevind7@cs.utexas.edu>
+Date:   Tue Jul 5 18:30:00 2016 -0500
+
+    added git log, makefile, models.html, updated apib file, updated about.html to include all information, updated models.py and test.py to reflect updated apib file.
+
 commit 77aa6b5aaaee5079d15d551ffcbdf48dfeed68ab
 Author: Brendon Rhodes <rhodesbrendon95@gmail.com>
 Date:   Tue Jul 5 16:36:57 2016 -0500
