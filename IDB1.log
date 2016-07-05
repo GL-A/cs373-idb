@@ -1,0 +1,177 @@
+commit 77aa6b5aaaee5079d15d551ffcbdf48dfeed68ab
+Author: Brendon Rhodes <rhodesbrendon95@gmail.com>
+Date:   Tue Jul 5 16:36:57 2016 -0500
+
+    No longer needed per Professor Downing
+
+commit f70568b91621640bffeee063db1c7abaaeef9b70
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 5 17:31:36 2016 -0400
+
+    Updated about page
+
+commit 0e80860d4616357d9aa498d1ff0aef78e9945459
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 5 15:53:13 2016 -0500
+
+    Fixed issue with image names
+
+commit 554885215ca128d3c277bfbe1ecb2bfac170596f
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 5 15:48:46 2016 -0500
+
+    Updated about page and fixed images on site
+
+commit 324b4af11d3f0765c1ba6c8281db62774befe2b9
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 5 15:34:57 2016 -0500
+
+    Fixed Jquery dependency bug
+
+commit ccb0688e66348325a4013cf5a2b907c305d126b5
+Merge: 27c04f1 d004e1e
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 5 15:21:11 2016 -0500
+
+    Merge branch 'flaskDev'
+
+commit d004e1e81e96b53029205fde43549826d3d54bc5
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 5 15:18:00 2016 -0500
+
+    Updated to work with flask
+
+commit f0994c1917d9a3aec5406f86830168a759208a74
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 5 15:17:25 2016 -0500
+
+    Updated to work with flask
+
+commit 27c04f1a98d34cac717fb82e9d4d9b5df9b61447
+Author: kiankris <kcv@utexas.edu>
+Date:   Tue Jul 5 14:55:39 2016 -0500
+
+    Added kiankris info to about page
+
+commit dd168fd4b456116c5acea7a435b954e76b6fd384
+Merge: cb9dd4f 51d3ffc
+Author: Darya Mylius <daryam@cs.utexas.edu>
+Date:   Tue Jul 5 14:27:01 2016 -0500
+
+    Merge branch 'master' of https://github.com/kd9357/cs373-idb
+
+commit cb9dd4ff2bf69611856ff775a1bec27b0a410b71
+Author: Darya Mylius <daryam@cs.utexas.edu>
+Date:   Tue Jul 5 14:26:33 2016 -0500
+
+    added darya.jpg
+
+commit 51d3ffc02b4b4ff1837d632971ec39d02810b895
+Author: Shuoyi Yang <yangshy2012@gmail.com>
+Date:   Tue Jul 5 15:11:48 2016 -0400
+
+    fixed some bad links
+
+commit cb0e36a04c1dcb9b258bb9065296b4bf78e16ff1
+Author: Darya Mylius <daryam@cs.utexas.edu>
+Date:   Tue Jul 5 13:36:05 2016 -0500
+
+    added about:darya
+
+commit f79e01292f6c33a43b9a7188f88d07a3c63e4239
+Author: Shuoyi Yang <yangshy2012@gmail.com>
+Date:   Tue Jul 5 13:58:15 2016 -0400
+
+    Fixed all the links and get all html files ready
+
+commit 6a3eb95734162523e9d65ad6ec1182042b7c1e8e
+Author: Shuoyi Yang <yangshy2012@gmail.com>
+Date:   Tue Jul 5 06:11:06 2016 -0400
+
+    improve the outlooking for html files
+
+commit 415f749b977ce395b8eb37f421ecec981a061395
+Author: Shuoyi Yang <yangshy2012@gmail.com>
+Date:   Mon Jul 4 17:37:34 2016 -0400
+
+    Create about page and modify the menu outlook
+
+commit de4db42056ced8a7a690abed01e8dd6e5f0b5183
+Author: Kevin Du <kevind7@cs.utexas.edu>
+Date:   Sun Jul 3 18:43:37 2016 -0500
+
+    Made a single character page example
+
+commit 5bacb9b74d9155e0381b446e7e455475773ffdb0
+Author: kiankris <kcv@utexas.edu>
+Date:   Sun Jul 3 18:42:33 2016 -0500
+
+    Created an example comic page
+
+commit 40a92165a762fd015e426fae8d58d3e1e6dd1ce7
+Author: kiankris <kcv@utexas.edu>
+Date:   Sat Jul 2 19:49:56 2016 -0500
+
+    Moved test.py to app folder
+
+commit c7398202aaba6e9f2acf5df4db8b62581f76a630
+Merge: 50084c1 297abb2
+Author: kiankris <kcv@utexas.edu>
+Date:   Sat Jul 2 19:49:03 2016 -0500
+
+    Merge branch 'andrewDev' of https://github.com/kd9357/cs373-idb into kcvdev
+
+commit 50084c1809b54d72263bdec0d1818cd87943d711
+Merge: da64e08 c4d0c17
+Author: kiankris <kcv@utexas.edu>
+Date:   Sat Jul 2 19:48:22 2016 -0500
+
+    Merge branch 'master' of https://github.com/kd9357/cs373-idb into kcvdev
+
+commit da64e08be772fc8a8e9d8c3f9013a5da0054b42d
+Author: kiankris <kcv@utexas.edu>
+Date:   Sat Jul 2 19:47:39 2016 -0500
+
+    Made test.py
+
+commit 297abb21d42590235aeacc3b694ed28b4d53ed1b
+Author: Kevin Du <kevind7@cs.utexas.edu>
+Date:   Sat Jul 2 19:39:19 2016 -0500
+
+    Added models.py
+
+commit c4d0c17c37f075c1695f36fe062101c8ecdd7f8e
+Author: Kevin Du <kevin_w_du@utexas.edu>
+Date:   Sat Jul 2 19:30:23 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 6ce9ffc893527e6fe89b3c0aed01bad0d9e8f624
+Author: Shuoyi Yang <yangshy2012@gmail.com>
+Date:   Sat Jul 2 18:17:38 2016 -0400
+
+    create the index page with carousel
+
+commit 2f2bfc7c906f50b4ec8cd54b1d8d5a22785273a8
+Author: Kevin Du <kevin_w_du@utexas.edu>
+Date:   Sat Jul 2 16:31:41 2016 -0500
+
+    Update .travis.yml
+
+commit 2ec201fb4dc2636a9db0ea9df7bb031d0e5abd45
+Author: Kevin Du <kevin_w_du@utexas.edu>
+Date:   Sat Jul 2 16:25:49 2016 -0500
+
+    Created .travis.yml file
+
+commit bb69092f12517b0b7faf8a66f73433417bd84c42
+Author: Kevin Du <kevin_w_du@utexas.edu>
+Date:   Thu Jun 30 15:17:39 2016 -0500
+
+    Added estimated time to complete
+
+commit d01896e8be8ba700ad4c76b16e2f69ce4bd9a7a5
+Author: Kevin Du <kevin_w_du@utexas.edu>
+Date:   Thu Jun 30 13:59:54 2016 -0500
+
+    Initial commit
