@@ -1,11 +1,11 @@
 from unittest import main, TestCase
-from models import Character, Teams
-from setupDB import create_db
+from models import *
+#need to create db each time
 import requests
 
 
 class TestModels(TestCase):
-
+    
     # ---------
     # character
     # ---------
@@ -29,18 +29,18 @@ class TestModels(TestCase):
         self.assertEqual(c.alignment, "Good")
 
     def test_character_repr_1(self):
-    actual = str(Character.query.filter_by("Batman"))
-    self.assertEqual(actual, "<name Batman>")
+        actual = str(Character.query.filter_by("Batman"))
+        self.assertEqual(actual, "<name Batman>")
 
     def test_character_repr_2(self):
-    actual = str(Character.query.filter_by("Superman"))
-    self.assertEqual(actual, "<name Superman>")
+        actual = str(Character.query.filter_by("Superman"))
+        self.assertEqual(actual, "<name Superman>")
 
     def test_character_repr_1(self):
-    actual = str(Character.query.filter_by("The Joker"))
-    self.assertEqual(actual, "<name The Joker>")
+        actual = str(Character.query.filter_by("The Joker"))
+        self.assertEqual(actual, "<name The Joker>")
 
-# ---------
+    # ---------
     # teams
     # ---------
 
@@ -65,18 +65,18 @@ class TestModels(TestCase):
         self.assertEqual(team.base_of_operations, "Oa")
 
     def test_character_repr_1(self):
-    actual = str(Team.query.filter_by("Justice League of America"))
-    self.assertEqual(actual, "<name Justice League of America>")
+        actual = str(Team.query.filter_by("Justice League of America"))
+        self.assertEqual(actual, "<name Justice League of America>")
 
     def test_character_repr_2(self):
-    actual = str(Team.query.filter_by("The Injustice League"))
-    self.assertEqual(actual, "<name The Injustice League>")
+        actual = str(Team.query.filter_by("The Injustice League"))
+        self.assertEqual(actual, "<name The Injustice League>")
 
     def test_character_repr_3(self):
-    actual = str(Team.query.filter_by("Green Lantern Corps"))
-    self.assertEqual(actual, "<name Green Lantern Corps>")
+        actual = str(Team.query.filter_by("Green Lantern Corps"))
+        self.assertEqual(actual, "<name Green Lantern Corps>")
 
-# ---------
+    # ---------
     # Comics
     # ---------
 
@@ -99,16 +99,16 @@ class TestModels(TestCase):
         self.assertEqual(c.date, "March, 1940")
 
     def test_comics_repr_1(self):
-    actual = str(Comic.query.filter_by("Brave and the Bold Vol 1"))
-    self.assertEqual(actual, "<name Brave and the Bold Vol 1>")
+        actual = str(Comic.query.filter_by("Brave and the Bold Vol 1"))
+        self.assertEqual(actual, "<name Brave and the Bold Vol 1>")
 
     def test_comics_repr_2(self):
-    actual = str(Comic.query.filter_by("Showcase Vol 1"))
-    self.assertEqual(actual, "<name Showcase Vol 1>")
+        actual = str(Comic.query.filter_by("Showcase Vol 1"))
+        self.assertEqual(actual, "<name Showcase Vol 1>")
 
     def test_comics_repr_3(self):
-    actual = str(Comic.query.filter_by("Batman Vol 1"))
-    self.assertEqual(actual, "<name Batman Vol 1>")
+        actual = str(Comic.query.filter_by("Batman Vol 1"))
+        self.assertEqual(actual, "<name Batman Vol 1>")
 
     # ---------
     # Movies
@@ -139,17 +139,17 @@ class TestModels(TestCase):
         self.assertEqual(c.composers, "Frederik Wiedmann")
 
     def test_movies_repr_1(self):
-    actual = str(Movie.query.filter_by("Watchmen"))
-    self.assertEqual(actual, "<name Watchmen>")
+        actual = str(Movie.query.filter_by("Watchmen"))
+        self.assertEqual(actual, "<name Watchmen>")
 
     def test_movies_repr_2(self):
-    actual = str(Movie.query.filter_by("Batman v Superman: Dawn of Justice"))
-    self.assertEqual(actual, "<name Batman v Superman: Dawn of Justice>")
+        actual = str(Movie.query.filter_by("Batman v Superman: Dawn of Justice"))
+        self.assertEqual(actual, "<name Batman v Superman: Dawn of Justice>")
 
     def test_movies_repr_3(self):
-    actual = str(Movie.query.filter_by(
-        "Justice League: The Flashpoint Paradox"))
-    self.assertEqual(actual, "<name Justice League: The Flashpoint Paradox>")
+        actual = str(Movie.query.filter_by(
+            "Justice League: The Flashpoint Paradox"))
+        self.assertEqual(actual, "<name Justice League: The Flashpoint Paradox>")
 
     # ---------
     # Tv Shows
@@ -174,16 +174,16 @@ class TestModels(TestCase):
         self.assertEqual(c.first_aired, "October 7, 2014")
 
     def test_tv_repr_1(self):
-    actual = str(Show.query.filter_by("Justice League Unlimited"))
-    self.assertEqual(actual, "<name Justice League Unlimited>")
+        actual = str(Show.query.filter_by("Justice League Unlimited"))
+        self.assertEqual(actual, "<name Justice League Unlimited>")
 
     def test_tv_repr_2(self):
-    actual = str(Show.query.filter_by("Young Justice"))
-    self.assertEqual(actual, "<name Young Justice>")
+        actual = str(Show.query.filter_by("Young Justice"))
+        self.assertEqual(actual, "<name Young Justice>")
 
     def test_tv_repr_3(self):
     actual = str(Show.query.filter_by("The Flash"))
-    self.assertEqual(actual, "<name The Flash>")
+    
 
     # ---------
     # Creator
@@ -214,14 +214,18 @@ class TestModels(TestCase):
             c.birth_place, "Green Bay, Wisconsin, United States of America")
         self.assertEqual(c.first_publication, "Watchmen (Movie)")
 
-    def test_tv_repr_1(self):
-    actual = str(Creator.query.filter_by("Bob Kane"))
-    self.assertEqual(actual, "<name Bob Kane>")
+    def test_creator_repr_1(self):
+        actual = str(Creator.query.filter_by("Bob Kane"))
+        self.assertEqual(actual, "<name Bob Kane>")
 
-    def test_tv_repr_2(self):
-    actual = str(Creator.query.filter_by("Grant Morrison"))
-    self.assertEqual(actual, "<name Grant Morrison>")
+    def test_creator_repr_2(self):
+        actual = str(Creator.query.filter_by("Grant Morrison"))
+        self.assertEqual(actual, "<name Grant Morrison>")
 
-    def test_tv_repr_3(self):
-    actual = str(Creator.query.filter_by("Zack Snyder"))
-    self.assertEqual(actual, "<name Zack Snyder>")
+    def test_creator_repr_3(self):
+        actual = str(Creator.query.filter_by("Zack Snyder"))
+        self.assertEqual(actual, "<name Zack Snyder>")
+
+if __name__ == "__main__":
+    create_db()
+    main()
