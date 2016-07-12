@@ -11,13 +11,15 @@
 
 
 
-    <title>DC Comic</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img/dc.jpg') }}" type="image/png" />
+       <title>DC Comic</title>
+    <link rel="shortcut icon" href="../static/img/dc.jpg" type="image/png" />
+       
+
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{{ url_for('static', filename='css/full-slider.css') }}" rel="stylesheet">
+    <link href="../static/css/full-slider.css" rel="stylesheet">
      <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
@@ -45,31 +47,31 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">(current)</span> Menu <i class="glyphicon glyphicon-th-list"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">DC Comics</a>
+                <a class="navbar-brand" href="/">DC Comics</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="about">About</a>
                     </li>
-                    <li class = "active">
-                        <a href="characters.html">Characters</a>
-                    </li>
-                    <li>
-                        <a href="teams.html">Teams</a>
+                    <li   class="active">
+                        <a href="characters">Characters</a>
                     </li>
                     <li>
-                        <a href="comics.html">Comics</a>
+                        <a href="teams">Teams</a>
                     </li>
                     <li>
-                        <a href="movies.html">Movies</a>
+                        <a href="comics">Comics</a>
                     </li>
                     <li>
-                        <a href="shows.html">Shows</a>
+                        <a href="movies">Movies</a>
                     </li>
                     <li>
-                        <a href="creators.html">Creators</a>
+                        <a href="shows">Shows</a>
+                    </li>
+                    <li>
+                        <a href="creators">Creators</a>
                     </li>
                 </ul>
             </div>
@@ -84,7 +86,7 @@
     <div class = "container">
         <div class="box-table">
             <h2 class="section-heading">Characters</h2>
-            <table class="table table-striped">
+            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thread>
                     <tr>
                         <th>Image</th>
@@ -164,11 +166,10 @@
     <!-- table end -->
 
     <!-- jQuery -->
-    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="../static/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-
+    <script src="../static/js/bootstrap.min.js"></script>
 
 </body>
 
