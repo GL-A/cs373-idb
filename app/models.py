@@ -1,12 +1,22 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.exc import IntegrityError
+from marshmallow import Schema, fields, ValidationError, pre_load
+from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey, create_engine
+from sqlalchemy.dialects.postgresql import ARRAY
+from sqlalchemy.ext.declarative import declarative_base
+from flask.ext.jsontools import JsonSerializableBase
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/dcdatabase'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:psql@localhost:5432/dcdatabase'
 db = SQLAlchemy(app)
+db.init_app(app)
 
 
-class Character(db.Model):
+Base = declarative_base(cls=(JsonSerializableBase,))
+
+
+class Character(db.Model, Base):
 
     """
     DC characters with attributes title, hero/villain alias, an image,
@@ -15,18 +25,18 @@ class Character(db.Model):
 
     __tablename__ = 'characters'
 
-    id = db.Column(db.Integer)
+    
     title = db.Column(db.String(50), primary_key=True)
+    image = db.Column(db.String(250))
+    universes = db.Column(ARRAY(db.String(100)))
+    gender = db.Column(db.String(50))
+    aliases = db.Column(ARRAY(db.String(100)))
     creators = db.Column(ARRAY(db.String(100)))
-    alignment = db.Column(db.String(50))
     identity = db.Column(db.String(50))
     real_name = db.Column(db.String(50))
-    universe = db.Column(ARRAY(db.String(100)))
-    image = db.Column(db.String(250))
-    status = db.Column(db.String(50))
-    gender = db.Column(db.String(50))
     debut = db.Column(db.String(50))
-    aliases = db.Column(ARRAY(db.String(100)))
+    affiliation = db.Column(ARRAY(db.String(100)))
+    alignment = db.Column(db.String(50))
 
     def __init__(self, title, alias, image, alignment, creators, identity, real_name, universe, status, gender, debut, aliases):
         """
@@ -39,38 +49,28 @@ class Character(db.Model):
         self.creators = creators
         self.identity = identity
         self.real_name = real_name
-        self.universe = universe
-        self.status = status
+        self.universes = universe
         self.gender = gender
         self.debut = debut
 
-    def __repr__(self):
-        """
-        Return represenation of this character in format
-        <alias {}> where {} is character's alias
-
-        So the Character Bruce Wayne is represented as Batman
-        """
-        return '<alias {}>'.format(self.alias)
 
     def to_json(self, list_view = False):
         """
         Return a dictionary of information of this character
         """
         return {
-            'id' : self.id,
             'title' : self.title,
             'creators' : self.creators,
             'alignment' : self.alignment,
             'identity' : self.identity,
             'real_name' : self.real_name,
-            'universe' : self.universe,  
+            'universes' : self.universes,  
             'image' : self.image,
-            'status' : self.status,
             'gender' : self.gender,
             'debut' : self.debut,
             'aliases' : self.aliases
             }
+
 
 
 class Teams(db.Model):
@@ -82,15 +82,13 @@ class Teams(db.Model):
 
     __tablename__ = 'teams'
 
-    id = db.Column(db.Integer)
     title = db.Column(db.String(100), primary_key=True)
     image = db.Column(db.String(250))
     debut = db.Column(db.String(100))
-    origin = db.Column(db.String(100))
     identity = db.Column(db.String(100))
     status = db.Column(db.String(25))
     creators = db.Column(ARRAY(db.String(100)))
-    universe = db.Column(ARRAY(db.String(100)))
+    universes = db.Column(ARRAY(db.String(100)))
     team_leaders = db.Column(ARRAY(db.String(100)))
     enemies = db.Column(ARRAY(db.String(100)))
 
@@ -101,34 +99,26 @@ class Teams(db.Model):
         self.title = title
         self.image = image
         self.debut = debut
-        self.origin = origin
         self.identity = identity
         self.status = status
         self.creators = creators
-        self.universe = universe
+        self.universes = universe
         self.team_leaders = team_leaders
         self.enemies = enemies
 
-    def __repr__(self):
-        """
-        Return represenation of this team in format
-        <title {}> where {} is the team's title
-        """
-        return '<title {}>'.format(self.title)
 
     def to_json(self, list_view = False):
         """
         Return a dictionary of information of this teams
         """
         return {
-            'id' : self.id,
             'title' : self.title,
             'debut' : self.debut,
             'origin' : self.origin,
             'identity' : self.identity,
             'status' : self.status,
             'creators': self.creators,
-            'universe': self.universe,
+            'universe': self.universes,
             'team_leaders' : self.team_leaders,
             'enemies' : self.enemies
         }
@@ -142,10 +132,9 @@ class Comics(db.Model):
 
     __tablename__ = 'comics'
 
-    id = db.Column(db.Integer)
     image = db.Column(db.String(250))
     title = db.Column(db.String(100), primary_key=True)
-    date = db.Column(db.String(50))
+    release_date = db.Column(db.String(50))
     locations = db.Column(ARRAY(db.String(100)))
     featured_characters = db.Column(ARRAY(db.String(100)))
     creators = db.Column(ARRAY(db.String(100)))
@@ -156,27 +145,19 @@ class Comics(db.Model):
         """
         self.image = image
         self.title = title
-        self.date = date
+        self.release_date = date
         self.locations = locations
         self.featured_characters = featured_characters
         self.creators = creators
-
-    def __repr__(self):
-        """
-        Return represenation of this comic in format
-        <title {}> where {} is the comic's title
-        """
-        return '<title {}>'.format(self.title)
 
     def to_json(self, list_view = False):
         """
         Return a dictionary of information of this comic
         """
         return {
-            'id' : self.id,
             'title' : self.title,
             'image' : self.image,
-            'date' : self.date,
+            'release_date' : self.date,
             'locations' : self.locations,
             'featured_characters' : self.featured_characters,
             'creators' : self.creators
@@ -192,10 +173,9 @@ class Movies(db.Model):
 
     __tablename__ = 'movies'
 
-    id = db.Column(db.Integer)
     image = db.Column(db.String(250))
     title = db.Column(db.String(100), primary_key=True)
-    date = db.Column(db.String(50))
+    release_date = db.Column(db.String(50))
     running_time = db.Column(db.String(50))
     budget = db.Column(db.String(50))
     creators = db.Column(ARRAY(db.String(50)))
@@ -213,19 +193,11 @@ class Movies(db.Model):
         self.creators = creators
         self.featured_characters = featured_characters
 
-    def __repr__(self):
-        """
-        Return represenation of this movie in format
-        <title {}> where {} is the movie's title
-        """
-        return '<title {}>'.format(self.title)
-
     def to_json(self, list_view = False):
         """
         Return a dictionary of information of this movie
         """
         return {
-            'id' : self.id,
             'title' : self.title,
             'image' : self.image,
             'date' : self.date,
@@ -244,14 +216,12 @@ class Shows(db.Model):
 
     __tablename__ = 'shows'
 
-    id = db.Column(db.Integer)
     title = db.Column(db.String(100), primary_key=True)
-    last_air  = db.Column(db.String(250))
+    last_air_date  = db.Column(db.String(250))
     running_time  = db.Column(db.String(250))
     image = db.Column(db.String(250))
-    first_air = db.Column(db.String(50))
+    first_air_date = db.Column(db.String(50))
     creators = db.Column(ARRAY(db.String(100)))
-    characters = db.Column(ARRAY(db.String(100)))
 
     def __init__(self, image, title, network, running_time, first_air, creators, characters, last_air):
         """
@@ -263,14 +233,6 @@ class Shows(db.Model):
         self.running_time  = running_time
         self.first_air = first_air
         self.creators = creators
-        self.characters = characters
-
-    def __repr__(self):
-        """
-        Return represenation of this show in format
-        <title {}> where {} is the show's title
-        """
-        return '<title {}>'.format(self.title)
 
     def to_json(self, list_view = False):
 
@@ -278,7 +240,6 @@ class Shows(db.Model):
         Return a dictionary of information of this movie
         """
         return {
-            'id' : self.id,
             'title' : self.title,
             'last_air' : self.last_air,
             'running_time' : self.running_time,
@@ -297,9 +258,9 @@ class Creators(db.Model):
 
     __tablename__ = 'creators'
 
-    id = db.Column(db.Integer)
     title = db.Column(db.String(50), primary_key=True)
-    ocupations = db.Column(ARRAY(db.String(50)))
+    image = db.Column(String(50))
+    job_titles = db.Column(ARRAY(db.String(50)))
     gender = db.Column(String(50))
     birth_date = db.Column(db.String(50))
     first_publication = db.Column(db.String(100))
@@ -315,22 +276,99 @@ class Creators(db.Model):
         self.first_publication = first_publication
         slef.employers = db.Column(ARRAY(db.String(100)))
 
-    def __repr__(self):
-        """
-        Return represenation of this creator in format
-        <title {}> where {} is the creator's title
-        """
-        return '<title {}>'.format(self.title)
 
     def to_json(self, list_view = False):
         """
         Return a dictionary of information of this movie
         """
         return {
-            'id' : self.id,
             'title' : self.title,
             'birth_date' : self.birth_date,
             'gender' : self.gender,
             'first_publication' : self.first_publication,
             'employers' : self.employers
         }
+
+
+###SCHEMA###
+
+class CharacterSchema(Schema):
+    title = fields.Str(dump_only=True)
+    image = fields.Str()
+    universes = fields.Str()
+    gender = fields.Str()
+    aliases = fields.Str()
+    creators = fields.Str()
+    identity = fields.Str()
+    real_name = fields.Str()
+    debut = fields.Str()
+    affiliation = fields.Str()
+    alignment = fields.Str()
+
+
+class TeamsSchema(Schema):
+    title = fields.Str(dump_only=True)
+    image = fields.Str()
+    debut = fields.Str()
+    identity = fields.Str()
+    status = fields.Str()
+    creators = fields.Str()
+    universes = fields.Str()
+    team_leaders = fields.Str()
+    enemies = fields.Str()
+
+class ComicsSchema(Schema):
+    title = fields.Str(dump_only=True)
+    image = fields.Str()
+    release_date = fields.Str()
+    locations = fields.Str()
+    featured_characters = fields.Str()
+    creators = fields.Str()
+
+class MoviesSchema(Schema):
+    title = fields.Str(dump_only=True)
+    image = fields.Str()
+    release_date = fields.Str()
+    running_time = fields.Str()
+    budget = fields.Str()
+    creators = fields.Str()
+    featured_characters = fields.Str()
+
+class ShowsSchema(Schema):
+    title = fields.Str(dump_only=True)
+    image = fields.Str()
+    last_air_date  = fields.Str()
+    running_time  = fields.Str()
+    first_air_date = fields.Str()
+    creators = fields.Str()
+
+class CreatorsSchema(Schema):
+    title = fields.Str(dump_only=True)
+    image = fields.Str()
+    job_titles = fields.Str()
+    gender = fields.Str()
+    birth_date = fields.Str()
+    first_publication = fields.Str()
+    employers = fields.Str()
+
+# Custom validator
+def must_not_be_blank(data):
+    if not data:
+        raise ValidationError('Data not provided.')
+
+
+characters_schema = CharacterSchema(many=True)
+teams_schema = TeamsSchema(many=True)
+comics_schema = ComicsSchema(many=True)
+movies_schema = MoviesSchema(many=True)
+shows_schema = ShowsSchema(many=True)
+creators_schema = CreatorsSchema(many=True)
+
+character_schema = CharacterSchema()
+team_schema = TeamsSchema()
+comic_schema = ComicsSchema()
+movie_schema = MoviesSchema()
+show_schema = ShowsSchema()
+creator_schema = CreatorsSchema()
+
+
