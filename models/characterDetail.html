@@ -1,0 +1,54 @@
+<link href="static/css/character.css" rel="stylesheet" type="text/css">
+    <div class="chara-container container">
+        <div class="chara-header">
+        <div class = "row">
+            <div class="col-md-3">
+            <img class = "img-rounded" src = "{{image}}">
+            </div>
+
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+            <div class="chara-name"><b>{{name}}</b></div>
+            <table class="table">
+                <tr>
+                    <th>Real Name</th>
+                    <th>
+                        <p>{{reallyName}}</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <th>
+                        <p>{{gender}}</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Allignment</th>
+                    <th>
+                        <p>{{allignment}}</p>
+                    </th>
+                </tr>
+
+            </table>
+            <div class="panel panel-default">
+               <div class="panel-heading"><b>Affiliates</b></div>
+                <a ng-repeat="team in affiliation" href = "/#/teams/{{team}}">
+                <p>{{team}}</p>
+                </a>
+            </div>
+             <div class="panel panel-default">
+              <div class="panel-heading"><b>Creator</b></div>
+                	<a ng-repeat="creator in creators" href = "/#/creators/{{creator}}">
+                	<p>{{creator}}</p>
+                	</a>
+            </div>
+            <div class="panel panel-default">
+               <div class="panel-heading"><b>Aliases</b></div>
+                <a ng-repeat="ally in aliases" href = "/#/characters/{{ally}}">
+                <p>{{ally}}</p>
+                </a>
+            </div>
+           </div>
+       </div>
+       </div>
+     </div>

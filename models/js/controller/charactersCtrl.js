@@ -1,4 +1,4 @@
-app.controller('charactersCtrl',['$scope', '$http', function($scope, $http) {
+app.controller('charactersCtrl', function($scope, $http) {
 
 
   $scope.charactersOptions = {
@@ -10,11 +10,12 @@ app.controller('charactersCtrl',['$scope', '$http', function($scope, $http) {
             {
                 field:'image', 
                 displayName:'Image',
-                cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{ COL_FIELD }}" /></div>'
+                cellTemplate:'<div class="ui-grid-cell-contents ng-scope ng-binding"><img src="{{COL_FIELD}}" height="110" ></div>'
             },
             {
                 field:'name', 
-                displayName:'Name'
+                displayName:'Name',
+                cellTemplate: '<div class="ngCellText"><a href="/#/characters/{{ row.entity.name }}">{{ COL_FIELD }}</a></div>'
             },
             {
                 field:'alias',
@@ -39,8 +40,7 @@ app.controller('charactersCtrl',['$scope', '$http', function($scope, $http) {
    // get real data via url
 
   var getPage = function() {
-    // var url = host + "/data/characters";
-    var url = 'static/data/character.json';
+    var url = 'static/data/charater.json';
     $http.get(url, {cache: true})
     .success(function (data) {
       $scope.charactersOptions.data = data;
@@ -49,7 +49,7 @@ app.controller('charactersCtrl',['$scope', '$http', function($scope, $http) {
 
   getPage();
 }
-]);
+);
 
 
 

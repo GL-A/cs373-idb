@@ -4,7 +4,8 @@ var app = angular.module('dcdatabase', [
     'ngTouch',
     'ui.grid',
     'ui.router',
-    'ui.grid.pagination'   
+    'ui.grid.pagination',
+    'ngAnimate'
 ])
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -44,6 +45,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 '@' : {
                     templateUrl: 'static/partials/characters.html',
                     controller: 'charactersCtrl'
+                }
+            }
+        })
+        .state('root.character-detail', {
+            url: "/characters/:name",
+            views : { 
+                '@' : {
+                    templateUrl: 'static/partials/characterDetail.html',
+                    controller: 'characterDetailCtrl'
                 }
             }
         })
@@ -88,35 +98,3 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         });
         });
-
-// app.config(['$routeProvider',
-//      function($routeProvider) {
-//          $routeProvider.
-//              when('/', {
-//                  templateUrl: '/static/partials/home.html',
-//              }).
-//              when('/about', {
-//                  templateUrl: '../static/partials/about.html',
-//              }).
-//              when('/characters', {
-//                  templateUrl: '../static/partials/characters.html',
-//              }).
-//              when('/teams', {
-//                  templateUrl: '../static/partials/teams.html',
-//              }).
-//             when('/comics', {
-//                  templateUrl: '../static/partials/comics.html',
-//              }).
-//              when('/movies', {
-//                  templateUrl: '../static/partials/movies.html',
-//              }).
-//              when('/shows', {
-//                  templateUrl: '../static/partials/shows.html',
-//              }).
-//              when('/creators', {
-//                  templateUrl: '../static/partials/creators.html',
-//              }).
-//              otherwise({
-//                  redirectTo: '/'
-//              });
-//     }]);
