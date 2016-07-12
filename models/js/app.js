@@ -1,8 +1,11 @@
 'use strict';   // See note about 'use strict'; below
 
 var app = angular.module('dcdatabase', [
-    'ui.router'  
-]);
+    'ngTouch',
+    'ui.grid',
+    'ui.router',
+    'ui.grid.pagination'   
+])
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -39,7 +42,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: "/characters",
             views : { 
                 '@' : {
-                    templateUrl: 'static/partials/characters.html'
+                    templateUrl: 'static/partials/characters.html',
+                    controller: 'charactersCtrl'
                 }
             }
         })
