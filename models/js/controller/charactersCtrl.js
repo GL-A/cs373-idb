@@ -40,7 +40,7 @@ app.controller('charactersCtrl',['$scope', '$http', function($scope, $http) {
 
   var getPage = function() {
     // var url = host + "/data/characters";
-    var url = 'static/data/character.json';
+    var url = '/character.json';
     $http.get(url, {cache: true})
     .success(function (data) {
       $scope.charactersOptions.data = data;

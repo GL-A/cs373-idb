@@ -1,81 +1,71 @@
     <!-- Table -->
+    <link href="static/css/character.css" rel="stylesheet" type="text/css">
     <div class = "container">
-        <div class="box-table">
-            <h2 class="section-heading">Characters</h2>
-            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                <thread>
-                    <tr>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Alias</th>
-                        <th>Alignment</th>
-                        <th>Affiliation</th>
-                        <th>Creators</th>
-                    </tr>
-                </thread>
-                <tbody>
-                    <tr>
-                    <td><div class = "thumb">
-                        <img src = "http://vignette4.wikia.nocookie.net/marvel_dc/images/3/33/Batman_002.jpg/revision/latest/scale-to-width-down/270?cb=20130412165015"/></div></td>
-                    <td><a href = "characters/batman.html">Bruce Wayne</a></td>
-                    <td><a href = "characters/batman.html">Batman</a></td>
-                    <td>Good</td>
-                    <td>
-                    <a href = "teams/justice_league.html">
-                    <p>Justice League</p></a>
-                    </td>
-                    <td>
-                    <!-- <a href = "creators/bill_finger.html"> -->
-                    <p>Bill Finger</p>
-                    <!-- </a> -->
-                    <a href = "creators/bob_kane.html">
-                    <p>Bob Kane</p></a>
-                    </td>
-                    </tr>
-                    
-                    <tr>
-                    <td><div class= "thumb"> 
-                        <img  src="http://vignette3.wikia.nocookie.net/marvel_dc/images/1/14/Superman_0002.jpg/revision/latest/scale-to-width-down/270?cb=20100419210629"/></div></td>
-                    <td><a href="characters/superman.html">Clark Joseph Kent</a></td>
-                    <td><a href = "characters/superman.html">Superman</a></td>
-                    <td>Good</td>
-                    <td>
-                       <a href = "teams/justice_league.html">
-                       <p>Justice League</p></a>
-                    </td>
-                    <td>
-                            <!-- <a href = "creators/jerry_siegel.html"> -->
-                            <p>Jerry Siegel</p>
-                            <!-- </a> -->
-                            <!-- <a href = "creators/joe_shuster.html"> -->
-                            <p>Joe Shuster</p>
-                            <!-- </a> -->
-                        
-                    </td>
-                    </tr>
+        <h2 class="section-heading">Characters</h2>
+        <div style="height:auto" ui-grid="charactersOptions" ui-grid-pagination class="grid">
 
-                    <tr>
-                    <td><div class= "thumb"> 
-                        <img  src="http://vignette1.wikia.nocookie.net/marvel_dc/images/5/58/Joker_0003.jpg/revision/latest/scale-to-width-down/270?cb=20140725171230"/></div></td>
-                    <td>Unknown</td>
-                    <td><a href = "characters/joker.html">The Joker</a></td>
-                    <td>Bad</td>
-                    <td>
-                        <a href = "teams/injustice_league.html">
-                        <p>Injustice League</p></a>
-                    </td>
-                    <td>
-                            <!-- <a href = "creators/jerry_robinson.html"> -->
-                            <p>Jerry Robinson</p>
-                            <!-- </a> -->
-                            <!-- <a href = "creators/bill_finger.html"> -->
-                            <p>Bill Finger</p>
-                            <!-- </a> -->
-                            <a href = "creators/bob_kane.html">
-                            <p>Bob Kane</p></a>
-                    </td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- <thread>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Alias</th>
+                    <th>Alignment</th>
+                    <th>Affiliation</th>
+                    <th>Creators</th>
+                </tr>
+            </thread>
+            <tbody>
+                <tr>
+                <td><div class = "thumb">
+                    <img src = "http://vignette4.wikia.nocookie.net/marvel_dc/images/3/33/Batman_002.jpg/revision/latest/scale-to-width-down/270?cb=20130412165015"/></div></td>
+                <td><a href = "characters/batman.html">Bruce Wayne</a></td>
+                <td><a href = "characters/batman.html">Batman</a></td>
+                <td>Good</td>
+                <td>
+                <a href = "teams/justice_league.html">
+                <p>Justice League</p></a>
+                </td>
+                <td>
+                <p>Bill Finger</p>
+                <a href = "creators/bob_kane.html">
+                <p>Bob Kane</p></a>
+                </td>
+                </tr>
+                
+                <tr>
+                <td><div class= "thumb"> 
+                    <img  src="http://vignette3.wikia.nocookie.net/marvel_dc/images/1/14/Superman_0002.jpg/revision/latest/scale-to-width-down/270?cb=20100419210629"/></div></td>
+                <td><a href="characters/superman.html">Clark Joseph Kent</a></td>
+                <td><a href = "characters/superman.html">Superman</a></td>
+                <td>Good</td>
+                <td>
+                   <a href = "teams/justice_league.html">
+                   <p>Justice League</p></a>
+                </td>
+                <td>
+                        <p>Jerry Siegel</p>
+                        <p>Joe Shuster</p>
+                    
+                </td>
+                </tr>
+
+                <tr>
+                <td><div class= "thumb"> 
+                    <img  src="http://vignette1.wikia.nocookie.net/marvel_dc/images/5/58/Joker_0003.jpg/revision/latest/scale-to-width-down/270?cb=20140725171230"/></div></td>
+                <td>Unknown</td>
+                <td><a href = "characters/joker.html">The Joker</a></td>
+                <td>Bad</td>
+                <td>
+                    <a href = "teams/injustice_league.html">
+                    <p>Injustice League</p></a>
+                </td>
+                <td>
+                        <p>Jerry Robinson</p>
+                        <p>Bill Finger</p>
+                        <a href = "creators/bob_kane.html">
+                        <p>Bob Kane</p></a>
+                </td>
+                </tr>
+            </tbody> -->
         </div>
     </div>
