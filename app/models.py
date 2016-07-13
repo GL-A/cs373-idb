@@ -38,7 +38,7 @@ class Character(db.Model, Base):
     affiliation = db.Column(ARRAY(db.String(100)))
     alignment = db.Column(db.String(50))
 
-    def __init__(self, title, alias, image, alignment, creators, identity, real_name, universe, status, gender, debut, aliases):
+    def __init__(self, title = "", alias = [], image = "", alignment = "", creators = [], identity = "", real_name = "", universe = [], status = "", gender = "", debut = "", aliases = []):
         """
         Initialize the character
         """
@@ -222,8 +222,8 @@ class Shows(db.Model):
     image = db.Column(db.String(250))
     first_air_date = db.Column(db.String(50))
     creators = db.Column(ARRAY(db.String(100)))
-
-    def __init__(self, image, title, network, running_time, first_air, creators, characters, last_air):
+    featured_characters= db.Column(ARRAY(db.String(100)))
+    def __init__(self, image, title, network, running_time, first_air, creators, featured_characters, last_air):
         """
         Initialize a show
         """
@@ -233,6 +233,7 @@ class Shows(db.Model):
         self.running_time  = running_time
         self.first_air = first_air
         self.creators = creators
+	self.featured_character = featured_characters
 
     def to_json(self, list_view = False):
 
@@ -265,8 +266,8 @@ class Creators(db.Model):
     birth_date = db.Column(db.String(50))
     first_publication = db.Column(db.String(100))
     employers = db.Column(ARRAY(db.String(100)))
-
-    def __init__(self, title, occupations, birth_date, first_publication, employers):        
+    creations = db.Column(ARRAY(db.String(100)))
+    def __init__(self, title, occupations, birth_date, first_publication, employers,creations):        
         """
         Initialize a creator
         """
@@ -274,8 +275,8 @@ class Creators(db.Model):
         self.occupations = occupations
         self.birth_date = birth_date
         self.first_publication = first_publication
-        slef.employers = db.Column(ARRAY(db.String(100)))
-
+        self.employers = employers
+        self.creations = creations
 
     def to_json(self, list_view = False):
         """
@@ -286,7 +287,8 @@ class Creators(db.Model):
             'birth_date' : self.birth_date,
             'gender' : self.gender,
             'first_publication' : self.first_publication,
-            'employers' : self.employers
+            'employers' : self.employers,
+            'creations' : self.creations
         }
 
 
@@ -295,14 +297,14 @@ class Creators(db.Model):
 class CharacterSchema(Schema):
     title = fields.Str(dump_only=True)
     image = fields.Str()
-    universes = fields.Str()
+    universes = fields.List(fields.Raw)
     gender = fields.Str()
-    aliases = fields.Str()
-    creators = fields.Str()
+    aliases = fields.List(fields.Raw)
+    creators = fields.List(fields.Raw)
     identity = fields.Str()
     real_name = fields.Str()
     debut = fields.Str()
-    affiliation = fields.Str()
+    affiliation = fields.List(fields.Raw)
     alignment = fields.Str()
 
 
@@ -312,18 +314,18 @@ class TeamsSchema(Schema):
     debut = fields.Str()
     identity = fields.Str()
     status = fields.Str()
-    creators = fields.Str()
-    universes = fields.Str()
-    team_leaders = fields.Str()
-    enemies = fields.Str()
+    creators = fields.List(fields.Raw)
+    universes = fields.List(fields.Raw)
+    team_leaders = fields.List(fields.Raw)
+    enemies = fields.List(fields.Raw)
 
 class ComicsSchema(Schema):
     title = fields.Str(dump_only=True)
     image = fields.Str()
     release_date = fields.Str()
-    locations = fields.Str()
-    featured_characters = fields.Str()
-    creators = fields.Str()
+    locations = fields.List(fields.Raw)
+    featured_characters = fields.List(fields.Raw)
+    creators = fields.List(fields.Raw)
 
 class MoviesSchema(Schema):
     title = fields.Str(dump_only=True)
@@ -331,8 +333,8 @@ class MoviesSchema(Schema):
     release_date = fields.Str()
     running_time = fields.Str()
     budget = fields.Str()
-    creators = fields.Str()
-    featured_characters = fields.Str()
+    creators = fields.List(fields.Raw)
+    featured_characters = fields.List(fields.Raw)
 
 class ShowsSchema(Schema):
     title = fields.Str(dump_only=True)
@@ -340,16 +342,18 @@ class ShowsSchema(Schema):
     last_air_date  = fields.Str()
     running_time  = fields.Str()
     first_air_date = fields.Str()
-    creators = fields.Str()
+    creators = fields.List(fields.Raw)
+    featured_characters= fields.List(fields.Raw)
 
 class CreatorsSchema(Schema):
     title = fields.Str(dump_only=True)
     image = fields.Str()
-    job_titles = fields.Str()
+    job_titles = fields.List(fields.Raw)
     gender = fields.Str()
     birth_date = fields.Str()
     first_publication = fields.Str()
-    employers = fields.Str()
+    employers = fields.List(fields.Raw)
+    creations = fields.List(fields.Raw)
 
 # Custom validator
 def must_not_be_blank(data):
@@ -370,5 +374,3 @@ comic_schema = ComicsSchema()
 movie_schema = MoviesSchema()
 show_schema = ShowsSchema()
 creator_schema = CreatorsSchema()
-
-
