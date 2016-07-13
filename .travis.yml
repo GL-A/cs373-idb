@@ -15,7 +15,6 @@ install:
     - pip install Flask-SQLAlchemy
     - pip install Flask-Testing
     - pip install marshmallow
-    - pip install flask-declarative
     - pip install flask-jsontools
     - pip install psycopg2
     - pip install requests
