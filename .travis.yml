@@ -14,8 +14,12 @@ install:
     - pip install Flask-Script
     - pip install Flask-SQLAlchemy
     - pip install Flask-Testing
-    - pip install gunicorn
+    - pip install marshmallow
+    - pip install flask-declarative
+    - pip install flask-jsontools
+    - pip install psycopg2
     - pip install requests
+    - sudo apt-get install postgresql
 
 before_script:
     - uname -a
@@ -25,5 +29,6 @@ before_script:
 script:
     - date
     - ls -al
-    - make check
+    - make models.html
     - make test
+    - make check

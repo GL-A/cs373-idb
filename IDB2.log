@@ -1,3 +1,120 @@
+commit 23a3ee7691be75a39910f7eb928f1b6fcc8ac3ec
+Author: kiankris <kcv@utexas.edu>
+Date:   Tue Jul 12 20:21:58 2016 -0500
+
+    Added .travis.yml file
+
+commit 286f8dedd8985a7acb9c02c6f48511a4d96afdcf
+Author: kiankris <kcv@utexas.edu>
+Date:   Tue Jul 12 20:15:23 2016 -0500
+
+    Added in test cases to test.py
+
+commit 7e41d1aadf9b0710f3d2db4e86c0c2093145a5d5
+Author: Brendon Rhodes <rhodesbrendon95@gmail.com>
+Date:   Tue Jul 12 20:11:19 2016 -0500
+
+    Add files via upload
+
+commit c8e50e429168ac66d6957589c934f464f5b13189
+Author: Brendon Rhodes <rhodesbrendon95@gmail.com>
+Date:   Tue Jul 12 17:06:03 2016 -0500
+
+    Add files via upload
+
+commit 71091f32c322ee187c4b74bd87d3676368fcf8f5
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 12 16:54:42 2016 -0500
+
+    Moved to partials
+
+commit 0bf1934d8d0f2cea985e0008243eaaaf7383f63b
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 12 16:54:34 2016 -0500
+
+    Moved to partials
+
+commit b68e6f76e1a3bdf581aa1d11258f2f247cc05890
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 12 16:54:27 2016 -0500
+
+    Moved to partials
+
+commit cf46afb1d88d79c6546586c817497ee4b88cb000
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 12 16:54:16 2016 -0500
+
+    Moved to partials
+
+commit bcc6828b355e1d7d61e1cc291f75627416aa2f60
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 12 16:54:04 2016 -0500
+
+    Moved to partials
+
+commit 216e8135b1cea455b05ee3f0928f8736a10e34aa
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 12 16:53:51 2016 -0500
+
+    Moved to partials
+
+commit e27f15f6a1ccfcc3a28d113f659ab08096d99b75
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 12 16:53:35 2016 -0500
+
+    Moved to partials
+
+commit 9e86fd20d5c81c594f2bfa5dc1d4d62022b6c789
+Merge: d2a82da 1aff53e
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 12 15:01:09 2016 -0500
+
+    Merge pull request #23 from kd9357/webbranch
+    
+    Webbranch
+
+commit 1aff53e9b2d8955add95bdd95e2c802a3dbac8fb
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 12 15:55:45 2016 -0400
+
+    implement changes from sydev
+
+commit e814e08ef5b31e6e8e5e74376f81f9de1eea8e79
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 12 15:38:40 2016 -0400
+
+    add rest interface
+
+commit cba88a5c71fe31604336d79ab3203974f483186b
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Tue Jul 12 14:45:11 2016 -0400
+
+    Created the Rest API
+
+commit 5b0fdb8f0c188be3190c578a4f26178a119a98bc
+Author: Kevin Du <kevind7@cs.utexas.edu>
+Date:   Mon Jul 11 15:57:08 2016 -0500
+
+    Updated models.py and test.py
+
+commit ecf9c37a280ed7d40a08e81dbb5c03f8ce14cc7e
+Author: Kevin Du <kevind7@cs.utexas.edu>
+Date:   Sun Jul 10 18:07:10 2016 -0500
+
+    Updated models.py, added dcdatabase.py
+
+commit 3bb48c876b444194705b4dfe60f154cc2fc317a7
+Author: Kevin Du <kevind7@cs.utexas.edu>
+Date:   Sun Jul 10 15:32:02 2016 -0500
+
+    Added webbranch for digital ocean to auto update
+
+commit d2a82da28b076e0e7e8a4ed4571a5d717a87d145
+Author: Kevin Du <kevind7@cs.utexas.edu>
+Date:   Tue Jul 5 18:39:51 2016 -0500
+
+    Added .gitignore file, fixed image problem
+
 commit bf9825d5e9c505249386f4a80c18eaa6bfddff6d
 Author: Kevin Du <kevind7@cs.utexas.edu>
 Date:   Tue Jul 5 18:30:00 2016 -0500

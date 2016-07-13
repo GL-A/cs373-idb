@@ -56,6 +56,9 @@ format:
 	autopep8 -i models.py
 	autopep8 -i test.py
 
+test:
+	python app/tests.py
+
 status:
 	make clean
 	@echo
@@ -63,4 +66,4 @@ status:
 	git remote -v
 	git status
 
-all: models.html IDB2.log check
+all: models.html IDB2.log test check

@@ -44,7 +44,7 @@ class TestModels(TestCase):
         self.assertEqual(c.creators, ["Ivan Reis", "Geoff Johns"])
         self.assertEqual(c.universes, ["Earth 3"] )
         self.assertEqual(c.aliases, ["The Joker"])
-        self.assertEqual(c.affiliation, None)
+        self.assertEqual(c.affiliation, "Not available")
 
     # # ---------
     # # teams
@@ -119,7 +119,7 @@ class TestModels(TestCase):
         self.assertEqual(c.title, "The Batman vs. Dracula (Movie)")
         self.assertEqual(c.creators, ['Duane Capizzi', 'Michael Goguen'])
         self.assertEqual(c.release_date, "October 18 2005")
-        self.assertEqual(c.budget, None)
+        self.assertEqual(c.budget, "Not available")
         self.assertEqual(c.featured_characters, ['Bruce_Wayne_(The_Batman)'])
 
     def test_movies_3(self):
@@ -127,7 +127,7 @@ class TestModels(TestCase):
         self.assertEqual(c.title, "Justice League: Starcrossed (Movie)")
         self.assertEqual(c.creators, ['Dwayne McDuffie', 'Butch Lukic', 'Dan Riba', 'Rich Fogel'])
         self.assertEqual(c.release_date, "July 13 2004")
-        self.assertEqual(c.budget, None)
+        self.assertEqual(c.budget, "Not available")
         self.assertEqual(c.featured_characters, ['Justice_League_(DCAU)', 'Bruce_Wayne_(DCAU)', 'Wallace_West_(DCAU)', 'John_Stewart_(DCAU)', 'Shayera_Hol_(DCAU)', 'J%27onn_J%27onzz_(DCAU)', 'Kal-El_(DCAU)', 'Diana_of_Themyscira_(DCAU)'])
 
     # ---------
@@ -140,7 +140,7 @@ class TestModels(TestCase):
         self.assertEqual(c.featured_characters, ['Superman', 'Batman', 'Flash (Wally West', 'Green Lantern (John Stewart)', 'Hawkgirl', "J'onn J'onzz"])
         self.assertEqual(c.first_air_date, "July 31 2004")
         self.assertEqual(c.last_air_date, "May 13 2006")
-        self.assertEqual(c.running_time, None) 
+        self.assertEqual(c.running_time, "Not available") 
         self.assertEqual(c.title, "Justice League Unlimited (TV Series)")       
 
 
@@ -149,8 +149,8 @@ class TestModels(TestCase):
         self.assertEqual(c.creators, ['Greg Weisman', 'Brandon Vietti', 'Sam Register'])
         self.assertEqual(c.featured_characters, ['Artemis', 'Aqualad', 'Kid Flash', 'Miss Martian', 'Robin', 'Super Boy'])
         self.assertEqual(c.first_air_date, "November 2010")
-        self.assertEqual(c.last_air_date, None)
-        self.assertEqual(c.running_time, None) 
+        self.assertEqual(c.last_air_date, "Not available")
+        self.assertEqual(c.running_time, "Not available") 
         self.assertEqual(c.title, "Young Justice (TV Series)")  
 
     def test_tv_3(self):
@@ -158,8 +158,8 @@ class TestModels(TestCase):
         self.assertEqual(c.creators,['Greg Berlanti'])
         self.assertEqual(c.featured_characters, ['Flash'])
         self.assertEqual(c.first_air_date, "October 7th 2014")
-        self.assertEqual(c.last_air_date, None)
-        self.assertEqual(c.running_time, None) 
+        self.assertEqual(c.last_air_date, "Not available")
+        self.assertEqual(c.running_time, "Not available") 
         self.assertEqual(c.title, "The Flash (2014 TV Series)")     
     # ---------
     # Creator
