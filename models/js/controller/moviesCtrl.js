@@ -1,7 +1,7 @@
-app.controller('charactersCtrl',['$scope', '$http', function($scope, $http) {
+app.controller('moviesCtrl',['$scope', '$http', function($scope, $http) {
 
 
-  $scope.charactersOptions = {
+  $scope.moviesOptions = {
     paginationPageSizes: [25, 50, 75, 100],
     paginationPageSize: 25,
     minRowsToShow: 4,
@@ -16,21 +16,20 @@ app.controller('charactersCtrl',['$scope', '$http', function($scope, $http) {
             {
                 field:'title', 
                 displayName:'Name',
-		cellTemplate: '<a href="/#/characters/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
+		cellTemplate: '<a href="/#/movies/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
             },
             {
-                field:'aliases',
-                displayName:'Alias',
-		cellTemplate: '<div ng-repeat="ally in COL_FIELD"><p>{{ ally }}</p></div>'
+                field:'featured_characters',
+                displayName:'Featured Characters',
+		cellTemplate: '<div ng-repeat="character in COL_FIELD"><a href="/#/characters/{{ character }}">{{ character }}</a>'
             },
             {
-                field:'alignment',
-                displayName:'Alignment'
+                field:'release_date',
+                displayName:'Release Date'
             },
             {
-                field:'affiliation',
-                displayName:'Affiliation',
-		cellTemplate: '<div ng-repeat="affil in COL_FIELD"><a href="/#/teams/{{ affil }}">{{ affil }}</a>'
+                field:'running_time',
+                displayName:'Running Time',
             },
             {
                 field:'creators',
@@ -44,10 +43,10 @@ app.controller('charactersCtrl',['$scope', '$http', function($scope, $http) {
 
   var getPage = function() {
     // var url = host + "/data/characters";
-    var url = '/characters.json';
+    var url = '/movies.json';
     $http.get(url, {cache: true})
     .success(function (data) {
-      $scope.charactersOptions.data = data;
+      $scope.moviesOptions.data = data;
     });
   };
 

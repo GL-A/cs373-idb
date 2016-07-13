@@ -47,11 +47,79 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+	
+	.state('root.character-detail', {
+            url: "/characters/:name",
+            views : { 
+                '@' : {
+                    templateUrl: 'static/partials/characterDetail.html',
+                    controller: 'characterDetailCtrl'
+
+                }
+            }
+        })
+
+	.state('root.team-detail', {
+            url: "/teams/:name",
+            views : { 
+                '@' : {
+                    templateUrl: 'static/partials/teamDetail.html',
+                    controller: 'teamDetailCtrl'
+
+                }
+            }
+        })
+
+	.state('root.show-detail', {
+            url: "/shows/:name",
+            views : { 
+                '@' : {
+                    templateUrl: 'static/partials/showDetail.html',
+                    controller: 'showDetailCtrl'
+
+                }
+            }
+        })
+
+	.state('root.creator-detail', {
+            url: "/creators/:name",
+            views : { 
+                '@' : {
+                    templateUrl: 'static/partials/creatorDetail.html',
+                    controller: 'creatorDetailCtrl'
+
+                }
+            }
+        })
+
+	.state('root.movie-detail', {
+            url: "/movies/:name",
+            views : { 
+                '@' : {
+                    templateUrl: 'static/partials/movieDetail.html',
+                    controller: 'movieDetailCtrl'
+
+                }
+            }
+        })
+
+	.state('root.comic-detail', {
+            url: "/comics/:name",
+            views : { 
+                '@' : {
+                    templateUrl: 'static/partials/comicDetail.html',
+                    controller: 'comicDetailCtrl'
+
+                }
+            }
+        })
+	
         .state('root.teams', {
             url: "/teams",
             views : { 
                 '@' : {
-                    templateUrl: 'static/partials/teams.html'
+                    templateUrl: 'static/partials/teams.html',
+		    controller: 'teamsCtrl'
                 }
             }
         })
@@ -59,7 +127,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: "/comics",
             views : { 
                 '@' : {
-                    templateUrl: 'static/partials/comics.html'
+                    templateUrl: 'static/partials/comics.html',
+		    controller: 'comicsCtrl'
                 }
             }
         })
@@ -67,7 +136,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: "/movies",
             views : { 
                 '@' : {
-                    templateUrl: 'static/partials/movies.html'
+                    templateUrl: 'static/partials/movies.html',
+		    controller: 'moviesCtrl'
                 }
             }
         })
@@ -75,7 +145,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: "/shows",
             views : { 
                 '@' : {
-                    templateUrl: 'static/partials/shows.html'
+                    templateUrl: 'static/partials/shows.html',
+		    controller: 'showsCtrl'
                 }
             }
         })
@@ -83,7 +154,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: "/creators",
             views : { 
                 '@' : {
-                    templateUrl: 'static/partials/creators.html'
+                    templateUrl: 'static/partials/creators.html',
+		    controller: 'creatorsCtrl'
                 }
             }
         });

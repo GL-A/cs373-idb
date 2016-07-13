@@ -1,7 +1,7 @@
-app.controller('charactersCtrl',['$scope', '$http', function($scope, $http) {
+app.controller('teamsCtrl',['$scope', '$http', function($scope, $http) {
 
 
-  $scope.charactersOptions = {
+  $scope.teamsOptions = {
     paginationPageSizes: [25, 50, 75, 100],
     paginationPageSize: 25,
     minRowsToShow: 4,
@@ -16,21 +16,20 @@ app.controller('charactersCtrl',['$scope', '$http', function($scope, $http) {
             {
                 field:'title', 
                 displayName:'Name',
-		cellTemplate: '<a href="/#/characters/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
+		cellTemplate: '<a href="/#/teams/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
             },
             {
-                field:'aliases',
-                displayName:'Alias',
-		cellTemplate: '<div ng-repeat="ally in COL_FIELD"><p>{{ ally }}</p></div>'
+                field:'team_leaders',
+                displayName:'Team Leaders',
+		cellTemplate: '<div ng-repeat="affil in COL_FIELD"><a href="/#/characters/{{ affil }}">{{ affil }}</a>'
             },
             {
-                field:'alignment',
-                displayName:'Alignment'
+                field:'debut',
+                displayName:'Debut'
             },
             {
-                field:'affiliation',
-                displayName:'Affiliation',
-		cellTemplate: '<div ng-repeat="affil in COL_FIELD"><a href="/#/teams/{{ affil }}">{{ affil }}</a>'
+                field:'status',
+                displayName:'Status',
             },
             {
                 field:'creators',
@@ -44,10 +43,10 @@ app.controller('charactersCtrl',['$scope', '$http', function($scope, $http) {
 
   var getPage = function() {
     // var url = host + "/data/characters";
-    var url = '/characters.json';
+    var url = '/teams.json';
     $http.get(url, {cache: true})
     .success(function (data) {
-      $scope.charactersOptions.data = data;
+      $scope.teamsOptions.data = data;
     });
   };
 

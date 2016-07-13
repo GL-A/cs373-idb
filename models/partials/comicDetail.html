@@ -1,0 +1,39 @@
+<link href="static/css/character.css" rel="stylesheet" type="text/css">
+    <div class="chara-container container">
+        <div class="chara-header">
+        <div class = "row">
+            <div class="col-md-3">
+            <img class = "img-rounded" src = "{{image}}">
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+            
+            <div class="chara-name"><b>{{name}}</b></div>
+            <table class="table">
+                <tr>
+                    <th>Release Date</th>
+                    <th>
+                        <p>{{release_date}}</p>
+                    </th>
+                </tr>
+            </table>
+            <div class="panel panel-default">
+               <div class="panel-heading"><b>Featured Characters</b></div>
+                <a ng-repeat="char in featured_characters" href = "/#/characters/{{char}}">
+                <p>{{char}}</p>
+                </a>
+            </div>
+            <div class="panel panel-default">
+               <div class="panel-heading"><b>Locations</b></div>
+                <p ng-repeat="location in locations">{{location}}</p>
+            </div>
+             <div class="panel panel-default">
+              <div class="panel-heading"><b>Creators</b></div>
+                	<a ng-repeat="creator in creators" href = "/#/creators/{{creator}}">
+                	<p>{{creator}}</p>
+                	</a>
+            </div>
+           </div>
+       </div>
+       </div>
+     </div>

@@ -1,0 +1,58 @@
+<link href="static/css/character.css" rel="stylesheet" type="text/css">
+    <div class="chara-container container">
+        <div class="chara-header">
+        <div class = "row">
+            <div class="col-md-3">
+            <img class = "img-rounded" src = "{{image}}">
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+            
+            <div class="chara-name"><b>{{name}}</b></div>
+            <table class="table">
+                <tr>
+                    <th>Identity</th>
+                    <th>
+                        <p>{{identity}}</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Debut</th>
+                    <th>
+                        <p>{{debut}}</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <th>
+                        <p>{{status}}</p>
+                    </th>
+                </tr>
+
+            </table>
+            <div class="panel panel-default">
+               <div class="panel-heading"><b>Team Leaders</b></div>
+                <a ng-repeat="leader in team_leaders" href = "/#/characters/{{leader}}">
+                <p>{{leader}}</p>
+                </a>
+            </div>
+            <div class="panel panel-default">
+               <div class="panel-heading"><b>Enemies</b></div>
+                <a ng-repeat="enemy in enemies" href = "/#/characters/{{enemy}}">
+                <p>{{enemy}}</p>
+                </a>
+            </div>
+             <div class="panel panel-default">
+              <div class="panel-heading"><b>Creators</b></div>
+                	<a ng-repeat="creator in creators" href = "/#/creators/{{creator}}">
+                	<p>{{creator}}</p>
+                	</a>
+            </div>
+            <div class="panel panel-default">
+               <div class="panel-heading"><b>Universes</b></div>
+                <p ng-repeat="universe in universes">{{universe}}</p>
+            </div>
+           </div>
+       </div>
+       </div>
+     </div>
