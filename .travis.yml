@@ -20,7 +20,6 @@ install:
     - pip install flask-jsontools
     - pip install psycopg2
     - pip install requests
-    - sudo apt-get install postgresql
 
 before_script:
     - uname -a
