@@ -54,9 +54,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 '@' : {
                     templateUrl: 'static/partials/characterDetail.html',
                     controller: 'characterDetailCtrl'
+
                 }
             }
         })
+
         .state('root.teams', {
             url: "/teams",
             views : { 
