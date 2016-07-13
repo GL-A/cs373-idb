@@ -1,6 +1,5 @@
 from unittest import main, TestCase
 from models import *
-#need to create db each time
 import requests
 
 
@@ -11,221 +10,188 @@ class TestModels(TestCase):
     # ---------
 
     def test_character_1(self):
-        c = Character.query.filter_by("Batman")
-        self.assertEqual(c.name, "Bruce Wayne")
-        self.assertEqual(c.alias, "Batman")
+        c = Characters.query.filter_by(title = "Batman (Bruce Wayne)").first()
+        self.assertEqual(c.real_name, "Bruce Wayne")
+        self.assertEqual(c.gender, "Male")
         self.assertEqual(c.alignment, "Good")
+        self.assertEqual(c.debut, "1986")
+        self.assertEqual(c.identity, "Secret Identity")
+        self.assertEqual(c.creators, ["Bob Kane", "Bill Finger"])
+        self.assertEqual(c.universes, ["New Earth"])
+        self.assertEqual(c.aliases, ["Batman", "Insider", "Matches Malone", "Robin"])
+        self.assertEqual(c.affiliation,  ['Batman Family', 'Justice League' , 'Batman Incorporated', 'Outsiders','Wayne Enterprises', \
+            'Club of Heroes', 'formerly White Lantern Corps', 'Sinestro Corps'])
 
     def test_character_2(self):
-        c = Character.query.filter_by("Superman")
-        self.assertEqual(c.name, "Clark Joseph Kent")
-        self.assertEqual(c.alias, "Superman")
+        c = Characters.query.filter_by(title = "Flash (Barry Allen)").first()
+        self.assertEqual(c.real_name, "Bartholomew Henry \"Barry\" Allen")
+        self.assertEqual(c.gender, "Male")
         self.assertEqual(c.alignment, "Good")
+        self.assertEqual(c.debut, "1956")
+        self.assertEqual(c.identity, "Secret Identity")
+        self.assertEqual(c.creators, ["Carmine Infantino", "Robert Kanigher"])
+        self.assertEqual(c.universes, ["Earth-One", "New Earth" ] )
+        self.assertEqual(c.aliases, ["The Flash", "Black Flash", "Parallax"])
+        self.assertEqual(c.affiliation, ['Justice League', 'Flash Family', 'formerly Blue Lantern Corps', 'White Lantern Corps'])
 
     def test_character_3(self):
-        c = Character.query.filter_by("The Joker")
-        self.assertEqual(c.name, "Unknown")
-        self.assertEqual(c.alias, "The Joker")
+        c = Characters.query.filter_by(title = "Joker (Earth 3)").first()
+        self.assertEqual(c.real_name, "Unknown")
+        self.assertEqual(c.gender, "Male")
         self.assertEqual(c.alignment, "Good")
+        self.assertEqual(c.debut, "2013")
+        self.assertEqual(c.identity, "Secret Identity")
+        self.assertEqual(c.creators, ["Ivan Reis", "Geoff Johns"])
+        self.assertEqual(c.universes, ["Earth 3"] )
+        self.assertEqual(c.aliases, ["The Joker"])
+        self.assertEqual(c.affiliation, None)
 
-    def test_character_repr_1(self):
-        actual = str(Character.query.filter_by("Batman"))
-        self.assertEqual(actual, "<name Batman>")
-
-    def test_character_repr_2(self):
-        actual = str(Character.query.filter_by("Superman"))
-        self.assertEqual(actual, "<name Superman>")
-
-    def test_character_repr_1(self):
-        actual = str(Character.query.filter_by("The Joker"))
-        self.assertEqual(actual, "<name The Joker>")
-
-    # ---------
-    # teams
-    # ---------
+    # # ---------
+    # # teams
+    # # ---------
 
     def test_team_1(self):
-        team = Team.query.filter_by("Justice League of America")
-        self.assertEqual(team.name, "Justice League of America")
-        self.assertEqual(team.first_appearance, "Brave and the Bold Vol 1")
-        self.assertEqual(
-            team.base_of_operations, "Justice League Headquarters")
+        team = Teams.query.filter_by(title = "The Elite (Prime Earth)").first()
+        self.assertEqual(team.title, "The Elite (Prime Earth)")
+        self.assertEqual(team.team_leaders, ['Manchester Black', 'Wonder Girl'])
+        self.assertEqual(team.universes, ['Prime Earth'])
+        self.assertEqual(team.identity, "Secret")
+        self.assertEqual(team.status, "Active")
 
     def test_team_2(self):
-        c = Team.query.filter_by("The Injustice League")
-        self.assertEqual(team.name, "The Injustice League")
-        self.assertEqual(
-            team.first_appearance, "Justice League of American Wedding Special Vol 2")
-        self.assertEqual(team.base_of_operations, "Hall of Doom")
+        team = Teams.query.filter_by(title = "Justice League (Earth-16)").first()
+        self.assertEqual(team.title, "Justice League (Earth-16)")
+        self.assertEqual(team.team_leaders, ['Black Canary', 'Captain Atom', 'Batman (formerly)'])
+        self.assertEqual(team.universes, ['Earth-16'])
+        self.assertEqual(team.identity, "Public")
+        self.assertEqual(team.status, "Active")
 
     def test_team_3(self):
-        c = Team.query.filter_by("Green Lantern Corps")
-        self.assertEqual(team.name, "Green Lantern Corps")
-        self.assertEqual(team.first_appearance, "Showcase Vol 1")
-        self.assertEqual(team.base_of_operations, "Oa")
-
-    def test_character_repr_1(self):
-        actual = str(Team.query.filter_by("Justice League of America"))
-        self.assertEqual(actual, "<name Justice League of America>")
-
-    def test_character_repr_2(self):
-        actual = str(Team.query.filter_by("The Injustice League"))
-        self.assertEqual(actual, "<name The Injustice League>")
-
-    def test_character_repr_3(self):
-        actual = str(Team.query.filter_by("Green Lantern Corps"))
-        self.assertEqual(actual, "<name Green Lantern Corps>")
+        team = Teams.query.filter_by(title = "Seven Men of Death").first()
+        self.assertEqual(team.title, "Seven Men of Death")
+        self.assertEqual(team.team_leaders, ['Talia Head', 'formerly Sensei'])
+        self.assertEqual(team.universes, ['New Earth', 'Prime Earth'])
+        self.assertEqual(team.identity, "Secret")
+        self.assertEqual(team.status, "Active")
 
     # ---------
     # Comics
     # ---------
 
     def test_comics_1(self):
-        c = Comic.query.filter_by("Brave and the Bold Vol 1")
-        self.assertEqual(c.name, "Brave and the Bold Vol 1")
-        self.assertEqual(c.total_issues, 200)
-        self.assertEqual(c.date, "August, 1955")
+        c = Comics.query.filter_by(title = "Batman: Arkham Knight Annual Vol 1 1").first()
+        self.assertEqual(c.title, "Batman: Arkham Knight Annual Vol 1 1")
+        self.assertEqual(c.locations, ['Gotham_City', 'Gotham_City_Chinatown', 'Wayne_Manor'])
+        self.assertEqual(c.release_date, "{November,2015}")
+        self.assertEqual(c.featured_characters, ['Jason_Todd_(Arkhamverse)'])
+        self.assertEqual(c.creators, ['Brittany Holzherr', 'Andy Kubert', 'Peter Tomasi', 'Stephen Segovia', 'Art Thibert', 'Kelsey Shannon', 'Deron Bennett'])
 
     def test_comics_2(self):
-        c = Comic.query.filter_by("Showcase Vol 1")
-        self.assertEqual(c.name, "Showcase Vol 1")
-        self.assertEqual(c.total_issues, 104)
-        self.assertEqual(c.date, "October, 1956")
+        c = Comics.query.filter_by(title = "Hal Jordan and the Green Lantern Corps: Rebirth Vol 1 1").first()
+        self.assertEqual(c.title, "Hal Jordan and the Green Lantern Corps: Rebirth Vol 1 1")
+        self.assertEqual(c.locations, [])
+        self.assertEqual(c.release_date, "{September,2016}")
+        self.assertEqual(c.featured_characters, [])
+        self.assertEqual(c.creators, ['Andrew Marino', 'Ethan Van Sciver', 'Robert Venditti', 'Jason Wright', 'Dave Sharpe'])
 
     def test_comics_3(self):
-        c = Comic.query.filter_by("Batman Vol 1")
-        self.assertEqual(c.name, "Batman Vol 1")
-        self.assertEqual(c.total_issues, 715)
-        self.assertEqual(c.date, "March, 1940")
+        c = Comics.query.filter_by(title = "Justice League Vol 2 31").first()
+        self.assertEqual(c.title, "Justice League Vol 2 31")
+        self.assertEqual(c.locations, ['Metropolis', 'Gotham_City', 'Wayne_Manor', 'Oregon', 'Portland', '_Oregon'])
+        self.assertEqual(c.release_date, "{August,2014}")
+        self.assertEqual(c.featured_characters, ['Justice_League_(Prime_Earth)', 'Bruce_Wayne_(Prime_Earth)', 'Victor_Stone_(Prime_Earth)', 'Diana_of_Themyscira_(Prime_Earth)', 'Kal-El_(Prime_Earth)', 'William_Batson_(Prime_Earth)'])
+        self.assertEqual(c.creators, ['Brian Cunningham', 'Ivan Reis', 'Geoff Johns', 'Doug Mahnke', 'Keith Champagne', 'Rod Reis', 'Dezi Sienty'])
 
-    def test_comics_repr_1(self):
-        actual = str(Comic.query.filter_by("Brave and the Bold Vol 1"))
-        self.assertEqual(actual, "<name Brave and the Bold Vol 1>")
-
-    def test_comics_repr_2(self):
-        actual = str(Comic.query.filter_by("Showcase Vol 1"))
-        self.assertEqual(actual, "<name Showcase Vol 1>")
-
-    def test_comics_repr_3(self):
-        actual = str(Comic.query.filter_by("Batman Vol 1"))
-        self.assertEqual(actual, "<name Batman Vol 1>")
-
-    # ---------
-    # Movies
-    # ---------
+    # # ---------
+    # # Movies
+    # # ---------
 
     def test_movies_1(self):
-        c = Movie.query.filter_by("Watchmen")
-        self.assertEqual(c.name, "Watchmen")
-        self.assertEqual(c.director, "Zack Snyder")
-        self.assertEqual(c.date, "March 6, 2009")
-        self.assertEqual(c.distributors, "Warner Bros.")
-        self.assertEqual(c.composers, "Tyler Bates")
+        c = Movies.query.filter_by(title = "Watchmen (Movie)").first()
+        self.assertEqual(c.title, "Watchmen (Movie)")
+        self.assertEqual(c.creators, ['William Hoy', 'Zack Snyder', 'David Hayter', 'Alex Tse', 'Roberto Orci', 'Alex Kurtzman', 'Cinematographers', 'Larry Fong'])
+        self.assertEqual(c.release_date, "March 6 2009")
+        self.assertEqual(c.budget, "$120 million")
+        self.assertEqual(c.featured_characters, ['Crimebusters_(Watchmen)', 'Edward_Blake_(Watchmen)', 'Jonathan_Osterman_(Watchmen)', 'Daniel_Dreiberg_(Watchmen)', 'Walter_Kovacs_(Watchmen)', 'Laurel_Juspeczyk_(Watchmen)'])
 
     def test_movies_2(self):
-        c = Movie.query.filter_by("Batman v Superman: Dawn of Justice")
-        self.assertEqual(c.name, "Batman v Superman: Dawn of Justice")
-        self.assertEqual(c.director, "Zack Snyder")
-        self.assertEqual(c.date, "March 25, 2016")
-        self.assertEqual(c.distributors, "Warner Bros.")
-        self.assertEqual(c.composers, "Hans Zimmer")
+        c = Movies.query.filter_by(title = "The Batman vs. Dracula (Movie)").first()
+        self.assertEqual(c.title, "The Batman vs. Dracula (Movie)")
+        self.assertEqual(c.creators, ['Duane Capizzi', 'Michael Goguen'])
+        self.assertEqual(c.release_date, "October 18 2005")
+        self.assertEqual(c.budget, None)
+        self.assertEqual(c.featured_characters, ['Bruce_Wayne_(The_Batman)'])
 
     def test_movies_3(self):
-        c = Movie.query.filter_by("Justice League: The Flashpoint Paradox")
-        self.assertEqual(c.name, "Justice League: The Flashpoint Paradox")
-        self.assertEqual(c.director, "James Tucker")
-        self.assertEqual(c.date, "July 30, 2013")
-        self.assertEqual(c.distributors, "Warner Bros.")
-        self.assertEqual(c.composers, "Frederik Wiedmann")
-
-    def test_movies_repr_1(self):
-        actual = str(Movie.query.filter_by("Watchmen"))
-        self.assertEqual(actual, "<name Watchmen>")
-
-    def test_movies_repr_2(self):
-        actual = str(Movie.query.filter_by("Batman v Superman: Dawn of Justice"))
-        self.assertEqual(actual, "<name Batman v Superman: Dawn of Justice>")
-
-    def test_movies_repr_3(self):
-        actual = str(Movie.query.filter_by(
-            "Justice League: The Flashpoint Paradox"))
-        self.assertEqual(actual, "<name Justice League: The Flashpoint Paradox>")
+        c = Movies.query.filter_by(title = "Justice League: Starcrossed (Movie)").first()
+        self.assertEqual(c.title, "Justice League: Starcrossed (Movie)")
+        self.assertEqual(c.creators, ['Dwayne McDuffie', 'Butch Lukic', 'Dan Riba', 'Rich Fogel'])
+        self.assertEqual(c.release_date, "July 13 2004")
+        self.assertEqual(c.budget, None)
+        self.assertEqual(c.featured_characters, ['Justice_League_(DCAU)', 'Bruce_Wayne_(DCAU)', 'Wallace_West_(DCAU)', 'John_Stewart_(DCAU)', 'Shayera_Hol_(DCAU)', 'J%27onn_J%27onzz_(DCAU)', 'Kal-El_(DCAU)', 'Diana_of_Themyscira_(DCAU)'])
 
     # ---------
     # Tv Shows
     # ---------
 
     def test_tv_1(self):
-        c = Show.query.filter_by("Justice League Unlimited")
-        self.assertEqual(c.name, "Justice League Unlimited")
-        self.assertEqual(c.network, "Cartoon Network")
-        self.assertEqual(c.first_aired, "July 31, 2004")
+        c = Shows.query.filter_by(title = "Justice League Unlimited (TV Series)").first()
+        self.assertEqual(c.creators, ['Bruce Timm', 'James Tucker', 'Dwayne McDuffie'])
+        self.assertEqual(c.featured_characters, ['Superman', 'Batman', 'Flash (Wally West', 'Green Lantern (John Stewart)', 'Hawkgirl', "J'onn J'onzz"])
+        self.assertEqual(c.first_air_date, "July 31 2004")
+        self.assertEqual(c.last_air_date, "May 13 2006")
+        self.assertEqual(c.running_time, None) 
+        self.assertEqual(c.title, "Justice League Unlimited (TV Series)")       
+
 
     def test_tv_2(self):
-        c = Show.query.filter_by("Young Justice")
-        self.assertEqual(c.name, "Young Justice")
-        self.assertEqual(c.network, "Cartoon Network")
-        self.assertEqual(c.first_aired, "November 2010")
+        c = Shows.query.filter_by(title = "Young Justice (TV Series)").first()
+        self.assertEqual(c.creators, ['Greg Weisman', 'Brandon Vietti', 'Sam Register'])
+        self.assertEqual(c.featured_characters, ['Artemis', 'Aqualad', 'Kid Flash', 'Miss Martian', 'Robin', 'Super Boy'])
+        self.assertEqual(c.first_air_date, "November 2010")
+        self.assertEqual(c.last_air_date, None)
+        self.assertEqual(c.running_time, None) 
+        self.assertEqual(c.title, "Young Justice (TV Series)")  
 
     def test_tv_3(self):
-        c = Show.query.filter_by("The Flash")
-        self.assertEqual(c.name, "The Flash")
-        self.assertEqual(c.network, "CW")
-        self.assertEqual(c.first_aired, "October 7, 2014")
-
-    def test_tv_repr_1(self):
-        actual = str(Show.query.filter_by("Justice League Unlimited"))
-        self.assertEqual(actual, "<name Justice League Unlimited>")
-
-    def test_tv_repr_2(self):
-        actual = str(Show.query.filter_by("Young Justice"))
-        self.assertEqual(actual, "<name Young Justice>")
-
-    def test_tv_repr_3(self):
-    actual = str(Show.query.filter_by("The Flash"))
-    
-
+        c = Shows.query.filter_by(title = "The Flash (2014 TV Series)").first()
+        self.assertEqual(c.creators,['Greg Berlanti'])
+        self.assertEqual(c.featured_characters, ['Flash'])
+        self.assertEqual(c.first_air_date, "October 7th 2014")
+        self.assertEqual(c.last_air_date, None)
+        self.assertEqual(c.running_time, None) 
+        self.assertEqual(c.title, "The Flash (2014 TV Series)")     
     # ---------
     # Creator
     # ---------
     def test_creator_1(self):
-        c = Creator.query.filter_by("Bob Kane")
-        self.assertEqual(c.name, "Bob Kane")
-        self.assertEqual(c.occupation, "Writer")
-        self.assertEqual(c.birth_year, "October 24, 1915")
-        self.assertEqual(
-            c.birth_place, "New York City, New York, United States of America")
-        self.assertEqual(c.first_publication, "New Adventure Comics Vol 1 26")
-
-    def test_creator_2(self):
-        c = Creator.query.filter_by("Grant Morrison")
-        self.assertEqual(c.name, "Grant Morrison")
-        self.assertEqual(c.occupation, "Writer")
-        self.assertEqual(c.birth_year, "January 31, 1960")
-        self.assertEqual(c.birth_place, "Glasgow Scotland")
+        c = Creators.query.filter_by(title = "Grant Morrison").first()
+        self.assertEqual(c.birth_date, "January 31 1960")
+        self.assertEqual(c.employers, ['DC Comics', 'Vertigo'])
         self.assertEqual(c.first_publication, "Animal Man #1")
+        self.assertEqual(c.gender, "Male")
+        self.assertEqual(c.job_titles, ['Writer'])
+        self.assertEqual(c.title, "Grant Morrison")
+    
+    def test_creator_2(self):
+        c = Creators.query.filter_by(title = "Scott Snyder").first()
+        self.assertEqual(c.birth_date, "January 1 1976")
+        self.assertEqual(c.employers, ['DC Comics', 'Vertigo'])
+        self.assertEqual(c.first_publication, "Unknown")
+        self.assertEqual(c.gender, "Male")
+        self.assertEqual(c.job_titles, ['Writer'])
+        self.assertEqual(c.title, "Scott Snyder")
+
+
 
     def test_creator_3(self):
-        c = Creator.query.filter_by("Zack Snyder")
-        self.assertEqual(c.name, "Zack Snyder")
-        self.assertEqual(c.occupation, "Director")
-        self.assertEqual(c.birth_year, "March 1, 1966")
-        self.assertEqual(
-            c.birth_place, "Green Bay, Wisconsin, United States of America")
-        self.assertEqual(c.first_publication, "Watchmen (Movie)")
-
-    def test_creator_repr_1(self):
-        actual = str(Creator.query.filter_by("Bob Kane"))
-        self.assertEqual(actual, "<name Bob Kane>")
-
-    def test_creator_repr_2(self):
-        actual = str(Creator.query.filter_by("Grant Morrison"))
-        self.assertEqual(actual, "<name Grant Morrison>")
-
-    def test_creator_repr_3(self):
-        actual = str(Creator.query.filter_by("Zack Snyder"))
-        self.assertEqual(actual, "<name Zack Snyder>")
+        c = Creators.query.filter_by(title = "William Moulton Marston").first()
+        self.assertEqual(c.birth_date, "May 9th 1893")
+        self.assertEqual(c.employers, ['DC Comics'])
+        self.assertEqual(c.first_publication, "All-Star Comics #8")
+        self.assertEqual(c.gender, "Male")
+        self.assertEqual(c.job_titles, ['Writer'])
+        self.assertEqual(c.title, "William Moulton Marston")
 
 if __name__ == "__main__":
-    create_db()
     main()
