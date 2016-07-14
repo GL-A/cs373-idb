@@ -1,11 +1,11 @@
 FORMAT: 1A
 HOST: http://dcdatabase.me/
 
-# apiary.apib
+# DC Database API
 
 DC comics API. A collection of character, team, comic, movie, show, and creator information.
 
-## All Characters [/api/characters]
+## All Characters [/characters.json]
 Affiliation refers to the teams the character is/was a member of
 Links to Teams and Characters
 ### List All Characters [GET]
@@ -14,39 +14,81 @@ Links to Teams and Characters
 
         [
             {
-                "name": "Bruce Wayne",
-                "alias": "Batman",
-                "image": "",
-                "alignment": "Good",
-                "affiliation": 6,
-                "creators": 2
-            },
-            
+                "affiliation": [
+                "Justice 9"
+                ], 
+                "aliases": [
+                "Blackbird"
+                ], 
+                "alignment": "Good", 
+                "creators": [
+                "Evan Shaner", 
+                "Grant Morrison"
+                ], 
+                "debut": "2015", 
+                "gender": "Female", 
+                "identity": "Secret Identity", 
+                "image": "http://vignette2.wikia.nocookie.net/marvel_dc/images/5/54/Blackbird_%28Earth_36%29.jpg/revision/latest?cb=20150222071100", 
+                "real_name": "Unknown", 
+                "title": "Blackbird (Earth 36)", 
+                "universes": [
+                "Earth 36"
+                ]
+            }, 
             {
-                "name": "Clark Joseph Kent",
-                "alias": "Superman",
-                "image": "",
-                "alignment": "Good",
-                "affiliation": 6,
-                "creators": 2
-            },
-            
+                "affiliation": [
+                "Sinestro Corps (Prime Earth)"
+                ], 
+                "aliases": [
+                "Hellblazer", 
+                "Yellow Lantern"
+                ], 
+                "alignment": "Good", 
+                "creators": [
+                "Steve Bissette", 
+                "Alan Moore"
+                ], 
+                "debut": "2011", 
+                "gender": "Male", 
+                "identity": "Public Identity", 
+                "image": "http://vignette2.wikia.nocookie.net/marvel_dc/images/a/a8/Constantine_Vol_1_1_Textless.jpg/revision/latest?cb=20130612164926", 
+                "real_name": "John Constantine", 
+                "title": "John Constantine (Prime Earth)", 
+                "universes": [
+                "Prime Earth"
+                ]
+            }, 
             {
-                "name": "Unknown",
-                "alias": "The Joker",
-                "image": "",
-                "alignment": "Bad",
-                "affiliation": 1,
-                "creators": 3
+                "affiliation": [
+                "The Green"
+                ], 
+                "aliases": [
+                "Poison Ivy", 
+                "Poison Ice"
+                ], 
+                "alignment": "Neutral", 
+                "creators": [
+                "Sheldon Moldoff", 
+                "Robert Kanigher"
+                ], 
+                "debut": "2011", 
+                "gender": "Female", 
+                "identity": "Secret Identity", 
+                "image": "http://vignette3.wikia.nocookie.net/marvel_dc/images/1/1e/Detective_Comics_Vol_2_23.1_Poison_Ivy_Textless.jpg/revision/latest?cb=20130904205517", 
+                "real_name": "Pamela Isley", 
+                "title": "Pamela Isley (Prime Earth)", 
+                "universes": [
+                "Prime Earth"
+                ]
             }
         ]
 
 
-## Character [/api/characters/{name}]
+## Character [/characters/{title}.json]
 A single Character with all its details. 
 
 + Parameters
-    + name (string) - name of a character
+    + title (string) - title of a character
     
 
 ### Retrieve a Character [GET]
@@ -56,19 +98,32 @@ A single Character with all its details.
     + Body
     
             {
-                "name": "Bruce Wayne",
-                "alias": "Batman",
-                "image": "",
-                "alignment": "Good",
-                "affiliation": 6
-                "creators": 2
+                "affiliation": [
+                "The Green"
+                ], 
+                "aliases": [
+                "Poison Ivy", 
+                "Poison Ice"
+                ], 
+                "alignment": "Neutral", 
+                "creators": [
+                "Sheldon Moldoff", 
+                "Robert Kanigher"
+                ], 
+                "debut": "2011", 
+                "gender": "Female", 
+                "identity": "Secret Identity", 
+                "image": "http://vignette3.wikia.nocookie.net/marvel_dc/images/1/1e/Detective_Comics_Vol_2_23.1_Poison_Ivy_Textless.jpg/revision/latest?cb=20130904205517", 
+                "real_name": "Pamela Isley", 
+                "title": "Pamela Isley (Prime Earth)", 
+                "universes": [
+                "Prime Earth"
+                ]
             }
-            
-+ Response 404
 
 
 
-## All Teams [/api/teams]
+## All Teams [/teams.json]
 Links to Characters and Comics
 ### List All Teams [GET]
 
@@ -76,38 +131,73 @@ Links to Characters and Comics
 
         [
             {
-                "name": "Justice League of America",
-                "image": "",
-                "members": 7,
-                "allies": 16,
-                "first_appearance": "Brave and the Bold Vol 1"
-                "base_of_operations": "Justice League Headquarters",
-            },
-            
+                "creators": [
+                "Bernie Wrightson", 
+                "Jim Starlin"
+                ], 
+                "debut": "1988", 
+                "enemies": [
+                "Blood Tribe", 
+                "Vandal Savage"
+                ], 
+                "identity": "Secret", 
+                "image": "http://vignette1.wikia.nocookie.net/marvel_dc/images/d/d7/Miagani_001.jpg/revision/latest?cb=20150206210100", 
+                "status": "Defunct", 
+                "team_leaders": [], 
+                "title": "Miagani", 
+                "universes": [
+                "New Earth", 
+                "Prime Earth"
+                ]
+            }, 
             {
-                "name": "The Injustice League",
-                "image": "",
-                "members": 50
-                "allies": 0,
-                "first_appearance": "Justice League of American Wedding Special Vol 2",
-                "base_of_operations": "Hall of Doom" 
-            },
-            
+                "creators": [
+                "Ivan Reis", 
+                "Grant Morrison", 
+                "Trivia"
+                ], 
+                "debut": "2014", 
+                "enemies": [
+                "Justice Incarnate"
+                ], 
+                "identity": "Public", 
+                "image": "http://vignette4.wikia.nocookie.net/marvel_dc/images/1/1c/The_Gentry_0001.jpg/revision/latest?cb=20150218003531", 
+                "status": "Active", 
+                "team_leaders": [
+                "Empty Hand"
+                ], 
+                "title": "The Gentry", 
+                "universes": [
+                "Not available"
+                ]
+            }, 
             {
-                "name": "Green Lantern Corps",
-                "image": "",
-                "members": 31,
-                "allies": 4,
-                "first_appearance": "Showcase Vol 1",
-                "base_of_operations": "Oa"
+                "creators": [
+                "Jes\u00fas Sa\u00edz", 
+                "Greg Rucka"
+                ], 
+                "debut": "2005", 
+                "enemies": [
+                "Metahumans"
+                ], 
+                "identity": "Public", 
+                "image": "http://vignette1.wikia.nocookie.net/marvel_dc/images/3/3a/OMAC_01.JPG/revision/latest?cb=20151020170952", 
+                "status": "Defunct", 
+                "team_leaders": [
+                "Brother Eye"
+                ], 
+                "title": "Omni Mind and Community", 
+                "universes": [
+                "New Earth"
+                ]
             }
         ]
         
-## Team [/api/teams/{name}]
+## Team [/teams/{title}.json]
 A single Team with all its details. 
 
 + Parameters
-    + name (string) - name of a team
+    + title (string) - name of a team
     
 
 ### Retrieve a Team [GET]
@@ -117,19 +207,28 @@ A single Team with all its details.
     + Body
     
             {
-                "name": "Justice League of America",
-                "image": "",
-                "members": 7,
-                "allies": 16,
-                "first_appearance": "Brave and the Bold Vol 1"
-                "base_of_operations": "Justice League Headquarters"
+                "creators": [
+                "Jes\u00fas Sa\u00edz", 
+                "Greg Rucka"
+                ], 
+                "debut": "2005", 
+                "enemies": [
+                "Metahumans"
+                ], 
+                "identity": "Public", 
+                "image": "http://vignette1.wikia.nocookie.net/marvel_dc/images/3/3a/OMAC_01.JPG/revision/latest?cb=20151020170952", 
+                "status": "Defunct", 
+                "team_leaders": [
+                "Brother Eye"
+                ], 
+                "title": "Omni Mind and Community", 
+                "universes": [
+                "New Earth"
+                ]
             }
-            
-+ Response 404
 
 
-
-## All Comics [/api/comics]
+## All Comics [/comics.json]
 Links to Characters and Creators
 ### List All Comics [GET]
 
@@ -137,38 +236,64 @@ Links to Characters and Creators
 
         [
             {
-                "image": "",
-                "name": "Brave and the Bold Vol 1",
-                "total_issues": 200,
-                "date": "August, 1955",
-                "writer": 0,
-                "featured_characters": 7
-            },
-            
+                "creators": [
+                  "Sal Cipriano", 
+                  "Francis Manapul", 
+                  "Geoff Johns", 
+                  "Scott Kolins", 
+                  "Michael Atiyeh"
+                ], 
+                "featured_characters": [
+                  "Bartholomew Allen (New Earth)"
+                ], 
+                "image": "http://vignette2.wikia.nocookie.net/marvel_dc/images/f/f5/Flash_Vol_3_12.jpg/revision/latest?cb=20110511180423", 
+                "locations": [
+                  "Central City"
+                ], 
+                "release_date": "Not available", 
+                "title": "Flash Vol 3 12"
+            }, 
             {
-                "image": "",
-                "name": "Showcase Vol 1",
-                "total_issues": 104,
-                "date": "October, 1956",
-                "writer": 3,
-                "featured_characters": 1
-            },
-            
+                "creators": [
+                  "Brittany Holzherr", 
+                  "Evan Shaner", 
+                  "Jeff Parker", 
+                  "Evan Shaner &#32", 
+                  "(pg. 1-13)", 
+                  "Jordie Bellaire", 
+                  "Dave Lamphear"
+                ], 
+                "featured_characters": [], 
+                "image": "http://vignette2.wikia.nocookie.net/marvel_dc/images/7/7c/Future_Quest_Vol_1_2.jpg/revision/latest?cb=20160707184748", 
+                "locations": [], 
+                "release_date": "September 2016", 
+                "title": "Future Quest Vol 1 2"
+            }, 
             {
-                "image": "",
-                "name": "Batman Vol 1",
-                "total_issues": 715,
-                "date": "March, 1940",
-                "writer": 2,
-                "featured_characters": 1
+                "creators": [
+                  "Andrew Marino", 
+                  "Martin Coccolo", 
+                  "Cullen Bunn", 
+                  "Blond", 
+                  "Dave Sharpe"
+                ], 
+                "featured_characters": [
+                  "Thaal Sinestro (New Earth)"
+                ], 
+                "image": "http://vignette3.wikia.nocookie.net/marvel_dc/images/d/d9/Sinestro_Vol_1_23.jpg/revision/latest?cb=20160519194012", 
+                "locations": [
+                  "Necropolis"
+                ], 
+                "release_date": "July 2016", 
+                "title": "Sinestro Vol 1 23"
             }
         ]
 
-## Comic [/api/comics/{name}]
+## Comic [/comics/{title}.json]
 A single Comic with all its details. 
 
 + Parameters
-    + name (string) - name of a team
+    + title (string) - name of a team
     
 
 ### Retrieve a Comic [GET]
@@ -178,19 +303,26 @@ A single Comic with all its details.
     + Body
     
             {
-                "image": "",
-                "name": "Brave and the Bold Vol 1",
-                "total_issues": 200,
-                "date": "August, 1955",
-                "writer": 0,
-                "featured_characters": 7
+                "creators": [
+                  "Andrew Marino", 
+                  "Martin Coccolo", 
+                  "Cullen Bunn", 
+                  "Blond", 
+                  "Dave Sharpe"
+                ], 
+                "featured_characters": [
+                  "Thaal Sinestro (New Earth)"
+                ], 
+                "image": "http://vignette3.wikia.nocookie.net/marvel_dc/images/d/d9/Sinestro_Vol_1_23.jpg/revision/latest?cb=20160519194012", 
+                "locations": [
+                  "Necropolis"
+                ], 
+                "release_date": "July 2016", 
+                "title": "Sinestro Vol 1 23"
             }
-            
-+ Response 404
-
 
         
-## All Movies [/api/movies]
+## All Movies [/movies.json]
 Links to Characters and Creators
 ### List All Movies [GET]
 
@@ -198,41 +330,72 @@ Links to Characters and Creators
 
         [
             {
-                "image": "",
-                "name": "Watchmen",
-                "director": "Zack Snyder",
-                "date": "March 6, 2009",
-                "featured_characters": 5,
-                "distributors": "Warner Bros.",
-                "composers": "Tyler Bates"
-            },
-            
+                "budget": "Not available", 
+                "creators": [
+                  "Dan Lin", 
+                  "Roy Lee", 
+                  "Phil Lord", 
+                  "Christopher Miller", 
+                  "Chris McKay"
+                ], 
+                "featured_characters": [
+                  "Bruce Wayne (Lego Batman)"
+                ], 
+                "image": "http://vignette4.wikia.nocookie.net/marvel_dc/images/e/e8/Thelegobatmanmovieposter2017.jpg/revision/latest?cb=20160328181535", 
+                "release_date": "February 10 2017", 
+                "running_time": "Not available", 
+                "title": "The Lego Batman Movie"
+            }, 
             {
-                "image": "",
-                "name": "Batman v Superman: Dawn of Justice",
-                "director": "Zack Snyder",
-                "date": "March 25, 2016",
-                "featured_characters": 2,
-                "distributors": "Warner Bros.",
-                "composers": "Hans Zimmer"
-            },
-            
+                "budget": "Not available", 
+                "creators": [
+                  "Randy Rogel", 
+                  "Boyd Kirkland", 
+                  "Benjamin Melniker", 
+                  "Michael Uslan", 
+                  "Distributors"
+                ], 
+                "featured_characters": [
+                  "Bruce Wayne (DCAU)"
+                ], 
+                "image": "http://vignette1.wikia.nocookie.net/marvel_dc/images/2/26/Batman_and_Mr._Freeze_-_Sub-Zero.jpg/revision/latest?cb=20081021212649", 
+                "release_date": "March 17 1998", 
+                "running_time": "70 min", 
+                "title": "Batman & Mr. Freeze: SubZero (Movie)"
+            }, 
             {
-                "image": "",
-                "name": "Justice League: The Flashpoint Paradox",
-                "director": "James Tucker",
-                "date": "July 30, 2013",
-                "featured_characters": 1,
-                "distributors": "Warner Bros.",
-                "composers": "Frederik Wiedmann"
+                "budget": "Not available", 
+                "creators": [
+                  "Craig Paulsen", 
+                  "Brandon Vietti", 
+                  "Sam Register", 
+                  "Michael Jelenic", 
+                  "Editors"
+                ], 
+                "featured_characters": [
+                  "Justice League (Lego Batman)", 
+                  "Bruce Wayne (Lego Batman)", 
+                  "Victor Stone (Lego Batman)", 
+                  "Bartholomew Allen (Lego Batman)", 
+                  "Oliver Queen (Lego Batman)", 
+                  "Guy Gardner (Lego Batman)", 
+                  "Hawkman (Lego Batman)", 
+                  "Patrick O%27Brian (Lego Batman)", 
+                  "Kal-El (Lego Batman)", 
+                  "Diana of Themyscira (Lego Batman)"
+                ], 
+                "image": "http://vignette3.wikia.nocookie.net/marvel_dc/images/e/ef/LEGO_Justice_League_vs_Bizarro_League_covers_01.jpg/revision/latest?cb=20150124043910", 
+                "release_date": "February 10  2015", 
+                "running_time": "Not available", 
+                "title": "Lego DC Comics Super Heroes: Justice League vs. Bizarro League (Movie)"
             }
         ]
 
-## Movie [/api/movies/{name}]
+## Movie [/movies/{title}.json]
 A single Movie with all its details. 
 
 + Parameters
-    + name (string) - name of a movie
+    + title (string) - name of a movie
     
 
 ### Retrieve a Movie [GET]
@@ -242,60 +405,103 @@ A single Movie with all its details.
     + Body
     
             {
-                "image": "",
-                "name": "Watchmen",
-                "director": "Zack Snyder",
-                "date": "March 6, 2009",
-                "featured_characters": 5,
-                "distributors": "Warner Bros.",
-                "composers": "Tyler Bates"
+                "budget": "Not available", 
+                "creators": [
+                  "Craig Paulsen", 
+                  "Brandon Vietti", 
+                  "Sam Register", 
+                  "Michael Jelenic", 
+                  "Editors"
+                ], 
+                "featured_characters": [
+                  "Justice League (Lego Batman)", 
+                  "Bruce Wayne (Lego Batman)", 
+                  "Victor Stone (Lego Batman)", 
+                  "Bartholomew Allen (Lego Batman)", 
+                  "Oliver Queen (Lego Batman)", 
+                  "Guy Gardner (Lego Batman)", 
+                  "Hawkman (Lego Batman)", 
+                  "Patrick O%27Brian (Lego Batman)", 
+                  "Kal-El (Lego Batman)", 
+                  "Diana of Themyscira (Lego Batman)"
+                ], 
+                "image": "http://vignette3.wikia.nocookie.net/marvel_dc/images/e/ef/LEGO_Justice_League_vs_Bizarro_League_covers_01.jpg/revision/latest?cb=20150124043910", 
+                "release_date": "February 10  2015", 
+                "running_time": "Not available", 
+                "title": "Lego DC Comics Super Heroes: Justice League vs. Bizarro League (Movie)"
             }
-            
-+ Response 404
 
 
         
-## All Television Series [/api/shows]
+## All Television Series [/shows.json]
 Links to Characters and Creators
 ### List All TV Shows [GET]
 
 + Response 200 (application/json)
 
         [
+                {
+                "creators": [
+                  "Max Fleischer", 
+                  "Dave Fleischer", 
+                  "Sam Buchwald"
+                ], 
+                "featured_characters": [
+                  "Superman", 
+                  "Lois Lane", 
+                  "Perry White"
+                ], 
+                "first_air_date": "1941", 
+                "image": "http://vignette1.wikia.nocookie.net/marvel_dc/images/4/40/Clark_Kent_1941_Superman_Cartoons_001.jpg/revision/latest?cb=20151128153001", 
+                "last_air_date": "1943", 
+                "running_time": "Not available", 
+                "title": "Superman (1941 Cartoons)"
+            }, 
             {
-                "image": "",
-                "name": "Justice League Unlimited",
-                "characters": 7,
-                "creators": 3,
-                "network": "Cartoon Network",
-                "first_aired": "July 31, 2004"
-            },
-            
+                "creators": [
+                  "Robert Goodman", 
+                  "Liz Holzman", 
+                  "Jean MacCurdy", 
+                  "Alan Burnett"
+                ], 
+                "featured_characters": [
+                  "Zeta", 
+                  "Ro", 
+                  "Agent Bennet", 
+                  "Agent West", 
+                  "Agent Lee"
+                ], 
+                "first_air_date": "January 27 2001", 
+                "image": "http://vignette2.wikia.nocookie.net/marvel_dc/images/7/70/The_Zeta_Project_series_logo.jpg/revision/latest?cb=20091129162915", 
+                "last_air_date": "August 17 2002", 
+                "running_time": "Not available", 
+                "title": "Zeta Project (TV Series)"
+            }, 
             {
-                "image": "",
-                "name": "Young Justice",
-                "characters": 6,
-                "creators": 2,
-                "network": "Cartoon Network",
-                "first_aired": "November 2010"
-            },
-            
-            {
-                "image": "",
-                "name": "The Flash",
-                "characters": 1,
-                "creators": 3,
-                "network": "CW",
-                "first_aired": "October 7, 2014"
+                "creators": [], 
+                "featured_characters": [
+                  "Wonder Woman", 
+                  "Harley Quinn", 
+                  "Bumblebee", 
+                  "Supergirl", 
+                  "Poison Ivy", 
+                  "Katana", 
+                  "Batgirl"
+                ], 
+                "first_air_date": "October 1 2015", 
+                "image": "http://vignette3.wikia.nocookie.net/marvel_dc/images/c/cd/DC_Super_Hero_Girls_0001.jpg/revision/latest?cb=20151002163402", 
+                "last_air_date": "Not available", 
+                "running_time": "Not available", 
+                "title": "DC Super Hero Girls (Shorts)"
             }
         ]
         
 
-## TV Show [/api/shows/{name}]
+## TV Show [/shows/{title}.json]
 A single Show with all its details. 
 
 + Parameters
-    + name (string) - name of a show
+    + title (string) - name of a show
     
 
 ### Retrieve a Show [GET]
@@ -305,19 +511,25 @@ A single Show with all its details.
     + Body
     
             {
-                "image": "",
-                "name": "The Flash",
-                "characters": 1,
-                "creators": 3,
-                "network": "CW",
-                "first_aired": "October 7, 2014"
+                "creators": [], 
+                "featured_characters": [
+                  "Wonder Woman", 
+                  "Harley Quinn", 
+                  "Bumblebee", 
+                  "Supergirl", 
+                  "Poison Ivy", 
+                  "Katana", 
+                  "Batgirl"
+                ], 
+                "first_air_date": "October 1 2015", 
+                "image": "http://vignette3.wikia.nocookie.net/marvel_dc/images/c/cd/DC_Super_Hero_Girls_0001.jpg/revision/latest?cb=20151002163402", 
+                "last_air_date": "Not available", 
+                "running_time": "Not available", 
+                "title": "DC Super Hero Girls (Shorts)"
             }
-            
-+ Response 404
 
 
-
-## All Creators [/api/creators]
+## All Creators [/creators.json]
 Links to Characters, Comics/Movies/Shows
 ### List All Creators [GET]
 Should include writers, directors, screenwriters and the like
@@ -325,38 +537,77 @@ Should include writers, directors, screenwriters and the like
 
         [
             {
-                "name": "Bob Kane",
-                "occupation": "Writer",
-                "birth_year": "October 24, 1915",
-                "birth_place": "New York City, New York, United States of America",
-                "creations": 8
-                "first_publication": "New Adventure Comics Vol 1 26"
-            },
-            
+                "birth_date": "March 16 1961", 
+                "creations": [
+                  "Blasters", 
+                  "Chroma", 
+                  "Mekanique", 
+                  "Mister Bones (co-creator)"
+                ], 
+                "employers": [
+                  "DC Comics", 
+                  "Image Comics", 
+                  "Marvel Comics", 
+                  "McFarlane Productions"
+                ], 
+                "first_publication": "Infinity Inc. #14", 
+                "gender": "Male", 
+                "image": "http://vignette4.wikia.nocookie.net/marvel_dc/images/6/69/Todd_McFarlane.jpg/revision/latest?cb=20080110204414", 
+                "job_titles": [
+                  "Penciler", 
+                  "Inker"
+                ], 
+                "title": "Todd McFarlane"
+            }, 
             {
-                "name": "Grant Morrison",
-                "occupation": "Writer",
-                "birth_year": "January 31, 1960",
-                "birth_place": "Glasgow, Scotland",
-                "creations": 1,
-                "first_publication": "Animal Man #1"
-            },
-            
+                "birth_date": "Not available", 
+                "creations": [
+                  "Not available"
+                ], 
+                "employers": [
+                  "DC Comics", 
+                  "Warner Bros. Entertainment", 
+                  "Inc."
+                ], 
+                "first_publication": "Batman (2004 TV Series) Episode: Traction", 
+                "gender": "Male", 
+                "image": "Not available", 
+                "job_titles": [
+                  "Director"
+                ], 
+                "title": "Sam Liu"
+            }, 
             {
-                "name": "Zack Snyder",
-                "occupation": "Director",
-                "birth_year": "March 1, 1966",
-                "birth_place": "Green Bay, Wisconsin, United States of America",
-                "creations": 0,
-                "first_publication": "Wachmen (Movie)"
-            },
+                "birth_date": "Not available", 
+                "creations": [
+                  "Not available"
+                ], 
+                "employers": [
+                  "DC Comics", 
+                  "Marvel Comics", 
+                  "WildStorm Productions", 
+                  "Dark Horse Comics", 
+                  "Image Comics"
+                ], 
+                "first_publication": "Superman/Batman #37", 
+                "gender": "Male", 
+                "image": "Not available", 
+                "job_titles": [
+                  "Penciler", 
+                  "Inker", 
+                  "Colourist", 
+                  "Cover Artist", 
+                  "Writer"
+                ], 
+                "title": "Derek Fridolfs"
+            }
         ]
 
-## Creator [/api/creators/{name}]
+## Creator [/creators/{title}.json]
 A single Creator with all its details. 
 
 + Parameters
-    + name (string) - name of a creator
+    + title (string) - name of a creator
     
 
 ### Retrieve a Creator [GET]
@@ -366,12 +617,26 @@ A single Creator with all its details.
     + Body
     
             {
-                "name": "Bob Kane",
-                "occupation": "Writer",
-                "birth_year": "October 24, 1915",
-                "birth_place": "New York City, New York, United States of America",
-                "creations": 8
-                "first_publication": "New Adventure Comics Vol 1 26"
+                "birth_date": "Not available", 
+                "creations": [
+                  "Not available"
+                ], 
+                "employers": [
+                  "DC Comics", 
+                  "Marvel Comics", 
+                  "WildStorm Productions", 
+                  "Dark Horse Comics", 
+                  "Image Comics"
+                ], 
+                "first_publication": "Superman/Batman #37", 
+                "gender": "Male", 
+                "image": "Not available", 
+                "job_titles": [
+                  "Penciler", 
+                  "Inker", 
+                  "Colourist", 
+                  "Cover Artist", 
+                  "Writer"
+                ], 
+                "title": "Derek Fridolfs"
             }
-            
-+ Response 404
