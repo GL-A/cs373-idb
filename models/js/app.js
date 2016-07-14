@@ -35,6 +35,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             views : { 
                 '@' : {
                     templateUrl: 'static/partials/about.html'
+                    controller: 'aboutCtrl'
                 }
             }
         })

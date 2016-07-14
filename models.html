@@ -1,6 +1,7 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html><head><title>Python: package models</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html><head><title>Python: module models</title>
+<meta charset="utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -8,14 +9,1702 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br>(built-in)</font></td></tr></table>
-    <p></p>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/kevind7/cs373/cs373-idb/app/models.py">/v/filer4b/v38q001/kevind7/cs373/cs373-idb/app/models.py</a></font></td></tr></table>
+    <p><tt>#-----------<br>
+#&nbsp;imports<br>
+#-----------</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Package Contents</strong></big></font></td></tr>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="marshmallow.fields.html">marshmallow.fields</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial">flask_sqlalchemy.Model(<a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#Character">Character</a>(flask_sqlalchemy.Model, sqlalchemy.ext.declarative.api.Base)
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Comics">Comics</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Creators">Creators</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Movies">Movies</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Shows">Shows</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Teams">Teams</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="marshmallow.schema.html#Schema">marshmallow.schema.Schema</a>(<a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#CharacterSchema">CharacterSchema</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#ComicsSchema">ComicsSchema</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#CreatorsSchema">CreatorsSchema</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#MoviesSchema">MoviesSchema</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#ShowsSchema">ShowsSchema</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#TeamsSchema">TeamsSchema</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial">sqlalchemy.ext.declarative.api.Base(<a href="flask_jsontools.formatting.html#JsonSerializableBase">flask_jsontools.formatting.JsonSerializableBase</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#Character">Character</a>(flask_sqlalchemy.Model, sqlalchemy.ext.declarative.api.Base)
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Character">class <strong>Character</strong></a>(flask_sqlalchemy.Model, sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>DC&nbsp;characters&nbsp;with&nbsp;attributes&nbsp;title,&nbsp;hero/villain&nbsp;alias,&nbsp;an&nbsp;image,<br>
+their&nbsp;alignment,&nbsp;and&nbsp;other&nbsp;information<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Character">Character</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="flask_jsontools.formatting.html#JsonSerializableBase">flask_jsontools.formatting.JsonSerializableBase</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Character-__init__"><strong>__init__</strong></a>(self, title<font color="#909090">=''</font>, alias<font color="#909090">=[]</font>, image<font color="#909090">=''</font>, alignment<font color="#909090">=''</font>, creators<font color="#909090">=[]</font>, identity<font color="#909090">=''</font>, real_name<font color="#909090">=''</font>, universe<font color="#909090">=[]</font>, status<font color="#909090">=''</font>, gender<font color="#909090">=''</font>, debut<font color="#909090">=''</font>, aliases<font color="#909090">=[]</font>)</dt><dd><tt>Initialize&nbsp;the&nbsp;character</tt></dd></dl>
+
+<dl><dt><a name="Character-to_json"><strong>to_json</strong></a>(self, list_view<font color="#909090">=False</font>)</dt><dd><tt>Return&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;information&nbsp;of&nbsp;this&nbsp;character</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>affiliation</strong></dt>
+</dl>
+<dl><dt><strong>aliases</strong></dt>
+</dl>
+<dl><dt><strong>alignment</strong></dt>
+</dl>
+<dl><dt><strong>creators</strong></dt>
+</dl>
+<dl><dt><strong>debut</strong></dt>
+</dl>
+<dl><dt><strong>gender</strong></dt>
+</dl>
+<dl><dt><strong>identity</strong></dt>
+</dl>
+<dl><dt><strong>image</strong></dt>
+</dl>
+<dl><dt><strong>real_name</strong></dt>
+</dl>
+<dl><dt><strong>title</strong></dt>
+</dl>
+<dl><dt><strong>universes</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f0a93acff10; Character&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('characters', MetaData(bind=None), Column(...ing(length=50), table=&lt;characters&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'characters'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
+
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+<hr>
+Methods inherited from <a href="flask_jsontools.formatting.html#JsonSerializableBase">flask_jsontools.formatting.JsonSerializableBase</a>:<br>
+<dl><dt><a name="Character-__json__"><strong>__json__</strong></a>(self, exluded_keys<font color="#909090">=set([])</font>)</dt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CharacterSchema">class <strong>CharacterSchema</strong></a>(<a href="marshmallow.schema.html#Schema">marshmallow.schema.Schema</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="marshmallow.schema.html#Schema">Schema</a>&nbsp;the&nbsp;Characters&nbsp;table&nbsp;must&nbsp;conform&nbsp;to.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#CharacterSchema">CharacterSchema</a></dd>
+<dd><a href="marshmallow.schema.html#Schema">marshmallow.schema.Schema</a></dd>
+<dd><a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a></dd>
+<dd><a href="marshmallow.base.html#SchemaABC">marshmallow.base.SchemaABC</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__processors__</strong> = defaultdict(&lt;type 'list'&gt;, {})</dl>
+
+<dl><dt><strong>opts</strong> = &lt;marshmallow.schema.SchemaOpts object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><a name="CharacterSchema-__init__"><strong>__init__</strong></a>(self, extra<font color="#909090">=None</font>, only<font color="#909090">=()</font>, exclude<font color="#909090">=()</font>, prefix<font color="#909090">=u''</font>, strict<font color="#909090">=False</font>, many<font color="#909090">=False</font>, context<font color="#909090">=None</font>, load_only<font color="#909090">=()</font>, dump_only<font color="#909090">=()</font>, partial<font color="#909090">=False</font>)</dt></dl>
+
+<dl><dt><a name="CharacterSchema-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="CharacterSchema-dump"><strong>dump</strong></a>(self, obj, many<font color="#909090">=None</font>, update_fields<font color="#909090">=True</font>, **kwargs)</dt><dd><tt>Serialize&nbsp;an&nbsp;object&nbsp;to&nbsp;native&nbsp;Python&nbsp;data&nbsp;types&nbsp;according&nbsp;to&nbsp;this<br>
+<a href="marshmallow.schema.html#Schema">Schema</a>'s&nbsp;fields.<br>
+&nbsp;<br>
+:param&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;serialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool&nbsp;update_fields:&nbsp;Whether&nbsp;to&nbsp;update&nbsp;the&nbsp;schema's&nbsp;field&nbsp;classes.&nbsp;Typically<br>
+&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;to&nbsp;`True`,&nbsp;but&nbsp;may&nbsp;be&nbsp;`False`&nbsp;when&nbsp;serializing&nbsp;a&nbsp;homogenous&nbsp;collection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;parameter&nbsp;is&nbsp;used&nbsp;by&nbsp;`fields.Nested`&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;updates.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`MarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="CharacterSchema-dumps"><strong>dumps</strong></a>(self, obj, many<font color="#909090">=None</font>, update_fields<font color="#909090">=True</font>, *args, **kwargs)</dt><dd><tt>Same&nbsp;as&nbsp;:meth:`dump`,&nbsp;except&nbsp;return&nbsp;a&nbsp;JSON-encoded&nbsp;string.<br>
+&nbsp;<br>
+:param&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;serialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool&nbsp;update_fields:&nbsp;Whether&nbsp;to&nbsp;update&nbsp;the&nbsp;schema's&nbsp;field&nbsp;classes.&nbsp;Typically<br>
+&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;to&nbsp;`True`,&nbsp;but&nbsp;may&nbsp;be&nbsp;`False`&nbsp;when&nbsp;serializing&nbsp;a&nbsp;homogenous&nbsp;collection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;parameter&nbsp;is&nbsp;used&nbsp;by&nbsp;`fields.Nested`&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;updates.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`MarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="CharacterSchema-get_attribute"><strong>get_attribute</strong></a>(self, attr, obj, default)</dt><dd><tt>Defines&nbsp;how&nbsp;to&nbsp;pull&nbsp;values&nbsp;from&nbsp;an&nbsp;object&nbsp;to&nbsp;serialize.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;2.0.0</tt></dd></dl>
+
+<dl><dt><a name="CharacterSchema-handle_error"><strong>handle_error</strong></a>(self, error, data)</dt><dd><tt>Custom&nbsp;error&nbsp;handler&nbsp;function&nbsp;for&nbsp;the&nbsp;schema.<br>
+&nbsp;<br>
+:param&nbsp;ValidationError&nbsp;error:&nbsp;The&nbsp;`ValidationError`&nbsp;raised&nbsp;during&nbsp;(de)serialization.<br>
+:param&nbsp;data:&nbsp;The&nbsp;original&nbsp;input&nbsp;data.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;2.0.0</tt></dd></dl>
+
+<dl><dt><a name="CharacterSchema-load"><strong>load</strong></a>(self, data, many<font color="#909090">=None</font>, partial<font color="#909090">=None</font>)</dt><dd><tt>Deserialize&nbsp;a&nbsp;data&nbsp;structure&nbsp;to&nbsp;an&nbsp;object&nbsp;defined&nbsp;by&nbsp;this&nbsp;<a href="marshmallow.schema.html#Schema">Schema</a>'s<br>
+fields&nbsp;and&nbsp;:meth:`make_object`.<br>
+&nbsp;<br>
+:param&nbsp;dict&nbsp;data:&nbsp;The&nbsp;data&nbsp;to&nbsp;deserialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;deserialize&nbsp;`data`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool|tuple&nbsp;partial:&nbsp;Whether&nbsp;to&nbsp;ignore&nbsp;missing&nbsp;fields.&nbsp;If&nbsp;`None`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;for&nbsp;`self.<strong>partial</strong>`&nbsp;is&nbsp;used.&nbsp;If&nbsp;its&nbsp;value&nbsp;is&nbsp;an&nbsp;iterable,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;only&nbsp;missing&nbsp;fields&nbsp;listed&nbsp;in&nbsp;that&nbsp;iterable&nbsp;will&nbsp;be&nbsp;ignored.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`UnmarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="CharacterSchema-loads"><strong>loads</strong></a>(self, json_data, many<font color="#909090">=None</font>, *args, **kwargs)</dt><dd><tt>Same&nbsp;as&nbsp;:meth:`load`,&nbsp;except&nbsp;it&nbsp;takes&nbsp;a&nbsp;JSON&nbsp;string&nbsp;as&nbsp;input.<br>
+&nbsp;<br>
+:param&nbsp;str&nbsp;json_data:&nbsp;A&nbsp;JSON&nbsp;string&nbsp;of&nbsp;the&nbsp;data&nbsp;to&nbsp;deserialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;deserialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool|tuple&nbsp;partial:&nbsp;Whether&nbsp;to&nbsp;ignore&nbsp;missing&nbsp;fields.&nbsp;If&nbsp;`None`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;for&nbsp;`self.<strong>partial</strong>`&nbsp;is&nbsp;used.&nbsp;If&nbsp;its&nbsp;value&nbsp;is&nbsp;an&nbsp;iterable,<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`UnmarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="CharacterSchema-on_bind_field"><strong>on_bind_field</strong></a>(self, field_name, field_obj)</dt><dd><tt>Hook&nbsp;to&nbsp;modify&nbsp;a&nbsp;field&nbsp;when&nbsp;it&nbsp;is&nbsp;bound&nbsp;to&nbsp;the&nbsp;`<a href="marshmallow.schema.html#Schema">Schema</a>`.&nbsp;No-op&nbsp;by&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="CharacterSchema-validate"><strong>validate</strong></a>(self, data, many<font color="#909090">=None</font>, partial<font color="#909090">=None</font>)</dt><dd><tt>Validate&nbsp;`data`&nbsp;against&nbsp;the&nbsp;schema,&nbsp;returning&nbsp;a&nbsp;dictionary&nbsp;of<br>
+validation&nbsp;errors.<br>
+&nbsp;<br>
+:param&nbsp;dict&nbsp;data:&nbsp;The&nbsp;data&nbsp;to&nbsp;validate.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;validate&nbsp;`data`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:return:&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;validation&nbsp;errors.<br>
+:rtype:&nbsp;dict<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.1.0</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><a name="CharacterSchema-accessor"><strong>accessor</strong></a>(cls, func)<font color="#909090"><font face="helvetica, arial"> from <a href="marshmallow.schema.html#SchemaMeta">marshmallow.schema.SchemaMeta</a></font></font></dt><dd><tt>Decorator&nbsp;that&nbsp;registers&nbsp;a&nbsp;function&nbsp;for&nbsp;pulling&nbsp;values&nbsp;from&nbsp;an&nbsp;object<br>
+to&nbsp;serialize.&nbsp;The&nbsp;function&nbsp;receives&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`&nbsp;instance,&nbsp;the<br>
+``key``&nbsp;of&nbsp;the&nbsp;value&nbsp;to&nbsp;get,&nbsp;the&nbsp;``obj``&nbsp;to&nbsp;serialize,&nbsp;and&nbsp;an&nbsp;optional<br>
+``default``&nbsp;value.<br>
+&nbsp;<br>
+..&nbsp;deprecated::&nbsp;2.0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;the&nbsp;``error_handler``&nbsp;class&nbsp;Meta&nbsp;option&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="CharacterSchema-error_handler"><strong>error_handler</strong></a>(cls, func)<font color="#909090"><font face="helvetica, arial"> from <a href="marshmallow.schema.html#SchemaMeta">marshmallow.schema.SchemaMeta</a></font></font></dt><dd><tt>Decorator&nbsp;that&nbsp;registers&nbsp;an&nbsp;error&nbsp;handler&nbsp;function&nbsp;for&nbsp;the&nbsp;schema.<br>
+The&nbsp;function&nbsp;receives&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`&nbsp;instance,&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;errors,<br>
+and&nbsp;the&nbsp;serialized&nbsp;object&nbsp;(if&nbsp;serializing&nbsp;data)&nbsp;or&nbsp;data&nbsp;dictionary&nbsp;(if<br>
+deserializing&nbsp;data)&nbsp;as&nbsp;arguments.<br>
+&nbsp;<br>
+Example:&nbsp;::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;UserSchema(<a href="marshmallow.schema.html#Schema">Schema</a>):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email&nbsp;=&nbsp;fields.Email()<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@UserSchema.error_handler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;handle_errors(schema,&nbsp;errors,&nbsp;obj):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError('An&nbsp;error&nbsp;occurred&nbsp;while&nbsp;marshalling&nbsp;{}'.format(obj))<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;=&nbsp;User(email='invalid')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserSchema().<a href="#CharacterSchema-dump">dump</a>(user)&nbsp;&nbsp;#&nbsp;=&gt;&nbsp;raises&nbsp;ValueError<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserSchema().<a href="#CharacterSchema-load">load</a>({'email':&nbsp;'bademail'})&nbsp;&nbsp;#&nbsp;raises&nbsp;ValueError<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;0.7.0<br>
+..&nbsp;deprecated::&nbsp;2.0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;the&nbsp;``error_handler``&nbsp;class&nbsp;Meta&nbsp;option&nbsp;instead.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><strong>dict_class</strong></dt>
+</dl>
+<dl><dt><strong>set_class</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><strong>Meta</strong> = &lt;class 'marshmallow.schema.Meta'&gt;<dd><tt>Options&nbsp;object&nbsp;for&nbsp;a&nbsp;<a href="marshmallow.schema.html#Schema">Schema</a>.<br>
+&nbsp;<br>
+Example&nbsp;usage:&nbsp;::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;Meta:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fields&nbsp;=&nbsp;("id",&nbsp;"email",&nbsp;"date_created")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude&nbsp;=&nbsp;("password",&nbsp;"secret_attribute")<br>
+&nbsp;<br>
+Available&nbsp;options:<br>
+&nbsp;<br>
+-&nbsp;``fields``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;serialized&nbsp;result.<br>
+-&nbsp;``additional``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;*in&nbsp;addition*&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;explicitly&nbsp;declared&nbsp;fields.&nbsp;``additional``&nbsp;and&nbsp;``fields``&nbsp;are<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mutually-exclusive&nbsp;options.<br>
+-&nbsp;``include``:&nbsp;Dictionary&nbsp;of&nbsp;additional&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;schema.&nbsp;It&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;usually&nbsp;better&nbsp;to&nbsp;define&nbsp;fields&nbsp;as&nbsp;class&nbsp;variables,&nbsp;but&nbsp;you&nbsp;may&nbsp;need&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;this&nbsp;option,&nbsp;e.g.,&nbsp;if&nbsp;your&nbsp;fields&nbsp;are&nbsp;Python&nbsp;keywords.&nbsp;May&nbsp;be&nbsp;an<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`OrderedDict`.<br>
+-&nbsp;``exclude``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;in&nbsp;the&nbsp;serialized&nbsp;result.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nested&nbsp;fields&nbsp;can&nbsp;be&nbsp;represented&nbsp;with&nbsp;dot&nbsp;delimiters.<br>
+-&nbsp;``dateformat``:&nbsp;Date&nbsp;format&nbsp;for&nbsp;all&nbsp;DateTime&nbsp;fields&nbsp;that&nbsp;do&nbsp;not&nbsp;have&nbsp;their<br>
+&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;format&nbsp;explicitly&nbsp;specified.<br>
+-&nbsp;``strict``:&nbsp;If&nbsp;`True`,&nbsp;raise&nbsp;errors&nbsp;during&nbsp;marshalling&nbsp;rather&nbsp;than<br>
+&nbsp;&nbsp;&nbsp;&nbsp;storing&nbsp;them.<br>
+-&nbsp;``json_module``:&nbsp;JSON&nbsp;module&nbsp;to&nbsp;use&nbsp;for&nbsp;`loads`&nbsp;and&nbsp;`dumps`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Defaults&nbsp;to&nbsp;the&nbsp;``json``&nbsp;module&nbsp;in&nbsp;the&nbsp;stdlib.<br>
+-&nbsp;``ordered``:&nbsp;If&nbsp;`True`,&nbsp;order&nbsp;serialization&nbsp;output&nbsp;according&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;order&nbsp;in&nbsp;which&nbsp;fields&nbsp;were&nbsp;declared.&nbsp;Output&nbsp;of&nbsp;`<a href="marshmallow.schema.html#Schema">Schema</a>.dump`&nbsp;will&nbsp;be&nbsp;a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`collections.OrderedDict`.<br>
+-&nbsp;``index_errors``:&nbsp;If&nbsp;`True`,&nbsp;errors&nbsp;dictionaries&nbsp;will&nbsp;include&nbsp;the&nbsp;index<br>
+&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;invalid&nbsp;items&nbsp;in&nbsp;a&nbsp;collection.<br>
+-&nbsp;``load_only``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;serialized&nbsp;results.<br>
+-&nbsp;``dump_only``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;deserialization</tt></dl>
+
+<dl><dt><strong>OPTIONS_CLASS</strong> = &lt;class 'marshmallow.schema.SchemaOpts'&gt;<dd><tt>class&nbsp;Meta&nbsp;options&nbsp;for&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`.&nbsp;Defines&nbsp;defaults.</tt></dl>
+
+<dl><dt><strong>TYPE_MAPPING</strong> = {&lt;type 'set'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'bool'&gt;: &lt;class 'marshmallow.fields.Boolean'&gt;, &lt;type 'list'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'tuple'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'float'&gt;: &lt;class 'marshmallow.fields.Float'&gt;, &lt;type 'int'&gt;: &lt;class 'marshmallow.fields.Integer'&gt;, &lt;type 'unicode'&gt;: &lt;class 'marshmallow.fields.String'&gt;, &lt;type 'str'&gt;: &lt;class 'marshmallow.fields.String'&gt;, &lt;class 'decimal.Decimal'&gt;: &lt;class 'marshmallow.fields.Decimal'&gt;, &lt;class 'uuid.UUID'&gt;: &lt;class 'marshmallow.fields.UUID'&gt;, ...}</dl>
+
+<dl><dt><strong>__accessor__</strong> = None</dl>
+
+<dl><dt><strong>__error_handler__</strong> = None</dl>
+
+<hr>
+Data descriptors inherited from <a href="marshmallow.base.html#SchemaABC">marshmallow.base.SchemaABC</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Comics">class <strong>Comics</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>DC&nbsp;comics&nbsp;with&nbsp;attributes&nbsp;title,&nbsp;issue&nbsp;number,&nbsp;writer,&nbsp;date<br>
+published,&nbsp;and&nbsp;other&nbsp;information<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Comics">Comics</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Comics-__init__"><strong>__init__</strong></a>(self, image, title, date, locations, featured_characters, creators)</dt><dd><tt>Initialize&nbsp;a&nbsp;comic</tt></dd></dl>
+
+<dl><dt><a name="Comics-to_json"><strong>to_json</strong></a>(self, list_view<font color="#909090">=False</font>)</dt><dd><tt>Return&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;information&nbsp;of&nbsp;this&nbsp;comic</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>creators</strong></dt>
+</dl>
+<dl><dt><strong>featured_characters</strong></dt>
+</dl>
+<dl><dt><strong>image</strong></dt>
+</dl>
+<dl><dt><strong>locations</strong></dt>
+</dl>
+<dl><dt><strong>release_date</strong></dt>
+</dl>
+<dl><dt><strong>title</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f0a93af1c50; Comics&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('comics', MetaData(bind=None), Column('ima...tring(length=100)), table=&lt;comics&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'comics'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
+
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ComicsSchema">class <strong>ComicsSchema</strong></a>(<a href="marshmallow.schema.html#Schema">marshmallow.schema.Schema</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="marshmallow.schema.html#Schema">Schema</a>&nbsp;the&nbsp;<a href="#Comics">Comics</a>&nbsp;table&nbsp;must&nbsp;conform&nbsp;to.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#ComicsSchema">ComicsSchema</a></dd>
+<dd><a href="marshmallow.schema.html#Schema">marshmallow.schema.Schema</a></dd>
+<dd><a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a></dd>
+<dd><a href="marshmallow.base.html#SchemaABC">marshmallow.base.SchemaABC</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__processors__</strong> = defaultdict(&lt;type 'list'&gt;, {})</dl>
+
+<dl><dt><strong>opts</strong> = &lt;marshmallow.schema.SchemaOpts object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><a name="ComicsSchema-__init__"><strong>__init__</strong></a>(self, extra<font color="#909090">=None</font>, only<font color="#909090">=()</font>, exclude<font color="#909090">=()</font>, prefix<font color="#909090">=u''</font>, strict<font color="#909090">=False</font>, many<font color="#909090">=False</font>, context<font color="#909090">=None</font>, load_only<font color="#909090">=()</font>, dump_only<font color="#909090">=()</font>, partial<font color="#909090">=False</font>)</dt></dl>
+
+<dl><dt><a name="ComicsSchema-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ComicsSchema-dump"><strong>dump</strong></a>(self, obj, many<font color="#909090">=None</font>, update_fields<font color="#909090">=True</font>, **kwargs)</dt><dd><tt>Serialize&nbsp;an&nbsp;object&nbsp;to&nbsp;native&nbsp;Python&nbsp;data&nbsp;types&nbsp;according&nbsp;to&nbsp;this<br>
+<a href="marshmallow.schema.html#Schema">Schema</a>'s&nbsp;fields.<br>
+&nbsp;<br>
+:param&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;serialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool&nbsp;update_fields:&nbsp;Whether&nbsp;to&nbsp;update&nbsp;the&nbsp;schema's&nbsp;field&nbsp;classes.&nbsp;Typically<br>
+&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;to&nbsp;`True`,&nbsp;but&nbsp;may&nbsp;be&nbsp;`False`&nbsp;when&nbsp;serializing&nbsp;a&nbsp;homogenous&nbsp;collection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;parameter&nbsp;is&nbsp;used&nbsp;by&nbsp;`fields.Nested`&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;updates.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`MarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="ComicsSchema-dumps"><strong>dumps</strong></a>(self, obj, many<font color="#909090">=None</font>, update_fields<font color="#909090">=True</font>, *args, **kwargs)</dt><dd><tt>Same&nbsp;as&nbsp;:meth:`dump`,&nbsp;except&nbsp;return&nbsp;a&nbsp;JSON-encoded&nbsp;string.<br>
+&nbsp;<br>
+:param&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;serialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool&nbsp;update_fields:&nbsp;Whether&nbsp;to&nbsp;update&nbsp;the&nbsp;schema's&nbsp;field&nbsp;classes.&nbsp;Typically<br>
+&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;to&nbsp;`True`,&nbsp;but&nbsp;may&nbsp;be&nbsp;`False`&nbsp;when&nbsp;serializing&nbsp;a&nbsp;homogenous&nbsp;collection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;parameter&nbsp;is&nbsp;used&nbsp;by&nbsp;`fields.Nested`&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;updates.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`MarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="ComicsSchema-get_attribute"><strong>get_attribute</strong></a>(self, attr, obj, default)</dt><dd><tt>Defines&nbsp;how&nbsp;to&nbsp;pull&nbsp;values&nbsp;from&nbsp;an&nbsp;object&nbsp;to&nbsp;serialize.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;2.0.0</tt></dd></dl>
+
+<dl><dt><a name="ComicsSchema-handle_error"><strong>handle_error</strong></a>(self, error, data)</dt><dd><tt>Custom&nbsp;error&nbsp;handler&nbsp;function&nbsp;for&nbsp;the&nbsp;schema.<br>
+&nbsp;<br>
+:param&nbsp;ValidationError&nbsp;error:&nbsp;The&nbsp;`ValidationError`&nbsp;raised&nbsp;during&nbsp;(de)serialization.<br>
+:param&nbsp;data:&nbsp;The&nbsp;original&nbsp;input&nbsp;data.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;2.0.0</tt></dd></dl>
+
+<dl><dt><a name="ComicsSchema-load"><strong>load</strong></a>(self, data, many<font color="#909090">=None</font>, partial<font color="#909090">=None</font>)</dt><dd><tt>Deserialize&nbsp;a&nbsp;data&nbsp;structure&nbsp;to&nbsp;an&nbsp;object&nbsp;defined&nbsp;by&nbsp;this&nbsp;<a href="marshmallow.schema.html#Schema">Schema</a>'s<br>
+fields&nbsp;and&nbsp;:meth:`make_object`.<br>
+&nbsp;<br>
+:param&nbsp;dict&nbsp;data:&nbsp;The&nbsp;data&nbsp;to&nbsp;deserialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;deserialize&nbsp;`data`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool|tuple&nbsp;partial:&nbsp;Whether&nbsp;to&nbsp;ignore&nbsp;missing&nbsp;fields.&nbsp;If&nbsp;`None`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;for&nbsp;`self.<strong>partial</strong>`&nbsp;is&nbsp;used.&nbsp;If&nbsp;its&nbsp;value&nbsp;is&nbsp;an&nbsp;iterable,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;only&nbsp;missing&nbsp;fields&nbsp;listed&nbsp;in&nbsp;that&nbsp;iterable&nbsp;will&nbsp;be&nbsp;ignored.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`UnmarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="ComicsSchema-loads"><strong>loads</strong></a>(self, json_data, many<font color="#909090">=None</font>, *args, **kwargs)</dt><dd><tt>Same&nbsp;as&nbsp;:meth:`load`,&nbsp;except&nbsp;it&nbsp;takes&nbsp;a&nbsp;JSON&nbsp;string&nbsp;as&nbsp;input.<br>
+&nbsp;<br>
+:param&nbsp;str&nbsp;json_data:&nbsp;A&nbsp;JSON&nbsp;string&nbsp;of&nbsp;the&nbsp;data&nbsp;to&nbsp;deserialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;deserialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool|tuple&nbsp;partial:&nbsp;Whether&nbsp;to&nbsp;ignore&nbsp;missing&nbsp;fields.&nbsp;If&nbsp;`None`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;for&nbsp;`self.<strong>partial</strong>`&nbsp;is&nbsp;used.&nbsp;If&nbsp;its&nbsp;value&nbsp;is&nbsp;an&nbsp;iterable,<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`UnmarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="ComicsSchema-on_bind_field"><strong>on_bind_field</strong></a>(self, field_name, field_obj)</dt><dd><tt>Hook&nbsp;to&nbsp;modify&nbsp;a&nbsp;field&nbsp;when&nbsp;it&nbsp;is&nbsp;bound&nbsp;to&nbsp;the&nbsp;`<a href="marshmallow.schema.html#Schema">Schema</a>`.&nbsp;No-op&nbsp;by&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="ComicsSchema-validate"><strong>validate</strong></a>(self, data, many<font color="#909090">=None</font>, partial<font color="#909090">=None</font>)</dt><dd><tt>Validate&nbsp;`data`&nbsp;against&nbsp;the&nbsp;schema,&nbsp;returning&nbsp;a&nbsp;dictionary&nbsp;of<br>
+validation&nbsp;errors.<br>
+&nbsp;<br>
+:param&nbsp;dict&nbsp;data:&nbsp;The&nbsp;data&nbsp;to&nbsp;validate.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;validate&nbsp;`data`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:return:&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;validation&nbsp;errors.<br>
+:rtype:&nbsp;dict<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.1.0</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><a name="ComicsSchema-accessor"><strong>accessor</strong></a>(cls, func)<font color="#909090"><font face="helvetica, arial"> from <a href="marshmallow.schema.html#SchemaMeta">marshmallow.schema.SchemaMeta</a></font></font></dt><dd><tt>Decorator&nbsp;that&nbsp;registers&nbsp;a&nbsp;function&nbsp;for&nbsp;pulling&nbsp;values&nbsp;from&nbsp;an&nbsp;object<br>
+to&nbsp;serialize.&nbsp;The&nbsp;function&nbsp;receives&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`&nbsp;instance,&nbsp;the<br>
+``key``&nbsp;of&nbsp;the&nbsp;value&nbsp;to&nbsp;get,&nbsp;the&nbsp;``obj``&nbsp;to&nbsp;serialize,&nbsp;and&nbsp;an&nbsp;optional<br>
+``default``&nbsp;value.<br>
+&nbsp;<br>
+..&nbsp;deprecated::&nbsp;2.0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;the&nbsp;``error_handler``&nbsp;class&nbsp;Meta&nbsp;option&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="ComicsSchema-error_handler"><strong>error_handler</strong></a>(cls, func)<font color="#909090"><font face="helvetica, arial"> from <a href="marshmallow.schema.html#SchemaMeta">marshmallow.schema.SchemaMeta</a></font></font></dt><dd><tt>Decorator&nbsp;that&nbsp;registers&nbsp;an&nbsp;error&nbsp;handler&nbsp;function&nbsp;for&nbsp;the&nbsp;schema.<br>
+The&nbsp;function&nbsp;receives&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`&nbsp;instance,&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;errors,<br>
+and&nbsp;the&nbsp;serialized&nbsp;object&nbsp;(if&nbsp;serializing&nbsp;data)&nbsp;or&nbsp;data&nbsp;dictionary&nbsp;(if<br>
+deserializing&nbsp;data)&nbsp;as&nbsp;arguments.<br>
+&nbsp;<br>
+Example:&nbsp;::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;UserSchema(<a href="marshmallow.schema.html#Schema">Schema</a>):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email&nbsp;=&nbsp;fields.Email()<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@UserSchema.error_handler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;handle_errors(schema,&nbsp;errors,&nbsp;obj):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError('An&nbsp;error&nbsp;occurred&nbsp;while&nbsp;marshalling&nbsp;{}'.format(obj))<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;=&nbsp;User(email='invalid')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserSchema().<a href="#ComicsSchema-dump">dump</a>(user)&nbsp;&nbsp;#&nbsp;=&gt;&nbsp;raises&nbsp;ValueError<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserSchema().<a href="#ComicsSchema-load">load</a>({'email':&nbsp;'bademail'})&nbsp;&nbsp;#&nbsp;raises&nbsp;ValueError<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;0.7.0<br>
+..&nbsp;deprecated::&nbsp;2.0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;the&nbsp;``error_handler``&nbsp;class&nbsp;Meta&nbsp;option&nbsp;instead.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><strong>dict_class</strong></dt>
+</dl>
+<dl><dt><strong>set_class</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><strong>Meta</strong> = &lt;class 'marshmallow.schema.Meta'&gt;<dd><tt>Options&nbsp;object&nbsp;for&nbsp;a&nbsp;<a href="marshmallow.schema.html#Schema">Schema</a>.<br>
+&nbsp;<br>
+Example&nbsp;usage:&nbsp;::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;Meta:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fields&nbsp;=&nbsp;("id",&nbsp;"email",&nbsp;"date_created")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude&nbsp;=&nbsp;("password",&nbsp;"secret_attribute")<br>
+&nbsp;<br>
+Available&nbsp;options:<br>
+&nbsp;<br>
+-&nbsp;``fields``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;serialized&nbsp;result.<br>
+-&nbsp;``additional``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;*in&nbsp;addition*&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;explicitly&nbsp;declared&nbsp;fields.&nbsp;``additional``&nbsp;and&nbsp;``fields``&nbsp;are<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mutually-exclusive&nbsp;options.<br>
+-&nbsp;``include``:&nbsp;Dictionary&nbsp;of&nbsp;additional&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;schema.&nbsp;It&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;usually&nbsp;better&nbsp;to&nbsp;define&nbsp;fields&nbsp;as&nbsp;class&nbsp;variables,&nbsp;but&nbsp;you&nbsp;may&nbsp;need&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;this&nbsp;option,&nbsp;e.g.,&nbsp;if&nbsp;your&nbsp;fields&nbsp;are&nbsp;Python&nbsp;keywords.&nbsp;May&nbsp;be&nbsp;an<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`OrderedDict`.<br>
+-&nbsp;``exclude``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;in&nbsp;the&nbsp;serialized&nbsp;result.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nested&nbsp;fields&nbsp;can&nbsp;be&nbsp;represented&nbsp;with&nbsp;dot&nbsp;delimiters.<br>
+-&nbsp;``dateformat``:&nbsp;Date&nbsp;format&nbsp;for&nbsp;all&nbsp;DateTime&nbsp;fields&nbsp;that&nbsp;do&nbsp;not&nbsp;have&nbsp;their<br>
+&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;format&nbsp;explicitly&nbsp;specified.<br>
+-&nbsp;``strict``:&nbsp;If&nbsp;`True`,&nbsp;raise&nbsp;errors&nbsp;during&nbsp;marshalling&nbsp;rather&nbsp;than<br>
+&nbsp;&nbsp;&nbsp;&nbsp;storing&nbsp;them.<br>
+-&nbsp;``json_module``:&nbsp;JSON&nbsp;module&nbsp;to&nbsp;use&nbsp;for&nbsp;`loads`&nbsp;and&nbsp;`dumps`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Defaults&nbsp;to&nbsp;the&nbsp;``json``&nbsp;module&nbsp;in&nbsp;the&nbsp;stdlib.<br>
+-&nbsp;``ordered``:&nbsp;If&nbsp;`True`,&nbsp;order&nbsp;serialization&nbsp;output&nbsp;according&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;order&nbsp;in&nbsp;which&nbsp;fields&nbsp;were&nbsp;declared.&nbsp;Output&nbsp;of&nbsp;`<a href="marshmallow.schema.html#Schema">Schema</a>.dump`&nbsp;will&nbsp;be&nbsp;a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`collections.OrderedDict`.<br>
+-&nbsp;``index_errors``:&nbsp;If&nbsp;`True`,&nbsp;errors&nbsp;dictionaries&nbsp;will&nbsp;include&nbsp;the&nbsp;index<br>
+&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;invalid&nbsp;items&nbsp;in&nbsp;a&nbsp;collection.<br>
+-&nbsp;``load_only``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;serialized&nbsp;results.<br>
+-&nbsp;``dump_only``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;deserialization</tt></dl>
+
+<dl><dt><strong>OPTIONS_CLASS</strong> = &lt;class 'marshmallow.schema.SchemaOpts'&gt;<dd><tt>class&nbsp;Meta&nbsp;options&nbsp;for&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`.&nbsp;Defines&nbsp;defaults.</tt></dl>
+
+<dl><dt><strong>TYPE_MAPPING</strong> = {&lt;type 'set'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'bool'&gt;: &lt;class 'marshmallow.fields.Boolean'&gt;, &lt;type 'list'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'tuple'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'float'&gt;: &lt;class 'marshmallow.fields.Float'&gt;, &lt;type 'int'&gt;: &lt;class 'marshmallow.fields.Integer'&gt;, &lt;type 'unicode'&gt;: &lt;class 'marshmallow.fields.String'&gt;, &lt;type 'str'&gt;: &lt;class 'marshmallow.fields.String'&gt;, &lt;class 'decimal.Decimal'&gt;: &lt;class 'marshmallow.fields.Decimal'&gt;, &lt;class 'uuid.UUID'&gt;: &lt;class 'marshmallow.fields.UUID'&gt;, ...}</dl>
+
+<dl><dt><strong>__accessor__</strong> = None</dl>
+
+<dl><dt><strong>__error_handler__</strong> = None</dl>
+
+<hr>
+Data descriptors inherited from <a href="marshmallow.base.html#SchemaABC">marshmallow.base.SchemaABC</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Creators">class <strong>Creators</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>DC&nbsp;creators&nbsp;with&nbsp;attirubtes&nbsp;title,&nbsp;occupation,&nbsp;birth&nbsp;date,&nbsp;birth&nbsp;place<br>
+first&nbsp;publication&nbsp;made&nbsp;(if&nbsp;applicable),&nbsp;and&nbsp;other&nbsp;information<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Creators">Creators</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Creators-__init__"><strong>__init__</strong></a>(self, title, occupations, birth_date, first_publication, employers, creations)</dt><dd><tt>Initialize&nbsp;a&nbsp;creator</tt></dd></dl>
+
+<dl><dt><a name="Creators-to_json"><strong>to_json</strong></a>(self, list_view<font color="#909090">=False</font>)</dt><dd><tt>Return&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;information&nbsp;of&nbsp;this&nbsp;movie</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>birth_date</strong></dt>
+</dl>
+<dl><dt><strong>creations</strong></dt>
+</dl>
+<dl><dt><strong>employers</strong></dt>
+</dl>
+<dl><dt><strong>first_publication</strong></dt>
+</dl>
+<dl><dt><strong>gender</strong></dt>
+</dl>
+<dl><dt><strong>image</strong></dt>
+</dl>
+<dl><dt><strong>job_titles</strong></dt>
+</dl>
+<dl><dt><strong>title</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f0a93aa11d0; Creators&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('creators', MetaData(bind=None), Column('t...ing(length=100)), table=&lt;creators&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'creators'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
+
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CreatorsSchema">class <strong>CreatorsSchema</strong></a>(<a href="marshmallow.schema.html#Schema">marshmallow.schema.Schema</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="marshmallow.schema.html#Schema">Schema</a>&nbsp;the&nbsp;<a href="#Creators">Creators</a>&nbsp;table&nbsp;must&nbsp;conform&nbsp;to.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#CreatorsSchema">CreatorsSchema</a></dd>
+<dd><a href="marshmallow.schema.html#Schema">marshmallow.schema.Schema</a></dd>
+<dd><a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a></dd>
+<dd><a href="marshmallow.base.html#SchemaABC">marshmallow.base.SchemaABC</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__processors__</strong> = defaultdict(&lt;type 'list'&gt;, {})</dl>
+
+<dl><dt><strong>opts</strong> = &lt;marshmallow.schema.SchemaOpts object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><a name="CreatorsSchema-__init__"><strong>__init__</strong></a>(self, extra<font color="#909090">=None</font>, only<font color="#909090">=()</font>, exclude<font color="#909090">=()</font>, prefix<font color="#909090">=u''</font>, strict<font color="#909090">=False</font>, many<font color="#909090">=False</font>, context<font color="#909090">=None</font>, load_only<font color="#909090">=()</font>, dump_only<font color="#909090">=()</font>, partial<font color="#909090">=False</font>)</dt></dl>
+
+<dl><dt><a name="CreatorsSchema-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="CreatorsSchema-dump"><strong>dump</strong></a>(self, obj, many<font color="#909090">=None</font>, update_fields<font color="#909090">=True</font>, **kwargs)</dt><dd><tt>Serialize&nbsp;an&nbsp;object&nbsp;to&nbsp;native&nbsp;Python&nbsp;data&nbsp;types&nbsp;according&nbsp;to&nbsp;this<br>
+<a href="marshmallow.schema.html#Schema">Schema</a>'s&nbsp;fields.<br>
+&nbsp;<br>
+:param&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;serialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool&nbsp;update_fields:&nbsp;Whether&nbsp;to&nbsp;update&nbsp;the&nbsp;schema's&nbsp;field&nbsp;classes.&nbsp;Typically<br>
+&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;to&nbsp;`True`,&nbsp;but&nbsp;may&nbsp;be&nbsp;`False`&nbsp;when&nbsp;serializing&nbsp;a&nbsp;homogenous&nbsp;collection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;parameter&nbsp;is&nbsp;used&nbsp;by&nbsp;`fields.Nested`&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;updates.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`MarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="CreatorsSchema-dumps"><strong>dumps</strong></a>(self, obj, many<font color="#909090">=None</font>, update_fields<font color="#909090">=True</font>, *args, **kwargs)</dt><dd><tt>Same&nbsp;as&nbsp;:meth:`dump`,&nbsp;except&nbsp;return&nbsp;a&nbsp;JSON-encoded&nbsp;string.<br>
+&nbsp;<br>
+:param&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;serialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool&nbsp;update_fields:&nbsp;Whether&nbsp;to&nbsp;update&nbsp;the&nbsp;schema's&nbsp;field&nbsp;classes.&nbsp;Typically<br>
+&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;to&nbsp;`True`,&nbsp;but&nbsp;may&nbsp;be&nbsp;`False`&nbsp;when&nbsp;serializing&nbsp;a&nbsp;homogenous&nbsp;collection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;parameter&nbsp;is&nbsp;used&nbsp;by&nbsp;`fields.Nested`&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;updates.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`MarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="CreatorsSchema-get_attribute"><strong>get_attribute</strong></a>(self, attr, obj, default)</dt><dd><tt>Defines&nbsp;how&nbsp;to&nbsp;pull&nbsp;values&nbsp;from&nbsp;an&nbsp;object&nbsp;to&nbsp;serialize.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;2.0.0</tt></dd></dl>
+
+<dl><dt><a name="CreatorsSchema-handle_error"><strong>handle_error</strong></a>(self, error, data)</dt><dd><tt>Custom&nbsp;error&nbsp;handler&nbsp;function&nbsp;for&nbsp;the&nbsp;schema.<br>
+&nbsp;<br>
+:param&nbsp;ValidationError&nbsp;error:&nbsp;The&nbsp;`ValidationError`&nbsp;raised&nbsp;during&nbsp;(de)serialization.<br>
+:param&nbsp;data:&nbsp;The&nbsp;original&nbsp;input&nbsp;data.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;2.0.0</tt></dd></dl>
+
+<dl><dt><a name="CreatorsSchema-load"><strong>load</strong></a>(self, data, many<font color="#909090">=None</font>, partial<font color="#909090">=None</font>)</dt><dd><tt>Deserialize&nbsp;a&nbsp;data&nbsp;structure&nbsp;to&nbsp;an&nbsp;object&nbsp;defined&nbsp;by&nbsp;this&nbsp;<a href="marshmallow.schema.html#Schema">Schema</a>'s<br>
+fields&nbsp;and&nbsp;:meth:`make_object`.<br>
+&nbsp;<br>
+:param&nbsp;dict&nbsp;data:&nbsp;The&nbsp;data&nbsp;to&nbsp;deserialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;deserialize&nbsp;`data`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool|tuple&nbsp;partial:&nbsp;Whether&nbsp;to&nbsp;ignore&nbsp;missing&nbsp;fields.&nbsp;If&nbsp;`None`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;for&nbsp;`self.<strong>partial</strong>`&nbsp;is&nbsp;used.&nbsp;If&nbsp;its&nbsp;value&nbsp;is&nbsp;an&nbsp;iterable,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;only&nbsp;missing&nbsp;fields&nbsp;listed&nbsp;in&nbsp;that&nbsp;iterable&nbsp;will&nbsp;be&nbsp;ignored.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`UnmarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="CreatorsSchema-loads"><strong>loads</strong></a>(self, json_data, many<font color="#909090">=None</font>, *args, **kwargs)</dt><dd><tt>Same&nbsp;as&nbsp;:meth:`load`,&nbsp;except&nbsp;it&nbsp;takes&nbsp;a&nbsp;JSON&nbsp;string&nbsp;as&nbsp;input.<br>
+&nbsp;<br>
+:param&nbsp;str&nbsp;json_data:&nbsp;A&nbsp;JSON&nbsp;string&nbsp;of&nbsp;the&nbsp;data&nbsp;to&nbsp;deserialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;deserialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool|tuple&nbsp;partial:&nbsp;Whether&nbsp;to&nbsp;ignore&nbsp;missing&nbsp;fields.&nbsp;If&nbsp;`None`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;for&nbsp;`self.<strong>partial</strong>`&nbsp;is&nbsp;used.&nbsp;If&nbsp;its&nbsp;value&nbsp;is&nbsp;an&nbsp;iterable,<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`UnmarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="CreatorsSchema-on_bind_field"><strong>on_bind_field</strong></a>(self, field_name, field_obj)</dt><dd><tt>Hook&nbsp;to&nbsp;modify&nbsp;a&nbsp;field&nbsp;when&nbsp;it&nbsp;is&nbsp;bound&nbsp;to&nbsp;the&nbsp;`<a href="marshmallow.schema.html#Schema">Schema</a>`.&nbsp;No-op&nbsp;by&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="CreatorsSchema-validate"><strong>validate</strong></a>(self, data, many<font color="#909090">=None</font>, partial<font color="#909090">=None</font>)</dt><dd><tt>Validate&nbsp;`data`&nbsp;against&nbsp;the&nbsp;schema,&nbsp;returning&nbsp;a&nbsp;dictionary&nbsp;of<br>
+validation&nbsp;errors.<br>
+&nbsp;<br>
+:param&nbsp;dict&nbsp;data:&nbsp;The&nbsp;data&nbsp;to&nbsp;validate.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;validate&nbsp;`data`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:return:&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;validation&nbsp;errors.<br>
+:rtype:&nbsp;dict<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.1.0</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><a name="CreatorsSchema-accessor"><strong>accessor</strong></a>(cls, func)<font color="#909090"><font face="helvetica, arial"> from <a href="marshmallow.schema.html#SchemaMeta">marshmallow.schema.SchemaMeta</a></font></font></dt><dd><tt>Decorator&nbsp;that&nbsp;registers&nbsp;a&nbsp;function&nbsp;for&nbsp;pulling&nbsp;values&nbsp;from&nbsp;an&nbsp;object<br>
+to&nbsp;serialize.&nbsp;The&nbsp;function&nbsp;receives&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`&nbsp;instance,&nbsp;the<br>
+``key``&nbsp;of&nbsp;the&nbsp;value&nbsp;to&nbsp;get,&nbsp;the&nbsp;``obj``&nbsp;to&nbsp;serialize,&nbsp;and&nbsp;an&nbsp;optional<br>
+``default``&nbsp;value.<br>
+&nbsp;<br>
+..&nbsp;deprecated::&nbsp;2.0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;the&nbsp;``error_handler``&nbsp;class&nbsp;Meta&nbsp;option&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="CreatorsSchema-error_handler"><strong>error_handler</strong></a>(cls, func)<font color="#909090"><font face="helvetica, arial"> from <a href="marshmallow.schema.html#SchemaMeta">marshmallow.schema.SchemaMeta</a></font></font></dt><dd><tt>Decorator&nbsp;that&nbsp;registers&nbsp;an&nbsp;error&nbsp;handler&nbsp;function&nbsp;for&nbsp;the&nbsp;schema.<br>
+The&nbsp;function&nbsp;receives&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`&nbsp;instance,&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;errors,<br>
+and&nbsp;the&nbsp;serialized&nbsp;object&nbsp;(if&nbsp;serializing&nbsp;data)&nbsp;or&nbsp;data&nbsp;dictionary&nbsp;(if<br>
+deserializing&nbsp;data)&nbsp;as&nbsp;arguments.<br>
+&nbsp;<br>
+Example:&nbsp;::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;UserSchema(<a href="marshmallow.schema.html#Schema">Schema</a>):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email&nbsp;=&nbsp;fields.Email()<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@UserSchema.error_handler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;handle_errors(schema,&nbsp;errors,&nbsp;obj):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError('An&nbsp;error&nbsp;occurred&nbsp;while&nbsp;marshalling&nbsp;{}'.format(obj))<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;=&nbsp;User(email='invalid')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserSchema().<a href="#CreatorsSchema-dump">dump</a>(user)&nbsp;&nbsp;#&nbsp;=&gt;&nbsp;raises&nbsp;ValueError<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserSchema().<a href="#CreatorsSchema-load">load</a>({'email':&nbsp;'bademail'})&nbsp;&nbsp;#&nbsp;raises&nbsp;ValueError<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;0.7.0<br>
+..&nbsp;deprecated::&nbsp;2.0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;the&nbsp;``error_handler``&nbsp;class&nbsp;Meta&nbsp;option&nbsp;instead.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><strong>dict_class</strong></dt>
+</dl>
+<dl><dt><strong>set_class</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><strong>Meta</strong> = &lt;class 'marshmallow.schema.Meta'&gt;<dd><tt>Options&nbsp;object&nbsp;for&nbsp;a&nbsp;<a href="marshmallow.schema.html#Schema">Schema</a>.<br>
+&nbsp;<br>
+Example&nbsp;usage:&nbsp;::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;Meta:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fields&nbsp;=&nbsp;("id",&nbsp;"email",&nbsp;"date_created")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude&nbsp;=&nbsp;("password",&nbsp;"secret_attribute")<br>
+&nbsp;<br>
+Available&nbsp;options:<br>
+&nbsp;<br>
+-&nbsp;``fields``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;serialized&nbsp;result.<br>
+-&nbsp;``additional``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;*in&nbsp;addition*&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;explicitly&nbsp;declared&nbsp;fields.&nbsp;``additional``&nbsp;and&nbsp;``fields``&nbsp;are<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mutually-exclusive&nbsp;options.<br>
+-&nbsp;``include``:&nbsp;Dictionary&nbsp;of&nbsp;additional&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;schema.&nbsp;It&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;usually&nbsp;better&nbsp;to&nbsp;define&nbsp;fields&nbsp;as&nbsp;class&nbsp;variables,&nbsp;but&nbsp;you&nbsp;may&nbsp;need&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;this&nbsp;option,&nbsp;e.g.,&nbsp;if&nbsp;your&nbsp;fields&nbsp;are&nbsp;Python&nbsp;keywords.&nbsp;May&nbsp;be&nbsp;an<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`OrderedDict`.<br>
+-&nbsp;``exclude``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;in&nbsp;the&nbsp;serialized&nbsp;result.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nested&nbsp;fields&nbsp;can&nbsp;be&nbsp;represented&nbsp;with&nbsp;dot&nbsp;delimiters.<br>
+-&nbsp;``dateformat``:&nbsp;Date&nbsp;format&nbsp;for&nbsp;all&nbsp;DateTime&nbsp;fields&nbsp;that&nbsp;do&nbsp;not&nbsp;have&nbsp;their<br>
+&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;format&nbsp;explicitly&nbsp;specified.<br>
+-&nbsp;``strict``:&nbsp;If&nbsp;`True`,&nbsp;raise&nbsp;errors&nbsp;during&nbsp;marshalling&nbsp;rather&nbsp;than<br>
+&nbsp;&nbsp;&nbsp;&nbsp;storing&nbsp;them.<br>
+-&nbsp;``json_module``:&nbsp;JSON&nbsp;module&nbsp;to&nbsp;use&nbsp;for&nbsp;`loads`&nbsp;and&nbsp;`dumps`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Defaults&nbsp;to&nbsp;the&nbsp;``json``&nbsp;module&nbsp;in&nbsp;the&nbsp;stdlib.<br>
+-&nbsp;``ordered``:&nbsp;If&nbsp;`True`,&nbsp;order&nbsp;serialization&nbsp;output&nbsp;according&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;order&nbsp;in&nbsp;which&nbsp;fields&nbsp;were&nbsp;declared.&nbsp;Output&nbsp;of&nbsp;`<a href="marshmallow.schema.html#Schema">Schema</a>.dump`&nbsp;will&nbsp;be&nbsp;a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`collections.OrderedDict`.<br>
+-&nbsp;``index_errors``:&nbsp;If&nbsp;`True`,&nbsp;errors&nbsp;dictionaries&nbsp;will&nbsp;include&nbsp;the&nbsp;index<br>
+&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;invalid&nbsp;items&nbsp;in&nbsp;a&nbsp;collection.<br>
+-&nbsp;``load_only``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;serialized&nbsp;results.<br>
+-&nbsp;``dump_only``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;deserialization</tt></dl>
+
+<dl><dt><strong>OPTIONS_CLASS</strong> = &lt;class 'marshmallow.schema.SchemaOpts'&gt;<dd><tt>class&nbsp;Meta&nbsp;options&nbsp;for&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`.&nbsp;Defines&nbsp;defaults.</tt></dl>
+
+<dl><dt><strong>TYPE_MAPPING</strong> = {&lt;type 'set'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'bool'&gt;: &lt;class 'marshmallow.fields.Boolean'&gt;, &lt;type 'list'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'tuple'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'float'&gt;: &lt;class 'marshmallow.fields.Float'&gt;, &lt;type 'int'&gt;: &lt;class 'marshmallow.fields.Integer'&gt;, &lt;type 'unicode'&gt;: &lt;class 'marshmallow.fields.String'&gt;, &lt;type 'str'&gt;: &lt;class 'marshmallow.fields.String'&gt;, &lt;class 'decimal.Decimal'&gt;: &lt;class 'marshmallow.fields.Decimal'&gt;, &lt;class 'uuid.UUID'&gt;: &lt;class 'marshmallow.fields.UUID'&gt;, ...}</dl>
+
+<dl><dt><strong>__accessor__</strong> = None</dl>
+
+<dl><dt><strong>__error_handler__</strong> = None</dl>
+
+<hr>
+Data descriptors inherited from <a href="marshmallow.base.html#SchemaABC">marshmallow.base.SchemaABC</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Movies">class <strong>Movies</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>DC&nbsp;movies&nbsp;with&nbsp;attributes&nbsp;title,&nbsp;director,&nbsp;date&nbsp;released,<br>
+and&nbsp;other&nbsp;information<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Movies">Movies</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Movies-__init__"><strong>__init__</strong></a>(self, image, title, date, running_time, budget, creators, featured_characters)</dt><dd><tt>Initialize&nbsp;a&nbsp;movie</tt></dd></dl>
+
+<dl><dt><a name="Movies-to_json"><strong>to_json</strong></a>(self, list_view<font color="#909090">=False</font>)</dt><dd><tt>Return&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;information&nbsp;of&nbsp;this&nbsp;movie</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>budget</strong></dt>
+</dl>
+<dl><dt><strong>creators</strong></dt>
+</dl>
+<dl><dt><strong>featured_characters</strong></dt>
+</dl>
+<dl><dt><strong>image</strong></dt>
+</dl>
+<dl><dt><strong>release_date</strong></dt>
+</dl>
+<dl><dt><strong>running_time</strong></dt>
+</dl>
+<dl><dt><strong>title</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f0a93a8e350; Movies&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('movies', MetaData(bind=None), Column('ima...tring(length=100)), table=&lt;movies&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'movies'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
+
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MoviesSchema">class <strong>MoviesSchema</strong></a>(<a href="marshmallow.schema.html#Schema">marshmallow.schema.Schema</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="marshmallow.schema.html#Schema">Schema</a>&nbsp;the&nbsp;<a href="#Movies">Movies</a>&nbsp;table&nbsp;must&nbsp;conform&nbsp;to.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#MoviesSchema">MoviesSchema</a></dd>
+<dd><a href="marshmallow.schema.html#Schema">marshmallow.schema.Schema</a></dd>
+<dd><a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a></dd>
+<dd><a href="marshmallow.base.html#SchemaABC">marshmallow.base.SchemaABC</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__processors__</strong> = defaultdict(&lt;type 'list'&gt;, {})</dl>
+
+<dl><dt><strong>opts</strong> = &lt;marshmallow.schema.SchemaOpts object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><a name="MoviesSchema-__init__"><strong>__init__</strong></a>(self, extra<font color="#909090">=None</font>, only<font color="#909090">=()</font>, exclude<font color="#909090">=()</font>, prefix<font color="#909090">=u''</font>, strict<font color="#909090">=False</font>, many<font color="#909090">=False</font>, context<font color="#909090">=None</font>, load_only<font color="#909090">=()</font>, dump_only<font color="#909090">=()</font>, partial<font color="#909090">=False</font>)</dt></dl>
+
+<dl><dt><a name="MoviesSchema-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="MoviesSchema-dump"><strong>dump</strong></a>(self, obj, many<font color="#909090">=None</font>, update_fields<font color="#909090">=True</font>, **kwargs)</dt><dd><tt>Serialize&nbsp;an&nbsp;object&nbsp;to&nbsp;native&nbsp;Python&nbsp;data&nbsp;types&nbsp;according&nbsp;to&nbsp;this<br>
+<a href="marshmallow.schema.html#Schema">Schema</a>'s&nbsp;fields.<br>
+&nbsp;<br>
+:param&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;serialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool&nbsp;update_fields:&nbsp;Whether&nbsp;to&nbsp;update&nbsp;the&nbsp;schema's&nbsp;field&nbsp;classes.&nbsp;Typically<br>
+&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;to&nbsp;`True`,&nbsp;but&nbsp;may&nbsp;be&nbsp;`False`&nbsp;when&nbsp;serializing&nbsp;a&nbsp;homogenous&nbsp;collection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;parameter&nbsp;is&nbsp;used&nbsp;by&nbsp;`fields.Nested`&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;updates.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`MarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="MoviesSchema-dumps"><strong>dumps</strong></a>(self, obj, many<font color="#909090">=None</font>, update_fields<font color="#909090">=True</font>, *args, **kwargs)</dt><dd><tt>Same&nbsp;as&nbsp;:meth:`dump`,&nbsp;except&nbsp;return&nbsp;a&nbsp;JSON-encoded&nbsp;string.<br>
+&nbsp;<br>
+:param&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;serialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool&nbsp;update_fields:&nbsp;Whether&nbsp;to&nbsp;update&nbsp;the&nbsp;schema's&nbsp;field&nbsp;classes.&nbsp;Typically<br>
+&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;to&nbsp;`True`,&nbsp;but&nbsp;may&nbsp;be&nbsp;`False`&nbsp;when&nbsp;serializing&nbsp;a&nbsp;homogenous&nbsp;collection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;parameter&nbsp;is&nbsp;used&nbsp;by&nbsp;`fields.Nested`&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;updates.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`MarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="MoviesSchema-get_attribute"><strong>get_attribute</strong></a>(self, attr, obj, default)</dt><dd><tt>Defines&nbsp;how&nbsp;to&nbsp;pull&nbsp;values&nbsp;from&nbsp;an&nbsp;object&nbsp;to&nbsp;serialize.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;2.0.0</tt></dd></dl>
+
+<dl><dt><a name="MoviesSchema-handle_error"><strong>handle_error</strong></a>(self, error, data)</dt><dd><tt>Custom&nbsp;error&nbsp;handler&nbsp;function&nbsp;for&nbsp;the&nbsp;schema.<br>
+&nbsp;<br>
+:param&nbsp;ValidationError&nbsp;error:&nbsp;The&nbsp;`ValidationError`&nbsp;raised&nbsp;during&nbsp;(de)serialization.<br>
+:param&nbsp;data:&nbsp;The&nbsp;original&nbsp;input&nbsp;data.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;2.0.0</tt></dd></dl>
+
+<dl><dt><a name="MoviesSchema-load"><strong>load</strong></a>(self, data, many<font color="#909090">=None</font>, partial<font color="#909090">=None</font>)</dt><dd><tt>Deserialize&nbsp;a&nbsp;data&nbsp;structure&nbsp;to&nbsp;an&nbsp;object&nbsp;defined&nbsp;by&nbsp;this&nbsp;<a href="marshmallow.schema.html#Schema">Schema</a>'s<br>
+fields&nbsp;and&nbsp;:meth:`make_object`.<br>
+&nbsp;<br>
+:param&nbsp;dict&nbsp;data:&nbsp;The&nbsp;data&nbsp;to&nbsp;deserialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;deserialize&nbsp;`data`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool|tuple&nbsp;partial:&nbsp;Whether&nbsp;to&nbsp;ignore&nbsp;missing&nbsp;fields.&nbsp;If&nbsp;`None`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;for&nbsp;`self.<strong>partial</strong>`&nbsp;is&nbsp;used.&nbsp;If&nbsp;its&nbsp;value&nbsp;is&nbsp;an&nbsp;iterable,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;only&nbsp;missing&nbsp;fields&nbsp;listed&nbsp;in&nbsp;that&nbsp;iterable&nbsp;will&nbsp;be&nbsp;ignored.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`UnmarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="MoviesSchema-loads"><strong>loads</strong></a>(self, json_data, many<font color="#909090">=None</font>, *args, **kwargs)</dt><dd><tt>Same&nbsp;as&nbsp;:meth:`load`,&nbsp;except&nbsp;it&nbsp;takes&nbsp;a&nbsp;JSON&nbsp;string&nbsp;as&nbsp;input.<br>
+&nbsp;<br>
+:param&nbsp;str&nbsp;json_data:&nbsp;A&nbsp;JSON&nbsp;string&nbsp;of&nbsp;the&nbsp;data&nbsp;to&nbsp;deserialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;deserialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool|tuple&nbsp;partial:&nbsp;Whether&nbsp;to&nbsp;ignore&nbsp;missing&nbsp;fields.&nbsp;If&nbsp;`None`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;for&nbsp;`self.<strong>partial</strong>`&nbsp;is&nbsp;used.&nbsp;If&nbsp;its&nbsp;value&nbsp;is&nbsp;an&nbsp;iterable,<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`UnmarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="MoviesSchema-on_bind_field"><strong>on_bind_field</strong></a>(self, field_name, field_obj)</dt><dd><tt>Hook&nbsp;to&nbsp;modify&nbsp;a&nbsp;field&nbsp;when&nbsp;it&nbsp;is&nbsp;bound&nbsp;to&nbsp;the&nbsp;`<a href="marshmallow.schema.html#Schema">Schema</a>`.&nbsp;No-op&nbsp;by&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="MoviesSchema-validate"><strong>validate</strong></a>(self, data, many<font color="#909090">=None</font>, partial<font color="#909090">=None</font>)</dt><dd><tt>Validate&nbsp;`data`&nbsp;against&nbsp;the&nbsp;schema,&nbsp;returning&nbsp;a&nbsp;dictionary&nbsp;of<br>
+validation&nbsp;errors.<br>
+&nbsp;<br>
+:param&nbsp;dict&nbsp;data:&nbsp;The&nbsp;data&nbsp;to&nbsp;validate.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;validate&nbsp;`data`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:return:&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;validation&nbsp;errors.<br>
+:rtype:&nbsp;dict<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.1.0</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><a name="MoviesSchema-accessor"><strong>accessor</strong></a>(cls, func)<font color="#909090"><font face="helvetica, arial"> from <a href="marshmallow.schema.html#SchemaMeta">marshmallow.schema.SchemaMeta</a></font></font></dt><dd><tt>Decorator&nbsp;that&nbsp;registers&nbsp;a&nbsp;function&nbsp;for&nbsp;pulling&nbsp;values&nbsp;from&nbsp;an&nbsp;object<br>
+to&nbsp;serialize.&nbsp;The&nbsp;function&nbsp;receives&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`&nbsp;instance,&nbsp;the<br>
+``key``&nbsp;of&nbsp;the&nbsp;value&nbsp;to&nbsp;get,&nbsp;the&nbsp;``obj``&nbsp;to&nbsp;serialize,&nbsp;and&nbsp;an&nbsp;optional<br>
+``default``&nbsp;value.<br>
+&nbsp;<br>
+..&nbsp;deprecated::&nbsp;2.0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;the&nbsp;``error_handler``&nbsp;class&nbsp;Meta&nbsp;option&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="MoviesSchema-error_handler"><strong>error_handler</strong></a>(cls, func)<font color="#909090"><font face="helvetica, arial"> from <a href="marshmallow.schema.html#SchemaMeta">marshmallow.schema.SchemaMeta</a></font></font></dt><dd><tt>Decorator&nbsp;that&nbsp;registers&nbsp;an&nbsp;error&nbsp;handler&nbsp;function&nbsp;for&nbsp;the&nbsp;schema.<br>
+The&nbsp;function&nbsp;receives&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`&nbsp;instance,&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;errors,<br>
+and&nbsp;the&nbsp;serialized&nbsp;object&nbsp;(if&nbsp;serializing&nbsp;data)&nbsp;or&nbsp;data&nbsp;dictionary&nbsp;(if<br>
+deserializing&nbsp;data)&nbsp;as&nbsp;arguments.<br>
+&nbsp;<br>
+Example:&nbsp;::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;UserSchema(<a href="marshmallow.schema.html#Schema">Schema</a>):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email&nbsp;=&nbsp;fields.Email()<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@UserSchema.error_handler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;handle_errors(schema,&nbsp;errors,&nbsp;obj):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError('An&nbsp;error&nbsp;occurred&nbsp;while&nbsp;marshalling&nbsp;{}'.format(obj))<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;=&nbsp;User(email='invalid')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserSchema().<a href="#MoviesSchema-dump">dump</a>(user)&nbsp;&nbsp;#&nbsp;=&gt;&nbsp;raises&nbsp;ValueError<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserSchema().<a href="#MoviesSchema-load">load</a>({'email':&nbsp;'bademail'})&nbsp;&nbsp;#&nbsp;raises&nbsp;ValueError<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;0.7.0<br>
+..&nbsp;deprecated::&nbsp;2.0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;the&nbsp;``error_handler``&nbsp;class&nbsp;Meta&nbsp;option&nbsp;instead.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><strong>dict_class</strong></dt>
+</dl>
+<dl><dt><strong>set_class</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><strong>Meta</strong> = &lt;class 'marshmallow.schema.Meta'&gt;<dd><tt>Options&nbsp;object&nbsp;for&nbsp;a&nbsp;<a href="marshmallow.schema.html#Schema">Schema</a>.<br>
+&nbsp;<br>
+Example&nbsp;usage:&nbsp;::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;Meta:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fields&nbsp;=&nbsp;("id",&nbsp;"email",&nbsp;"date_created")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude&nbsp;=&nbsp;("password",&nbsp;"secret_attribute")<br>
+&nbsp;<br>
+Available&nbsp;options:<br>
+&nbsp;<br>
+-&nbsp;``fields``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;serialized&nbsp;result.<br>
+-&nbsp;``additional``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;*in&nbsp;addition*&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;explicitly&nbsp;declared&nbsp;fields.&nbsp;``additional``&nbsp;and&nbsp;``fields``&nbsp;are<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mutually-exclusive&nbsp;options.<br>
+-&nbsp;``include``:&nbsp;Dictionary&nbsp;of&nbsp;additional&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;schema.&nbsp;It&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;usually&nbsp;better&nbsp;to&nbsp;define&nbsp;fields&nbsp;as&nbsp;class&nbsp;variables,&nbsp;but&nbsp;you&nbsp;may&nbsp;need&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;this&nbsp;option,&nbsp;e.g.,&nbsp;if&nbsp;your&nbsp;fields&nbsp;are&nbsp;Python&nbsp;keywords.&nbsp;May&nbsp;be&nbsp;an<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`OrderedDict`.<br>
+-&nbsp;``exclude``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;in&nbsp;the&nbsp;serialized&nbsp;result.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nested&nbsp;fields&nbsp;can&nbsp;be&nbsp;represented&nbsp;with&nbsp;dot&nbsp;delimiters.<br>
+-&nbsp;``dateformat``:&nbsp;Date&nbsp;format&nbsp;for&nbsp;all&nbsp;DateTime&nbsp;fields&nbsp;that&nbsp;do&nbsp;not&nbsp;have&nbsp;their<br>
+&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;format&nbsp;explicitly&nbsp;specified.<br>
+-&nbsp;``strict``:&nbsp;If&nbsp;`True`,&nbsp;raise&nbsp;errors&nbsp;during&nbsp;marshalling&nbsp;rather&nbsp;than<br>
+&nbsp;&nbsp;&nbsp;&nbsp;storing&nbsp;them.<br>
+-&nbsp;``json_module``:&nbsp;JSON&nbsp;module&nbsp;to&nbsp;use&nbsp;for&nbsp;`loads`&nbsp;and&nbsp;`dumps`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Defaults&nbsp;to&nbsp;the&nbsp;``json``&nbsp;module&nbsp;in&nbsp;the&nbsp;stdlib.<br>
+-&nbsp;``ordered``:&nbsp;If&nbsp;`True`,&nbsp;order&nbsp;serialization&nbsp;output&nbsp;according&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;order&nbsp;in&nbsp;which&nbsp;fields&nbsp;were&nbsp;declared.&nbsp;Output&nbsp;of&nbsp;`<a href="marshmallow.schema.html#Schema">Schema</a>.dump`&nbsp;will&nbsp;be&nbsp;a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`collections.OrderedDict`.<br>
+-&nbsp;``index_errors``:&nbsp;If&nbsp;`True`,&nbsp;errors&nbsp;dictionaries&nbsp;will&nbsp;include&nbsp;the&nbsp;index<br>
+&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;invalid&nbsp;items&nbsp;in&nbsp;a&nbsp;collection.<br>
+-&nbsp;``load_only``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;serialized&nbsp;results.<br>
+-&nbsp;``dump_only``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;deserialization</tt></dl>
+
+<dl><dt><strong>OPTIONS_CLASS</strong> = &lt;class 'marshmallow.schema.SchemaOpts'&gt;<dd><tt>class&nbsp;Meta&nbsp;options&nbsp;for&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`.&nbsp;Defines&nbsp;defaults.</tt></dl>
+
+<dl><dt><strong>TYPE_MAPPING</strong> = {&lt;type 'set'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'bool'&gt;: &lt;class 'marshmallow.fields.Boolean'&gt;, &lt;type 'list'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'tuple'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'float'&gt;: &lt;class 'marshmallow.fields.Float'&gt;, &lt;type 'int'&gt;: &lt;class 'marshmallow.fields.Integer'&gt;, &lt;type 'unicode'&gt;: &lt;class 'marshmallow.fields.String'&gt;, &lt;type 'str'&gt;: &lt;class 'marshmallow.fields.String'&gt;, &lt;class 'decimal.Decimal'&gt;: &lt;class 'marshmallow.fields.Decimal'&gt;, &lt;class 'uuid.UUID'&gt;: &lt;class 'marshmallow.fields.UUID'&gt;, ...}</dl>
+
+<dl><dt><strong>__accessor__</strong> = None</dl>
+
+<dl><dt><strong>__error_handler__</strong> = None</dl>
+
+<hr>
+Data descriptors inherited from <a href="marshmallow.base.html#SchemaABC">marshmallow.base.SchemaABC</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Shows">class <strong>Shows</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>DC&nbsp;shows&nbsp;with&nbsp;attributes&nbsp;title,&nbsp;network&nbsp;aired&nbsp;on,&nbsp;date&nbsp;first<br>
+aired&nbsp;on,&nbsp;and&nbsp;other&nbsp;information<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Shows">Shows</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Shows-__init__"><strong>__init__</strong></a>(self, image, title, network, running_time, first_air, creators, featured_characters, last_air)</dt><dd><tt>Initialize&nbsp;a&nbsp;show</tt></dd></dl>
+
+<dl><dt><a name="Shows-to_json"><strong>to_json</strong></a>(self, list_view<font color="#909090">=False</font>)</dt><dd><tt>Return&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;information&nbsp;of&nbsp;this&nbsp;movie</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>creators</strong></dt>
+</dl>
+<dl><dt><strong>featured_characters</strong></dt>
+</dl>
+<dl><dt><strong>first_air_date</strong></dt>
+</dl>
+<dl><dt><strong>image</strong></dt>
+</dl>
+<dl><dt><strong>last_air_date</strong></dt>
+</dl>
+<dl><dt><strong>running_time</strong></dt>
+</dl>
+<dl><dt><strong>title</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f0a93a8ea10; Shows&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('shows', MetaData(bind=None), Column('titl...String(length=100)), table=&lt;shows&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'shows'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
+
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ShowsSchema">class <strong>ShowsSchema</strong></a>(<a href="marshmallow.schema.html#Schema">marshmallow.schema.Schema</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="marshmallow.schema.html#Schema">Schema</a>&nbsp;the&nbsp;<a href="#Shows">Shows</a>&nbsp;table&nbsp;must&nbsp;conform&nbsp;to.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#ShowsSchema">ShowsSchema</a></dd>
+<dd><a href="marshmallow.schema.html#Schema">marshmallow.schema.Schema</a></dd>
+<dd><a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a></dd>
+<dd><a href="marshmallow.base.html#SchemaABC">marshmallow.base.SchemaABC</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__processors__</strong> = defaultdict(&lt;type 'list'&gt;, {})</dl>
+
+<dl><dt><strong>opts</strong> = &lt;marshmallow.schema.SchemaOpts object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><a name="ShowsSchema-__init__"><strong>__init__</strong></a>(self, extra<font color="#909090">=None</font>, only<font color="#909090">=()</font>, exclude<font color="#909090">=()</font>, prefix<font color="#909090">=u''</font>, strict<font color="#909090">=False</font>, many<font color="#909090">=False</font>, context<font color="#909090">=None</font>, load_only<font color="#909090">=()</font>, dump_only<font color="#909090">=()</font>, partial<font color="#909090">=False</font>)</dt></dl>
+
+<dl><dt><a name="ShowsSchema-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ShowsSchema-dump"><strong>dump</strong></a>(self, obj, many<font color="#909090">=None</font>, update_fields<font color="#909090">=True</font>, **kwargs)</dt><dd><tt>Serialize&nbsp;an&nbsp;object&nbsp;to&nbsp;native&nbsp;Python&nbsp;data&nbsp;types&nbsp;according&nbsp;to&nbsp;this<br>
+<a href="marshmallow.schema.html#Schema">Schema</a>'s&nbsp;fields.<br>
+&nbsp;<br>
+:param&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;serialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool&nbsp;update_fields:&nbsp;Whether&nbsp;to&nbsp;update&nbsp;the&nbsp;schema's&nbsp;field&nbsp;classes.&nbsp;Typically<br>
+&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;to&nbsp;`True`,&nbsp;but&nbsp;may&nbsp;be&nbsp;`False`&nbsp;when&nbsp;serializing&nbsp;a&nbsp;homogenous&nbsp;collection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;parameter&nbsp;is&nbsp;used&nbsp;by&nbsp;`fields.Nested`&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;updates.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`MarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="ShowsSchema-dumps"><strong>dumps</strong></a>(self, obj, many<font color="#909090">=None</font>, update_fields<font color="#909090">=True</font>, *args, **kwargs)</dt><dd><tt>Same&nbsp;as&nbsp;:meth:`dump`,&nbsp;except&nbsp;return&nbsp;a&nbsp;JSON-encoded&nbsp;string.<br>
+&nbsp;<br>
+:param&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;serialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool&nbsp;update_fields:&nbsp;Whether&nbsp;to&nbsp;update&nbsp;the&nbsp;schema's&nbsp;field&nbsp;classes.&nbsp;Typically<br>
+&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;to&nbsp;`True`,&nbsp;but&nbsp;may&nbsp;be&nbsp;`False`&nbsp;when&nbsp;serializing&nbsp;a&nbsp;homogenous&nbsp;collection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;parameter&nbsp;is&nbsp;used&nbsp;by&nbsp;`fields.Nested`&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;updates.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`MarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="ShowsSchema-get_attribute"><strong>get_attribute</strong></a>(self, attr, obj, default)</dt><dd><tt>Defines&nbsp;how&nbsp;to&nbsp;pull&nbsp;values&nbsp;from&nbsp;an&nbsp;object&nbsp;to&nbsp;serialize.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;2.0.0</tt></dd></dl>
+
+<dl><dt><a name="ShowsSchema-handle_error"><strong>handle_error</strong></a>(self, error, data)</dt><dd><tt>Custom&nbsp;error&nbsp;handler&nbsp;function&nbsp;for&nbsp;the&nbsp;schema.<br>
+&nbsp;<br>
+:param&nbsp;ValidationError&nbsp;error:&nbsp;The&nbsp;`ValidationError`&nbsp;raised&nbsp;during&nbsp;(de)serialization.<br>
+:param&nbsp;data:&nbsp;The&nbsp;original&nbsp;input&nbsp;data.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;2.0.0</tt></dd></dl>
+
+<dl><dt><a name="ShowsSchema-load"><strong>load</strong></a>(self, data, many<font color="#909090">=None</font>, partial<font color="#909090">=None</font>)</dt><dd><tt>Deserialize&nbsp;a&nbsp;data&nbsp;structure&nbsp;to&nbsp;an&nbsp;object&nbsp;defined&nbsp;by&nbsp;this&nbsp;<a href="marshmallow.schema.html#Schema">Schema</a>'s<br>
+fields&nbsp;and&nbsp;:meth:`make_object`.<br>
+&nbsp;<br>
+:param&nbsp;dict&nbsp;data:&nbsp;The&nbsp;data&nbsp;to&nbsp;deserialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;deserialize&nbsp;`data`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool|tuple&nbsp;partial:&nbsp;Whether&nbsp;to&nbsp;ignore&nbsp;missing&nbsp;fields.&nbsp;If&nbsp;`None`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;for&nbsp;`self.<strong>partial</strong>`&nbsp;is&nbsp;used.&nbsp;If&nbsp;its&nbsp;value&nbsp;is&nbsp;an&nbsp;iterable,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;only&nbsp;missing&nbsp;fields&nbsp;listed&nbsp;in&nbsp;that&nbsp;iterable&nbsp;will&nbsp;be&nbsp;ignored.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`UnmarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="ShowsSchema-loads"><strong>loads</strong></a>(self, json_data, many<font color="#909090">=None</font>, *args, **kwargs)</dt><dd><tt>Same&nbsp;as&nbsp;:meth:`load`,&nbsp;except&nbsp;it&nbsp;takes&nbsp;a&nbsp;JSON&nbsp;string&nbsp;as&nbsp;input.<br>
+&nbsp;<br>
+:param&nbsp;str&nbsp;json_data:&nbsp;A&nbsp;JSON&nbsp;string&nbsp;of&nbsp;the&nbsp;data&nbsp;to&nbsp;deserialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;deserialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool|tuple&nbsp;partial:&nbsp;Whether&nbsp;to&nbsp;ignore&nbsp;missing&nbsp;fields.&nbsp;If&nbsp;`None`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;for&nbsp;`self.<strong>partial</strong>`&nbsp;is&nbsp;used.&nbsp;If&nbsp;its&nbsp;value&nbsp;is&nbsp;an&nbsp;iterable,<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`UnmarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="ShowsSchema-on_bind_field"><strong>on_bind_field</strong></a>(self, field_name, field_obj)</dt><dd><tt>Hook&nbsp;to&nbsp;modify&nbsp;a&nbsp;field&nbsp;when&nbsp;it&nbsp;is&nbsp;bound&nbsp;to&nbsp;the&nbsp;`<a href="marshmallow.schema.html#Schema">Schema</a>`.&nbsp;No-op&nbsp;by&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="ShowsSchema-validate"><strong>validate</strong></a>(self, data, many<font color="#909090">=None</font>, partial<font color="#909090">=None</font>)</dt><dd><tt>Validate&nbsp;`data`&nbsp;against&nbsp;the&nbsp;schema,&nbsp;returning&nbsp;a&nbsp;dictionary&nbsp;of<br>
+validation&nbsp;errors.<br>
+&nbsp;<br>
+:param&nbsp;dict&nbsp;data:&nbsp;The&nbsp;data&nbsp;to&nbsp;validate.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;validate&nbsp;`data`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:return:&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;validation&nbsp;errors.<br>
+:rtype:&nbsp;dict<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.1.0</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><a name="ShowsSchema-accessor"><strong>accessor</strong></a>(cls, func)<font color="#909090"><font face="helvetica, arial"> from <a href="marshmallow.schema.html#SchemaMeta">marshmallow.schema.SchemaMeta</a></font></font></dt><dd><tt>Decorator&nbsp;that&nbsp;registers&nbsp;a&nbsp;function&nbsp;for&nbsp;pulling&nbsp;values&nbsp;from&nbsp;an&nbsp;object<br>
+to&nbsp;serialize.&nbsp;The&nbsp;function&nbsp;receives&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`&nbsp;instance,&nbsp;the<br>
+``key``&nbsp;of&nbsp;the&nbsp;value&nbsp;to&nbsp;get,&nbsp;the&nbsp;``obj``&nbsp;to&nbsp;serialize,&nbsp;and&nbsp;an&nbsp;optional<br>
+``default``&nbsp;value.<br>
+&nbsp;<br>
+..&nbsp;deprecated::&nbsp;2.0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;the&nbsp;``error_handler``&nbsp;class&nbsp;Meta&nbsp;option&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="ShowsSchema-error_handler"><strong>error_handler</strong></a>(cls, func)<font color="#909090"><font face="helvetica, arial"> from <a href="marshmallow.schema.html#SchemaMeta">marshmallow.schema.SchemaMeta</a></font></font></dt><dd><tt>Decorator&nbsp;that&nbsp;registers&nbsp;an&nbsp;error&nbsp;handler&nbsp;function&nbsp;for&nbsp;the&nbsp;schema.<br>
+The&nbsp;function&nbsp;receives&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`&nbsp;instance,&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;errors,<br>
+and&nbsp;the&nbsp;serialized&nbsp;object&nbsp;(if&nbsp;serializing&nbsp;data)&nbsp;or&nbsp;data&nbsp;dictionary&nbsp;(if<br>
+deserializing&nbsp;data)&nbsp;as&nbsp;arguments.<br>
+&nbsp;<br>
+Example:&nbsp;::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;UserSchema(<a href="marshmallow.schema.html#Schema">Schema</a>):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email&nbsp;=&nbsp;fields.Email()<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@UserSchema.error_handler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;handle_errors(schema,&nbsp;errors,&nbsp;obj):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError('An&nbsp;error&nbsp;occurred&nbsp;while&nbsp;marshalling&nbsp;{}'.format(obj))<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;=&nbsp;User(email='invalid')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserSchema().<a href="#ShowsSchema-dump">dump</a>(user)&nbsp;&nbsp;#&nbsp;=&gt;&nbsp;raises&nbsp;ValueError<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserSchema().<a href="#ShowsSchema-load">load</a>({'email':&nbsp;'bademail'})&nbsp;&nbsp;#&nbsp;raises&nbsp;ValueError<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;0.7.0<br>
+..&nbsp;deprecated::&nbsp;2.0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;the&nbsp;``error_handler``&nbsp;class&nbsp;Meta&nbsp;option&nbsp;instead.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><strong>dict_class</strong></dt>
+</dl>
+<dl><dt><strong>set_class</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><strong>Meta</strong> = &lt;class 'marshmallow.schema.Meta'&gt;<dd><tt>Options&nbsp;object&nbsp;for&nbsp;a&nbsp;<a href="marshmallow.schema.html#Schema">Schema</a>.<br>
+&nbsp;<br>
+Example&nbsp;usage:&nbsp;::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;Meta:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fields&nbsp;=&nbsp;("id",&nbsp;"email",&nbsp;"date_created")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude&nbsp;=&nbsp;("password",&nbsp;"secret_attribute")<br>
+&nbsp;<br>
+Available&nbsp;options:<br>
+&nbsp;<br>
+-&nbsp;``fields``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;serialized&nbsp;result.<br>
+-&nbsp;``additional``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;*in&nbsp;addition*&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;explicitly&nbsp;declared&nbsp;fields.&nbsp;``additional``&nbsp;and&nbsp;``fields``&nbsp;are<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mutually-exclusive&nbsp;options.<br>
+-&nbsp;``include``:&nbsp;Dictionary&nbsp;of&nbsp;additional&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;schema.&nbsp;It&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;usually&nbsp;better&nbsp;to&nbsp;define&nbsp;fields&nbsp;as&nbsp;class&nbsp;variables,&nbsp;but&nbsp;you&nbsp;may&nbsp;need&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;this&nbsp;option,&nbsp;e.g.,&nbsp;if&nbsp;your&nbsp;fields&nbsp;are&nbsp;Python&nbsp;keywords.&nbsp;May&nbsp;be&nbsp;an<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`OrderedDict`.<br>
+-&nbsp;``exclude``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;in&nbsp;the&nbsp;serialized&nbsp;result.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nested&nbsp;fields&nbsp;can&nbsp;be&nbsp;represented&nbsp;with&nbsp;dot&nbsp;delimiters.<br>
+-&nbsp;``dateformat``:&nbsp;Date&nbsp;format&nbsp;for&nbsp;all&nbsp;DateTime&nbsp;fields&nbsp;that&nbsp;do&nbsp;not&nbsp;have&nbsp;their<br>
+&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;format&nbsp;explicitly&nbsp;specified.<br>
+-&nbsp;``strict``:&nbsp;If&nbsp;`True`,&nbsp;raise&nbsp;errors&nbsp;during&nbsp;marshalling&nbsp;rather&nbsp;than<br>
+&nbsp;&nbsp;&nbsp;&nbsp;storing&nbsp;them.<br>
+-&nbsp;``json_module``:&nbsp;JSON&nbsp;module&nbsp;to&nbsp;use&nbsp;for&nbsp;`loads`&nbsp;and&nbsp;`dumps`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Defaults&nbsp;to&nbsp;the&nbsp;``json``&nbsp;module&nbsp;in&nbsp;the&nbsp;stdlib.<br>
+-&nbsp;``ordered``:&nbsp;If&nbsp;`True`,&nbsp;order&nbsp;serialization&nbsp;output&nbsp;according&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;order&nbsp;in&nbsp;which&nbsp;fields&nbsp;were&nbsp;declared.&nbsp;Output&nbsp;of&nbsp;`<a href="marshmallow.schema.html#Schema">Schema</a>.dump`&nbsp;will&nbsp;be&nbsp;a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`collections.OrderedDict`.<br>
+-&nbsp;``index_errors``:&nbsp;If&nbsp;`True`,&nbsp;errors&nbsp;dictionaries&nbsp;will&nbsp;include&nbsp;the&nbsp;index<br>
+&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;invalid&nbsp;items&nbsp;in&nbsp;a&nbsp;collection.<br>
+-&nbsp;``load_only``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;serialized&nbsp;results.<br>
+-&nbsp;``dump_only``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;deserialization</tt></dl>
+
+<dl><dt><strong>OPTIONS_CLASS</strong> = &lt;class 'marshmallow.schema.SchemaOpts'&gt;<dd><tt>class&nbsp;Meta&nbsp;options&nbsp;for&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`.&nbsp;Defines&nbsp;defaults.</tt></dl>
+
+<dl><dt><strong>TYPE_MAPPING</strong> = {&lt;type 'set'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'bool'&gt;: &lt;class 'marshmallow.fields.Boolean'&gt;, &lt;type 'list'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'tuple'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'float'&gt;: &lt;class 'marshmallow.fields.Float'&gt;, &lt;type 'int'&gt;: &lt;class 'marshmallow.fields.Integer'&gt;, &lt;type 'unicode'&gt;: &lt;class 'marshmallow.fields.String'&gt;, &lt;type 'str'&gt;: &lt;class 'marshmallow.fields.String'&gt;, &lt;class 'decimal.Decimal'&gt;: &lt;class 'marshmallow.fields.Decimal'&gt;, &lt;class 'uuid.UUID'&gt;: &lt;class 'marshmallow.fields.UUID'&gt;, ...}</dl>
+
+<dl><dt><strong>__accessor__</strong> = None</dl>
+
+<dl><dt><strong>__error_handler__</strong> = None</dl>
+
+<hr>
+Data descriptors inherited from <a href="marshmallow.base.html#SchemaABC">marshmallow.base.SchemaABC</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Teams">class <strong>Teams</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>DC&nbsp;teams&nbsp;with&nbsp;attributes&nbsp;title,&nbsp;first&nbsp;comic&nbsp;appeared&nbsp;in,<br>
+and&nbsp;other&nbsp;information<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Teams">Teams</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Teams-__init__"><strong>__init__</strong></a>(self, title, image, debut, origin, identity, status, creators, universe, team_leaders, enemies)</dt><dd><tt>Initialize&nbsp;a&nbsp;team</tt></dd></dl>
+
+<dl><dt><a name="Teams-to_json"><strong>to_json</strong></a>(self, list_view<font color="#909090">=False</font>)</dt><dd><tt>Return&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;information&nbsp;of&nbsp;this&nbsp;teams</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>creators</strong></dt>
+</dl>
+<dl><dt><strong>debut</strong></dt>
+</dl>
+<dl><dt><strong>enemies</strong></dt>
+</dl>
+<dl><dt><strong>identity</strong></dt>
+</dl>
+<dl><dt><strong>image</strong></dt>
+</dl>
+<dl><dt><strong>status</strong></dt>
+</dl>
+<dl><dt><strong>team_leaders</strong></dt>
+</dl>
+<dl><dt><strong>title</strong></dt>
+</dl>
+<dl><dt><strong>universes</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f0a93af1650; Teams&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('teams', MetaData(bind=None), Column('titl...String(length=100)), table=&lt;teams&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'teams'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
+
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TeamsSchema">class <strong>TeamsSchema</strong></a>(<a href="marshmallow.schema.html#Schema">marshmallow.schema.Schema</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="marshmallow.schema.html#Schema">Schema</a>&nbsp;the&nbsp;<a href="#Teams">Teams</a>&nbsp;table&nbsp;must&nbsp;conform&nbsp;to.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#TeamsSchema">TeamsSchema</a></dd>
+<dd><a href="marshmallow.schema.html#Schema">marshmallow.schema.Schema</a></dd>
+<dd><a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a></dd>
+<dd><a href="marshmallow.base.html#SchemaABC">marshmallow.base.SchemaABC</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__processors__</strong> = defaultdict(&lt;type 'list'&gt;, {})</dl>
+
+<dl><dt><strong>opts</strong> = &lt;marshmallow.schema.SchemaOpts object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><a name="TeamsSchema-__init__"><strong>__init__</strong></a>(self, extra<font color="#909090">=None</font>, only<font color="#909090">=()</font>, exclude<font color="#909090">=()</font>, prefix<font color="#909090">=u''</font>, strict<font color="#909090">=False</font>, many<font color="#909090">=False</font>, context<font color="#909090">=None</font>, load_only<font color="#909090">=()</font>, dump_only<font color="#909090">=()</font>, partial<font color="#909090">=False</font>)</dt></dl>
+
+<dl><dt><a name="TeamsSchema-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TeamsSchema-dump"><strong>dump</strong></a>(self, obj, many<font color="#909090">=None</font>, update_fields<font color="#909090">=True</font>, **kwargs)</dt><dd><tt>Serialize&nbsp;an&nbsp;object&nbsp;to&nbsp;native&nbsp;Python&nbsp;data&nbsp;types&nbsp;according&nbsp;to&nbsp;this<br>
+<a href="marshmallow.schema.html#Schema">Schema</a>'s&nbsp;fields.<br>
+&nbsp;<br>
+:param&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;serialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool&nbsp;update_fields:&nbsp;Whether&nbsp;to&nbsp;update&nbsp;the&nbsp;schema's&nbsp;field&nbsp;classes.&nbsp;Typically<br>
+&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;to&nbsp;`True`,&nbsp;but&nbsp;may&nbsp;be&nbsp;`False`&nbsp;when&nbsp;serializing&nbsp;a&nbsp;homogenous&nbsp;collection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;parameter&nbsp;is&nbsp;used&nbsp;by&nbsp;`fields.Nested`&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;updates.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`MarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="TeamsSchema-dumps"><strong>dumps</strong></a>(self, obj, many<font color="#909090">=None</font>, update_fields<font color="#909090">=True</font>, *args, **kwargs)</dt><dd><tt>Same&nbsp;as&nbsp;:meth:`dump`,&nbsp;except&nbsp;return&nbsp;a&nbsp;JSON-encoded&nbsp;string.<br>
+&nbsp;<br>
+:param&nbsp;obj:&nbsp;The&nbsp;object&nbsp;to&nbsp;serialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;serialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool&nbsp;update_fields:&nbsp;Whether&nbsp;to&nbsp;update&nbsp;the&nbsp;schema's&nbsp;field&nbsp;classes.&nbsp;Typically<br>
+&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;to&nbsp;`True`,&nbsp;but&nbsp;may&nbsp;be&nbsp;`False`&nbsp;when&nbsp;serializing&nbsp;a&nbsp;homogenous&nbsp;collection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;parameter&nbsp;is&nbsp;used&nbsp;by&nbsp;`fields.Nested`&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;updates.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`MarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="TeamsSchema-get_attribute"><strong>get_attribute</strong></a>(self, attr, obj, default)</dt><dd><tt>Defines&nbsp;how&nbsp;to&nbsp;pull&nbsp;values&nbsp;from&nbsp;an&nbsp;object&nbsp;to&nbsp;serialize.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;2.0.0</tt></dd></dl>
+
+<dl><dt><a name="TeamsSchema-handle_error"><strong>handle_error</strong></a>(self, error, data)</dt><dd><tt>Custom&nbsp;error&nbsp;handler&nbsp;function&nbsp;for&nbsp;the&nbsp;schema.<br>
+&nbsp;<br>
+:param&nbsp;ValidationError&nbsp;error:&nbsp;The&nbsp;`ValidationError`&nbsp;raised&nbsp;during&nbsp;(de)serialization.<br>
+:param&nbsp;data:&nbsp;The&nbsp;original&nbsp;input&nbsp;data.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;2.0.0</tt></dd></dl>
+
+<dl><dt><a name="TeamsSchema-load"><strong>load</strong></a>(self, data, many<font color="#909090">=None</font>, partial<font color="#909090">=None</font>)</dt><dd><tt>Deserialize&nbsp;a&nbsp;data&nbsp;structure&nbsp;to&nbsp;an&nbsp;object&nbsp;defined&nbsp;by&nbsp;this&nbsp;<a href="marshmallow.schema.html#Schema">Schema</a>'s<br>
+fields&nbsp;and&nbsp;:meth:`make_object`.<br>
+&nbsp;<br>
+:param&nbsp;dict&nbsp;data:&nbsp;The&nbsp;data&nbsp;to&nbsp;deserialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;deserialize&nbsp;`data`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool|tuple&nbsp;partial:&nbsp;Whether&nbsp;to&nbsp;ignore&nbsp;missing&nbsp;fields.&nbsp;If&nbsp;`None`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;for&nbsp;`self.<strong>partial</strong>`&nbsp;is&nbsp;used.&nbsp;If&nbsp;its&nbsp;value&nbsp;is&nbsp;an&nbsp;iterable,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;only&nbsp;missing&nbsp;fields&nbsp;listed&nbsp;in&nbsp;that&nbsp;iterable&nbsp;will&nbsp;be&nbsp;ignored.<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`UnmarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="TeamsSchema-loads"><strong>loads</strong></a>(self, json_data, many<font color="#909090">=None</font>, *args, **kwargs)</dt><dd><tt>Same&nbsp;as&nbsp;:meth:`load`,&nbsp;except&nbsp;it&nbsp;takes&nbsp;a&nbsp;JSON&nbsp;string&nbsp;as&nbsp;input.<br>
+&nbsp;<br>
+:param&nbsp;str&nbsp;json_data:&nbsp;A&nbsp;JSON&nbsp;string&nbsp;of&nbsp;the&nbsp;data&nbsp;to&nbsp;deserialize.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;deserialize&nbsp;`obj`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:param&nbsp;bool|tuple&nbsp;partial:&nbsp;Whether&nbsp;to&nbsp;ignore&nbsp;missing&nbsp;fields.&nbsp;If&nbsp;`None`,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;value&nbsp;for&nbsp;`self.<strong>partial</strong>`&nbsp;is&nbsp;used.&nbsp;If&nbsp;its&nbsp;value&nbsp;is&nbsp;an&nbsp;iterable,<br>
+:return:&nbsp;A&nbsp;tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(``data``,&nbsp;``errors``)<br>
+:rtype:&nbsp;`UnmarshalResult`,&nbsp;a&nbsp;`collections.namedtuple`<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.0.0</tt></dd></dl>
+
+<dl><dt><a name="TeamsSchema-on_bind_field"><strong>on_bind_field</strong></a>(self, field_name, field_obj)</dt><dd><tt>Hook&nbsp;to&nbsp;modify&nbsp;a&nbsp;field&nbsp;when&nbsp;it&nbsp;is&nbsp;bound&nbsp;to&nbsp;the&nbsp;`<a href="marshmallow.schema.html#Schema">Schema</a>`.&nbsp;No-op&nbsp;by&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="TeamsSchema-validate"><strong>validate</strong></a>(self, data, many<font color="#909090">=None</font>, partial<font color="#909090">=None</font>)</dt><dd><tt>Validate&nbsp;`data`&nbsp;against&nbsp;the&nbsp;schema,&nbsp;returning&nbsp;a&nbsp;dictionary&nbsp;of<br>
+validation&nbsp;errors.<br>
+&nbsp;<br>
+:param&nbsp;dict&nbsp;data:&nbsp;The&nbsp;data&nbsp;to&nbsp;validate.<br>
+:param&nbsp;bool&nbsp;many:&nbsp;Whether&nbsp;to&nbsp;validate&nbsp;`data`&nbsp;as&nbsp;a&nbsp;collection.&nbsp;If&nbsp;`None`,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;for&nbsp;`self.<strong>many</strong>`&nbsp;is&nbsp;used.<br>
+:return:&nbsp;A&nbsp;dictionary&nbsp;of&nbsp;validation&nbsp;errors.<br>
+:rtype:&nbsp;dict<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;1.1.0</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><a name="TeamsSchema-accessor"><strong>accessor</strong></a>(cls, func)<font color="#909090"><font face="helvetica, arial"> from <a href="marshmallow.schema.html#SchemaMeta">marshmallow.schema.SchemaMeta</a></font></font></dt><dd><tt>Decorator&nbsp;that&nbsp;registers&nbsp;a&nbsp;function&nbsp;for&nbsp;pulling&nbsp;values&nbsp;from&nbsp;an&nbsp;object<br>
+to&nbsp;serialize.&nbsp;The&nbsp;function&nbsp;receives&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`&nbsp;instance,&nbsp;the<br>
+``key``&nbsp;of&nbsp;the&nbsp;value&nbsp;to&nbsp;get,&nbsp;the&nbsp;``obj``&nbsp;to&nbsp;serialize,&nbsp;and&nbsp;an&nbsp;optional<br>
+``default``&nbsp;value.<br>
+&nbsp;<br>
+..&nbsp;deprecated::&nbsp;2.0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;the&nbsp;``error_handler``&nbsp;class&nbsp;Meta&nbsp;option&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="TeamsSchema-error_handler"><strong>error_handler</strong></a>(cls, func)<font color="#909090"><font face="helvetica, arial"> from <a href="marshmallow.schema.html#SchemaMeta">marshmallow.schema.SchemaMeta</a></font></font></dt><dd><tt>Decorator&nbsp;that&nbsp;registers&nbsp;an&nbsp;error&nbsp;handler&nbsp;function&nbsp;for&nbsp;the&nbsp;schema.<br>
+The&nbsp;function&nbsp;receives&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`&nbsp;instance,&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;errors,<br>
+and&nbsp;the&nbsp;serialized&nbsp;object&nbsp;(if&nbsp;serializing&nbsp;data)&nbsp;or&nbsp;data&nbsp;dictionary&nbsp;(if<br>
+deserializing&nbsp;data)&nbsp;as&nbsp;arguments.<br>
+&nbsp;<br>
+Example:&nbsp;::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;UserSchema(<a href="marshmallow.schema.html#Schema">Schema</a>):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email&nbsp;=&nbsp;fields.Email()<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@UserSchema.error_handler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;handle_errors(schema,&nbsp;errors,&nbsp;obj):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;ValueError('An&nbsp;error&nbsp;occurred&nbsp;while&nbsp;marshalling&nbsp;{}'.format(obj))<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;=&nbsp;User(email='invalid')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserSchema().<a href="#TeamsSchema-dump">dump</a>(user)&nbsp;&nbsp;#&nbsp;=&gt;&nbsp;raises&nbsp;ValueError<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserSchema().<a href="#TeamsSchema-load">load</a>({'email':&nbsp;'bademail'})&nbsp;&nbsp;#&nbsp;raises&nbsp;ValueError<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;0.7.0<br>
+..&nbsp;deprecated::&nbsp;2.0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;the&nbsp;``error_handler``&nbsp;class&nbsp;Meta&nbsp;option&nbsp;instead.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><strong>dict_class</strong></dt>
+</dl>
+<dl><dt><strong>set_class</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="marshmallow.schema.html#BaseSchema">marshmallow.schema.BaseSchema</a>:<br>
+<dl><dt><strong>Meta</strong> = &lt;class 'marshmallow.schema.Meta'&gt;<dd><tt>Options&nbsp;object&nbsp;for&nbsp;a&nbsp;<a href="marshmallow.schema.html#Schema">Schema</a>.<br>
+&nbsp;<br>
+Example&nbsp;usage:&nbsp;::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;Meta:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fields&nbsp;=&nbsp;("id",&nbsp;"email",&nbsp;"date_created")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude&nbsp;=&nbsp;("password",&nbsp;"secret_attribute")<br>
+&nbsp;<br>
+Available&nbsp;options:<br>
+&nbsp;<br>
+-&nbsp;``fields``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;serialized&nbsp;result.<br>
+-&nbsp;``additional``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;include&nbsp;*in&nbsp;addition*&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;explicitly&nbsp;declared&nbsp;fields.&nbsp;``additional``&nbsp;and&nbsp;``fields``&nbsp;are<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mutually-exclusive&nbsp;options.<br>
+-&nbsp;``include``:&nbsp;Dictionary&nbsp;of&nbsp;additional&nbsp;fields&nbsp;to&nbsp;include&nbsp;in&nbsp;the&nbsp;schema.&nbsp;It&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;usually&nbsp;better&nbsp;to&nbsp;define&nbsp;fields&nbsp;as&nbsp;class&nbsp;variables,&nbsp;but&nbsp;you&nbsp;may&nbsp;need&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;this&nbsp;option,&nbsp;e.g.,&nbsp;if&nbsp;your&nbsp;fields&nbsp;are&nbsp;Python&nbsp;keywords.&nbsp;May&nbsp;be&nbsp;an<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`OrderedDict`.<br>
+-&nbsp;``exclude``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;in&nbsp;the&nbsp;serialized&nbsp;result.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nested&nbsp;fields&nbsp;can&nbsp;be&nbsp;represented&nbsp;with&nbsp;dot&nbsp;delimiters.<br>
+-&nbsp;``dateformat``:&nbsp;Date&nbsp;format&nbsp;for&nbsp;all&nbsp;DateTime&nbsp;fields&nbsp;that&nbsp;do&nbsp;not&nbsp;have&nbsp;their<br>
+&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;format&nbsp;explicitly&nbsp;specified.<br>
+-&nbsp;``strict``:&nbsp;If&nbsp;`True`,&nbsp;raise&nbsp;errors&nbsp;during&nbsp;marshalling&nbsp;rather&nbsp;than<br>
+&nbsp;&nbsp;&nbsp;&nbsp;storing&nbsp;them.<br>
+-&nbsp;``json_module``:&nbsp;JSON&nbsp;module&nbsp;to&nbsp;use&nbsp;for&nbsp;`loads`&nbsp;and&nbsp;`dumps`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Defaults&nbsp;to&nbsp;the&nbsp;``json``&nbsp;module&nbsp;in&nbsp;the&nbsp;stdlib.<br>
+-&nbsp;``ordered``:&nbsp;If&nbsp;`True`,&nbsp;order&nbsp;serialization&nbsp;output&nbsp;according&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;order&nbsp;in&nbsp;which&nbsp;fields&nbsp;were&nbsp;declared.&nbsp;Output&nbsp;of&nbsp;`<a href="marshmallow.schema.html#Schema">Schema</a>.dump`&nbsp;will&nbsp;be&nbsp;a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`collections.OrderedDict`.<br>
+-&nbsp;``index_errors``:&nbsp;If&nbsp;`True`,&nbsp;errors&nbsp;dictionaries&nbsp;will&nbsp;include&nbsp;the&nbsp;index<br>
+&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;invalid&nbsp;items&nbsp;in&nbsp;a&nbsp;collection.<br>
+-&nbsp;``load_only``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;serialized&nbsp;results.<br>
+-&nbsp;``dump_only``:&nbsp;Tuple&nbsp;or&nbsp;list&nbsp;of&nbsp;fields&nbsp;to&nbsp;exclude&nbsp;from&nbsp;deserialization</tt></dl>
+
+<dl><dt><strong>OPTIONS_CLASS</strong> = &lt;class 'marshmallow.schema.SchemaOpts'&gt;<dd><tt>class&nbsp;Meta&nbsp;options&nbsp;for&nbsp;the&nbsp;:class:`<a href="marshmallow.schema.html#Schema">Schema</a>`.&nbsp;Defines&nbsp;defaults.</tt></dl>
+
+<dl><dt><strong>TYPE_MAPPING</strong> = {&lt;type 'set'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'bool'&gt;: &lt;class 'marshmallow.fields.Boolean'&gt;, &lt;type 'list'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'tuple'&gt;: &lt;class 'marshmallow.fields.Raw'&gt;, &lt;type 'float'&gt;: &lt;class 'marshmallow.fields.Float'&gt;, &lt;type 'int'&gt;: &lt;class 'marshmallow.fields.Integer'&gt;, &lt;type 'unicode'&gt;: &lt;class 'marshmallow.fields.String'&gt;, &lt;type 'str'&gt;: &lt;class 'marshmallow.fields.String'&gt;, &lt;class 'decimal.Decimal'&gt;: &lt;class 'marshmallow.fields.Decimal'&gt;, &lt;class 'uuid.UUID'&gt;: &lt;class 'marshmallow.fields.UUID'&gt;, ...}</dl>
+
+<dl><dt><strong>__accessor__</strong> = None</dl>
+
+<dl><dt><strong>__error_handler__</strong> = None</dl>
+
+<hr>
+Data descriptors inherited from <a href="marshmallow.base.html#SchemaABC">marshmallow.base.SchemaABC</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-must_not_be_blank"><strong>must_not_be_blank</strong></a>(data)</dt><dd><tt>Check&nbsp;to&nbsp;ensure&nbsp;data&nbsp;is&nbsp;provided</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>app</strong> = &lt;Flask 'models'&gt;<br>
+<strong>character_schema</strong> = &lt;CharacterSchema(many=False, strict=False)&gt;<br>
+<strong>characters_schema</strong> = &lt;CharacterSchema(many=True, strict=False)&gt;<br>
+<strong>comic_schema</strong> = &lt;ComicsSchema(many=False, strict=False)&gt;<br>
+<strong>comics_schema</strong> = &lt;ComicsSchema(many=True, strict=False)&gt;<br>
+<strong>creator_schema</strong> = &lt;CreatorsSchema(many=False, strict=False)&gt;<br>
+<strong>creators_schema</strong> = &lt;CreatorsSchema(many=True, strict=False)&gt;<br>
+<strong>db</strong> = &lt;SQLAlchemy engine='postgresql://postgres:psql@localhost:5432/dcdatabase'&gt;<br>
+<strong>movie_schema</strong> = &lt;MoviesSchema(many=False, strict=False)&gt;<br>
+<strong>movies_schema</strong> = &lt;MoviesSchema(many=True, strict=False)&gt;<br>
+<strong>show_schema</strong> = &lt;ShowsSchema(many=False, strict=False)&gt;<br>
+<strong>shows_schema</strong> = &lt;ShowsSchema(many=True, strict=False)&gt;<br>
+<strong>team_schema</strong> = &lt;TeamsSchema(many=False, strict=False)&gt;<br>
+<strong>teams_schema</strong> = &lt;TeamsSchema(many=True, strict=False)&gt;</td></tr></table>
 </body></html>

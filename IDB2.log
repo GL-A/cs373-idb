@@ -1,3 +1,58 @@
+commit f39cf5f681a44fe789af3276df4e5a5e8ab9a95a
+Merge: 6f0f5b1 228ce69
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Wed Jul 13 19:50:48 2016 -0400
+
+    Merge branch 'webbranch'
+
+commit 228ce6900daf21a14f61b3959b2954a7d946f88b
+Author: drewt1995 <drewt1995@gmail.com>
+Date:   Wed Jul 13 19:50:15 2016 -0400
+
+    Created all of the models pages with pagination and the details pages for each of the models
+
+commit 6f0f5b103f4297fab8a420832d793912148d5d4b
+Author: Brendon Rhodes <rhodesbrendon95@gmail.com>
+Date:   Wed Jul 13 17:49:18 2016 -0500
+
+    Got rid of Postgresql imports
+
+commit 99643fff17e1dd56966e689914691e12772590a5
+Author: Brendon Rhodes <rhodesbrendon95@gmail.com>
+Date:   Wed Jul 13 17:47:53 2016 -0500
+
+    Changed Unit Tests
+
+commit 51c566bc0dcaaa6f07408098629e4da9f1f12594
+Author: Kevin Du <kevind7@cs.utexas.edu>
+Date:   Tue Jul 12 21:59:59 2016 -0500
+
+    Updated .travis.yml
+
+commit 0e5a1f0d5a0e1a79b4fbcefe6cb1054b95186e7d
+Author: Kevin Du <kevind7@cs.utexas.edu>
+Date:   Tue Jul 12 21:57:20 2016 -0500
+
+    Updated .travis.yml
+
+commit 9e9d6d0d79775e0c2713d8e3bb478fae9d950470
+Author: Kevin Du <kevind7@cs.utexas.edu>
+Date:   Tue Jul 12 21:53:09 2016 -0500
+
+    Updated .travis.yml
+
+commit 56195a3d976053d28ef5dbf987210f9b929200b0
+Author: Kevin Du <kevind7@cs.utexas.edu>
+Date:   Tue Jul 12 21:51:03 2016 -0500
+
+    Updated .travis.yml
+
+commit 337583d644eedd82596844283c60cb378fce3e6a
+Author: Kevin Du <kevind7@cs.utexas.edu>
+Date:   Tue Jul 12 21:45:18 2016 -0500
+
+    Updated makefile, .travis.yml
+
 commit 23a3ee7691be75a39910f7eb928f1b6fcc8ac3ec
 Author: kiankris <kcv@utexas.edu>
 Date:   Tue Jul 12 20:21:58 2016 -0500
@@ -21,6 +76,12 @@ Author: Brendon Rhodes <rhodesbrendon95@gmail.com>
 Date:   Tue Jul 12 17:06:03 2016 -0500
 
     Add files via upload
+
+commit fa3ed36377f76a11c45ff32dfb2b4edc42f92755
+Author: kiankris <kcv@utexas.edu>
+Date:   Tue Jul 12 17:04:23 2016 -0500
+
+    Updated characters.html
 
 commit 71091f32c322ee187c4b74bd87d3676368fcf8f5
 Author: drewt1995 <drewt1995@gmail.com>
@@ -63,6 +124,25 @@ Author: drewt1995 <drewt1995@gmail.com>
 Date:   Tue Jul 12 16:53:35 2016 -0500
 
     Moved to partials
+
+commit 4dfb28b3c13e0fc16747490be94451d416874b2d
+Merge: a764031 1ad64b9
+Author: kiankris <kcv@utexas.edu>
+Date:   Tue Jul 12 16:49:03 2016 -0500
+
+    Merge branch 'Webbranch' into webbranch
+
+commit a76403187e0d8fe3b482fde59435d652cd1b44be
+Author: kiankris <kcv@utexas.edu>
+Date:   Tue Jul 12 16:48:11 2016 -0500
+
+    Added characters controller
+
+commit 1ad64b9d40504dfffe0b474c5885dead8d135c3f
+Author: Shuoyi Yang <yangshy2012@gmail.com>
+Date:   Tue Jul 12 15:14:28 2016 -0500
+
+    auto generate characters table
 
 commit 9e86fd20d5c81c594f2bfa5dc1d4d62022b6c789
 Merge: d2a82da 1aff53e
