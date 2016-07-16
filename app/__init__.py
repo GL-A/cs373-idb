@@ -24,8 +24,6 @@ def tests():
 
 
 
-
-
 #Define API endpoints
 #Map classes to API endpoints
 api.add_resource(CharacterList, '/characters.json')

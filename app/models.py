@@ -4,13 +4,18 @@
 
 
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy, BaseQuery
 from sqlalchemy.exc import IntegrityError
 from marshmallow import Schema, fields, ValidationError, pre_load
 from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey, create_engine
 from sqlalchemy.dialects.postgresql import ARRAY
 from sqlalchemy.ext.declarative import declarative_base
 from flask.ext.jsontools import JsonSerializableBase
+from sqlalchemy_searchable import SearchQueryMixin
+from sqlalchemy_utils.types import TSVectorType
+from sqlalchemy_searchable import make_searchable
+
+make_searchable()
 
 app = Flask(__name__)
 app.config[
@@ -20,6 +25,25 @@ db.init_app(app)
 
 
 Base = declarative_base(cls=(JsonSerializableBase,))
+
+class CharacterQuery(BaseQuery, SearchQueryMixin):
+    pass
+
+class TeamsQuery(BaseQuery, SearchQueryMixin):
+    pass
+
+class ComicsQuery(BaseQuery, SearchQueryMixin):
+    pass
+
+class MoviesQuery(BaseQuery, SearchQueryMixin):
+    pass
+
+class ShowsQuery(BaseQuery, SearchQueryMixin):
+    pass
+
+class CreatorsQuery(BaseQuery, SearchQueryMixin):
+    pass
+
 
 """
 The Models module. 
@@ -31,6 +55,8 @@ pydoc -w models
 # Characters
 #-----------
 
+#TODO: add category attribute for models, and search_vector for each model
+#ALSO need to check configure_mappers before the creationg of tables. Need to ask andrew about how the db works in relation with that
 
 class Character(db.Model, Base):
 
