@@ -44,6 +44,8 @@ class ShowsQuery(BaseQuery, SearchQueryMixin):
 class CreatorsQuery(BaseQuery, SearchQueryMixin):
     pass
 
+class AmbiguiousQuery(BaseQuery, SearchQueryMixin):
+    pass
 
 """
 The Models module. 
@@ -96,6 +98,40 @@ class Character(db.Model, Base):
         self.gender = gender
         self.debut = debut
         self.affiliation = affiliation
+
+
+#-----------
+# Ambiguious
+#-----------
+
+class Ambiguious(db.Model, Base):
+
+    """
+    Ambiguious pages that could represent multiple articles in the database
+    """
+
+    __tablename__ = 'ambiguious'
+
+    title = db.Column(db.String(50), primary_key=True)
+    related= db.Column(ARRAY(db.String(100)))
+    category = db.Column(db.String(50))
+    search_vector = db.Column(TSVectorType('title', 'related'))
+    def __init__(self,title,related):
+        """
+        Initialize the page
+        """
+        self.title = title
+        sele.related = related
+
+    def to_json(self, list_view=False):
+        """
+        Return a dictionary of information of articles related 
+        """
+        return {
+            'title': self.title,
+            'releated': self.related
+        }
+
 
 
 #-----------
@@ -303,6 +339,15 @@ class CharacterSchema(Schema):
     alignment = fields.Str()
     category = fields.Str()
 
+class AmbiguiousrSchema(Schema):
+    """
+    Schema the ambiguious table must conform to.
+    """
+    title = fields.Str(dump_only=True)
+    category = fields.Str()
+    related = fields.List(fields.Raw)
+    
+
 
 class TeamsSchema(Schema):
     """
@@ -397,6 +442,8 @@ comics_schema = ComicsSchema(many=True)
 movies_schema = MoviesSchema(many=True)
 shows_schema = ShowsSchema(many=True)
 creators_schema = CreatorsSchema(many=True)
+ambiguious_schema = AmbiguiousSchema(many=True)
+
 
 character_schema = CharacterSchema()
 team_schema = TeamsSchema()
@@ -404,3 +451,4 @@ comic_schema = ComicsSchema()
 movie_schema = MoviesSchema()
 show_schema = ShowsSchema()
 creator_schema = CreatorsSchema()
+ambiguious_schema = AmbiguiousSchema()
