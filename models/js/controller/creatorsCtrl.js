@@ -16,7 +16,7 @@ app.controller('creatorsCtrl',['$scope', '$http', function($scope, $http) {
             {
                 field:'title', 
                 displayName:'Name',
-		cellTemplate: '<a href="/#/creators/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
+                cellTemplate: '<a href="/#/creators/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
             },
             {
                 field:'birth_date',
@@ -25,7 +25,7 @@ app.controller('creatorsCtrl',['$scope', '$http', function($scope, $http) {
             {
                 field:'first_publication',
                 displayName:'First Publication',
-		cellTemplate: '<a href="/#/comics/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
+                cellTemplate: '<a href="/#/{{row.entity.category}}/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
             },
             {
                 field:'gender',
@@ -34,12 +34,12 @@ app.controller('creatorsCtrl',['$scope', '$http', function($scope, $http) {
             {
                 field:'employers',
                 displayName:'Employers',
-		cellTemplate: '<div ng-repeat="affil in COL_FIELD"><p>{{ affil }}</p>'
+                cellTemplate: '<div ng-repeat="affil in COL_FIELD"><p>{{ affil }}</p>'
             },
             {
                 field:'creations',
                 displayName:'Characters Created',
-		cellTemplate: '<div ng-repeat="creation in COL_FIELD"><p>{{ creation }}</p>'
+                cellTemplate: '<div ng-repeat="creation in COL_FIELD"><p>{{ creation }}</p>'
             }
         ]
   };

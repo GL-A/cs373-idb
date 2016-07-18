@@ -24,6 +24,7 @@ def tests():
 
 
 
+
 #Define API endpoints
 #Map classes to API endpoints
 api.add_resource(CharacterList, '/characters.json')
@@ -38,6 +39,7 @@ api.add_resource(ShowsUpdate, '/shows/<string:id>.json')
 api.add_resource(MoviesUpdate, '/movies/<string:id>.json')
 api.add_resource(ComicsUpdate, '/comics/<string:id>.json')
 api.add_resource(CreatorsUpdate, '/creators/<string:id>.json')
+api.add_resource(search, '/search/<string:search_text>')
 
 if __name__ == "__main__":
     app.run()

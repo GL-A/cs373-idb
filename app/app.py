@@ -174,23 +174,36 @@ class CreatorsUpdate(Resource):
         result = creator_schema.dump(creator_query)
         return jsonify(result.data)
 
-# Search functionality (Stay in here or __init__.py?)
-# TODO: Must add OR operation search, right now only default AND operation
-# @app.route('/search')
-# def search():
-#   search_text = request.args.get()
-#   character_query = Character.query.search(search_text)
-#   teams_query = Teams.query.search(search_text)
-#   comics_query = Comics.query.search(search_text)
-#   movies_query = Movies.query.search(search_text)
-#   shows_query = Shows.query.search(search_text)
-#   creators_query = Creators.query.search(search_text)
-#   results = {
-#     'characters':[x.to_json() for x in character_query.all()],
-#     'teams':[x.to_json() for x in teams_query.all()]],
-#     'comics':[x.to_json() for x in comics_query.all()]],
-#     'movies':[x.to_json() for x in movies_query.all()]],
-#     'shows':[x.to_json() for x in shows_query.all()]],
-#     'creators':[x.to_json() for x in creators_query.all()]]
-#   }
-#   return jsonify(results)
+#Search_text dependant on what html sends (possibly temporary)
+class search(Resource):
+    def get(self, search_text):
+        #AND search
+        character_query = Character.query.search(search_text)
+        teams_query = Teams.query.search(search_text)
+        comics_query = Comics.query.search(search_text)
+        movies_query = Movies.query.search(search_text)
+        shows_query = Shows.query.search(search_text)
+        creators_query = Creators.query.search(search_text)
+        result = character_schema.dump(character_query).data
+        result += team_schema.dump(teams_query).data
+        result += creator_schema.dump(creators_query).data
+        result += comic_schema.dump(comics_query).data
+        result += show_schema.dump(shows_query).data
+        result += movie_schema.dump(movies_query).data
+        #OR search
+        parsed_search = search_text.split()
+        or_search = parsed_search.next()
+        or_search = [or_search += " or " + x for x in parsed_search]
+        character_query_or = Character.query.search(or_search)
+        teams_query_or = Teams.query.search(or_search)
+        comics_query_or = Comics.query.search(or_search)
+        movies_query_or = Movies.query.search(or_search)
+        shows_query_or = Shows.query.search(or_search)
+        creators_query_or = Creators.query.search(or_search)
+        result += character_schema.dump(character_query_or).data
+        result += team_schema.dump(teams_query_or).data
+        result += creator_schema.dump(creators_query_or).data
+        result += comic_schema.dump(comics_query_or).data
+        result += show_schema.dump(shows_query_or).data
+        result += movie_schema.dump(movies_query_or).data
+        return jsonify(result)
