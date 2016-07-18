@@ -1,11 +1,13 @@
 # http://docs.travis-ci.com/user/build-configuration/
 
 language: python
+sudo: required
 
 python:
     - "3.4"
 
-sudo: false
+before_install:
+    - sudo apt-get update
 
 install:
     - pip install --upgrade pip
@@ -14,7 +16,9 @@ install:
     - pip install Flask-Script
     - pip install Flask-SQLAlchemy
     - pip install Flask-Testing
-    - pip install gunicorn
+    - pip install marshmallow
+    - pip install flask-jsontools
+    - pip install psycopg2
     - pip install requests
 
 before_script:
@@ -25,5 +29,6 @@ before_script:
 script:
     - date
     - ls -al
-    - make check
+    - make models.html
     - make test
+    - make check

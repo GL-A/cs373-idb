@@ -8,140 +8,189 @@ from flask_restful import Api, Resource
 from flask import jsonify
 from dc import api
 
- 
-#The following class will be used for GET and POST requests to /users
+
+# The following class will be used for GET and POST requests to /users
 class CharacterList(Resource):
-       #Function for a GET request
-       def get(self):
-        #Query the database and return all users
+    # Function for a GET request
+
+    def get(self):
+        # Query the database and return all users
         character_query = Character.query.all()
-        #Serialize the query results in the JSON API format
-	char_scheme = characters_schema.dump(character_query)
-        results = jsonify({'Characters':char_scheme.data})
+        # Serialize the query results in the JSON API format
+        char_scheme = characters_schema.dump(character_query)
+        results = jsonify(char_scheme.data)
         return results
 
-#The following class will be used for GET and POST requests to /teams
+# The following class will be used for GET and POST requests to /teams
+
+
 class TeamsList(Resource):
-       #Function for a GET request
-       def get(self):
-        #Query the database and return all teams
+    # Function for a GET request
+
+    def get(self):
+        # Query the database and return all teams
         teams_query = Teams.query.all()
-        #Serialize the query results in the JSON API format
-	team_scheme = teams_schema.dump(teams_query)
-        results = jsonify({'Teams':team_scheme.data})
+        # Serialize the query results in the JSON API format
+        team_scheme = teams_schema.dump(teams_query)
+        results = jsonify(team_scheme.data)
         return results
 
-#The following class will be used for GET and POST requests to /comics
+# The following class will be used for GET and POST requests to /comics
+
+
 class ComicsList(Resource):
-       #Function for a GET request
-       def get(self):
-        #Query the database and return all comics
+    # Function for a GET request
+
+    def get(self):
+        # Query the database and return all comics
         comics_query = Comics.query.all()
-        #Serialize the query results in the JSON API format
+        # Serialize the query results in the JSON API format
         comic_scheme = comics_schema.dump(comics_query)
-        results = jsonify({'Comics':comic_scheme.data})
+        results = jsonify(comic_scheme.data)
         return results
 
-#The following class will be used for GET and POST requests to /movies
+# The following class will be used for GET and POST requests to /movies
+
+
 class MoviesList(Resource):
-       #Function for a GET request
-       def get(self):
-        #Query the database and return all movies
+    # Function for a GET request
+
+    def get(self):
+        # Query the database and return all movies
         movies_query = Movies.query.all()
-        #Serialize the query results in the JSON API format
+        # Serialize the query results in the JSON API format
         movie_scheme = movies_schema.dump(movies_query)
-        results = jsonify({'Movies':movie_scheme.data})
+        results = jsonify(movie_scheme.data)
         return results
 
-#The following class will be used for GET and POST requests to /users
+# The following class will be used for GET and POST requests to /users
+
+
 class ShowsList(Resource):
-       #Function for a GET request
-       def get(self):
-        #Query the database and return all users
+    # Function for a GET request
+
+    def get(self):
+        # Query the database and return all users
         shows_query = Shows.query.all()
-        #Serialize the query results in the JSON API format
+        # Serialize the query results in the JSON API format
         show_scheme = shows_schema.dump(shows_query)
-        results = jsonify({'Shows':show_scheme.data})
+        results = jsonify(show_scheme.data)
         return results
 
-#The following class will be used for GET and POST requests to /users
+# The following class will be used for GET and POST requests to /users
+
+
 class CreatorsList(Resource):
-       #Function for a GET request
-       def get(self):
-        #Query the database and return all users
+    # Function for a GET request
+
+    def get(self):
+        # Query the database and return all users
         creators_query = Creators.query.all()
-        #Serialize the query results in the JSON API format
-	create_scheme = creators_schema.dump(creators_query)
-        results = jsonify({'Creators':create_scheme.data})
+        # Serialize the query results in the JSON API format
+        create_scheme = creators_schema.dump(creators_query)
+        results = jsonify(create_scheme.data)
         return results
 
 
-#The following class is used when a GET,PATCH,DELETE HTTP request is sent to /character/<str:id>.json
+# The following class is used when a GET,PATCH,DELETE HTTP request is sent
+# to /character/<str:id>.json
 class CharacterUpdate(Resource):
- 
 
-    def get(self, id):  
+    def get(self, id):
         try:
             character_query = Character.query.get(id.replace("_", " "))
         except IntegrityError:
             return jsonify({"message": "Character could not be found."}), 404
         result = character_schema.dump(character_query)
-        return jsonify({"Character": result.data})
- 
-#The following class is used when a GET,PATCH,DELETE HTTP request is sent to /teams/<string:id>.json
+        return jsonify(result.data)
+
+# The following class is used when a GET,PATCH,DELETE HTTP request is sent
+# to /teams/<string:id>.json
+
+
 class TeamsUpdate(Resource):
+
     def get(self, id):
         try:
             team_query = Teams.query.get(id.replace("_", " "))
         except IntegrityError:
             return jsonify({"message": "Team could not be found."}), 404
         result = team_schema.dump(team_query)
-        return jsonify({"Team": result.data})
+        return jsonify(result.data)
 
-#The following class is used when a GET,PATCH,DELETE HTTP request is sent to /shows/<string:id>.json
+# The following class is used when a GET,PATCH,DELETE HTTP request is sent
+# to /shows/<string:id>.json
+
+
 class ShowsUpdate(Resource):
+
     def get(self, id):
         try:
             show_query = Shows.query.get(id.replace("_", " "))
         except IntegrityError:
             return jsonify({"message": "Show could not be found."}), 404
         result = show_schema.dump(show_query)
-        return jsonify({"Show": result.data})
+        return jsonify(result.data)
 
-#The following class is used when a GET,PATCH,DELETE HTTP request is sent to /movies/<string:id>.json
+# The following class is used when a GET,PATCH,DELETE HTTP request is sent
+# to /movies/<string:id>.json
+
+
 class MoviesUpdate(Resource):
+
     def get(self, id):
         try:
             movie_query = Movies.query.get(id.replace("_", " "))
         except IntegrityError:
             return jsonify({"message": "Movie could not be found."}), 404
         result = movie_schema.dump(movie_query)
-        return jsonify({"Movie": result.data})
+        return jsonify(result.data)
 
-#The following class is used when a GET,PATCH,DELETE HTTP request is sent to /comics/<string:id>.json
+# The following class is used when a GET,PATCH,DELETE HTTP request is sent
+# to /comics/<string:id>.json
+
+
 class ComicsUpdate(Resource):
+
     def get(self, id):
         try:
             comic_query = Comics.query.get(id.replace("_", " "))
         except IntegrityError:
             return jsonify({"message": "Comic could not be found."}), 404
         result = comic_schema.dump(comic_query)
-        return jsonify({"Comic": result.data})
+        return jsonify(result.data)
 
-#The following class is used when a GET,PATCH,DELETE HTTP request is sent to /creators/<string:id>.json
+# The following class is used when a GET,PATCH,DELETE HTTP request is sent
+# to /creators/<string:id>.json
+
+
 class CreatorsUpdate(Resource):
+
     def get(self, id):
         try:
             creator_query = Creators.query.get(id.replace("_", " "))
         except IntegrityError:
             return jsonify({"message": "Creator could not be found."}), 404
         result = creator_schema.dump(creator_query)
-        return jsonify({"Creator": result.data})
+        return jsonify(result.data)
 
-
-
-
-
-
-
-
+# Search functionality (Stay in here or __init__.py?)
+# TODO: Must add OR operation search, right now only default AND operation
+# @app.route('/search')
+# def search():
+#   search_text = request.args.get()
+#   character_query = Character.query.search(search_text)
+#   teams_query = Teams.query.search(search_text)
+#   comics_query = Comics.query.search(search_text)
+#   movies_query = Movies.query.search(search_text)
+#   shows_query = Shows.query.search(search_text)
+#   creators_query = Creators.query.search(search_text)
+#   results = {
+#     'characters':[x.to_json() for x in character_query.all()],
+#     'teams':[x.to_json() for x in teams_query.all()]],
+#     'comics':[x.to_json() for x in comics_query.all()]],
+#     'movies':[x.to_json() for x in movies_query.all()]],
+#     'shows':[x.to_json() for x in shows_query.all()]],
+#     'creators':[x.to_json() for x in creators_query.all()]]
+#   }
+#   return jsonify(results)

@@ -1,5 +1,6 @@
 import os
 import sys
+import subprocess
 from flask_restful import Api, Resource
 from flask import Flask, send_file, send_from_directory, safe_join, request, Response, abort
 
@@ -15,6 +16,13 @@ from rest import *
 @app.route('/<path:path>')
 def index(**kwargs):
     return send_file('index.html')
+
+
+@app.route('/tests', methods=['GET'])
+def tests():
+	return subprocess.check_output("python3 /home/gitrepo/cs373-idb/app/tests.py", stderr=subprocess.STDOUT, shell=True)
+
+
 
 #Define API endpoints
 #Map classes to API endpoints
