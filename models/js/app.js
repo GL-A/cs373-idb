@@ -30,6 +30,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('root.search', {
+            url: "/search/:search-text",
+            views : { 
+                '@' : {
+                    templateUrl: 'static/partials/search.html'
+                    controller: 'searchCtrl'
+                }
+            }
+        })
         .state('root.about', {
             url: "/about",
             views : { 
@@ -49,7 +58,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 	
-	.state('root.character-detail', {
+	   .state('root.character-detail', {
             url: "/characters/:name",
             views : { 
                 '@' : {
@@ -60,7 +69,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
-	.state('root.team-detail', {
+	   .state('root.team-detail', {
             url: "/teams/:name",
             views : { 
                 '@' : {
@@ -71,7 +80,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
-	.state('root.show-detail', {
+	   .state('root.show-detail', {
             url: "/shows/:name",
             views : { 
                 '@' : {
@@ -82,7 +91,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
-	.state('root.creator-detail', {
+	   .state('root.creator-detail', {
             url: "/creators/:name",
             views : { 
                 '@' : {
@@ -93,7 +102,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
-	.state('root.movie-detail', {
+	   .state('root.movie-detail', {
             url: "/movies/:name",
             views : { 
                 '@' : {
@@ -104,7 +113,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
-	.state('root.comic-detail', {
+	   .state('root.comic-detail', {
             url: "/comics/:name",
             views : { 
                 '@' : {

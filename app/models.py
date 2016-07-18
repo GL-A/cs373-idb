@@ -116,22 +116,13 @@ class Ambiguious(db.Model, Base):
     related= db.Column(ARRAY(db.String(100)))
     category = db.Column(db.String(50))
     search_vector = db.Column(TSVectorType('title', 'related'))
+    
     def __init__(self,title,related):
         """
         Initialize the page
         """
         self.title = title
         sele.related = related
-
-    def to_json(self, list_view=False):
-        """
-        Return a dictionary of information of articles related 
-        """
-        return {
-            'title': self.title,
-            'releated': self.related
-        }
-
 
 
 #-----------

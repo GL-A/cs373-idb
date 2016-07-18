@@ -25,7 +25,7 @@ app.controller('creatorsCtrl',['$scope', '$http', function($scope, $http) {
             {
                 field:'first_publication',
                 displayName:'First Publication',
-                cellTemplate: '<a href="/#/{{row.entity.category}}/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
+                cellTemplate: '<a href="/#/comics/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
             },
             {
                 field:'gender',

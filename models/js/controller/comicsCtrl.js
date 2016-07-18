@@ -16,12 +16,12 @@ app.controller('comicsCtrl',['$scope', '$http', function($scope, $http) {
             {
                 field:'title', 
                 displayName:'Name',
-		cellTemplate: '<a href="/#/comics/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
+                cellTemplate: '<a href="/#/comics/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
             },
             {
                 field:'featured_characters',
                 displayName:'Featured Characters',
-		cellTemplate: '<div ng-repeat="affil in COL_FIELD"><a href="/#/characters/{{ affil }}">{{ affil }}</a>'
+                cellTemplate: '<div ng-repeat="affil in COL_FIELD"><a href="/#/characters/{{ affil }}">{{ affil }}</a>'
             },
             {
                 field:'release_date',
@@ -30,12 +30,12 @@ app.controller('comicsCtrl',['$scope', '$http', function($scope, $http) {
             {
                 field:'locations',
                 displayName:'Locations',
-		cellTemplate: '<p ng-repeat="affil in COL_FIELD">{{ affil }}</p>'
+                cellTemplate: '<p ng-repeat="affil in COL_FIELD">{{ affil }}</p>'
             },
             {
                 field:'creators',
                 displayName:'Creators',
-		cellTemplate: '<div ng-repeat="affil in COL_FIELD"><a href="/#/creators/{{ affil }}">{{ affil }}</a>'
+                cellTemplate: '<div ng-repeat="affil in COL_FIELD"><a href="/#/creators/{{ affil }}">{{ affil }}</a>'
             }
         ]
   };

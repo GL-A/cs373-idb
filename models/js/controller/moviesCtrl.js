@@ -16,12 +16,12 @@ app.controller('moviesCtrl',['$scope', '$http', function($scope, $http) {
             {
                 field:'title', 
                 displayName:'Name',
-		cellTemplate: '<a href="/#/movies/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
+                cellTemplate: '<a href="/#/movies/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
             },
             {
                 field:'featured_characters',
                 displayName:'Featured Characters',
-		cellTemplate: '<div ng-repeat="character in COL_FIELD"><a href="/#/characters/{{ character }}">{{ character }}</a>'
+                cellTemplate: '<div ng-repeat="character in COL_FIELD"><a href="/#/characters/{{ character }}">{{ character }}</a>'
             },
             {
                 field:'release_date',
@@ -34,7 +34,7 @@ app.controller('moviesCtrl',['$scope', '$http', function($scope, $http) {
             {
                 field:'creators',
                 displayName:'Creators',
-		cellTemplate: '<div ng-repeat="affil in COL_FIELD"><a href="/#/creators/{{ affil }}">{{ affil }}</a>'
+                cellTemplate: '<div ng-repeat="affil in COL_FIELD"><a href="/#/creators/{{ affil }}">{{ affil }}</a>'
             }
         ]
   };
