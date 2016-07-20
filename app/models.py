@@ -14,25 +14,42 @@ from flask.ext.jsontools import JsonSerializableBase
 from sqlalchemy_searchable import SearchQueryMixin
 from sqlalchemy_utils.types import TSVectorType
 from sqlalchemy_searchable import make_searchable
+from sqlalchemy_fulltext import FullText, FullTextSearch
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 make_searchable()
 
 app = Flask(__name__)
 app.config[
-    'SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:psql@localhost:5432/fakedatabase'
+    'SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:psql@localhost:5432/dcdatabase'
 db = SQLAlchemy(app)
 db.init_app(app)
 
 
+# an Engine, which the Session will use for connection
+# resources
+some_engine = create_engine('postgresql://postgres:psql@localhost:5432/dcdatabase')
+
+# create a configured "Session" class
+Session = sessionmaker(bind=some_engine)
+
+# create a Session
+session = Session()
+
 Base = declarative_base(cls=(JsonSerializableBase,))
+
+
+"""
+The Models module. 
+
+pydoc -w models
+"""
 
 class CharacterQuery(BaseQuery, SearchQueryMixin):
     pass
 
 class TeamsQuery(BaseQuery, SearchQueryMixin):
-    pass
-
-class ComicsQuery(BaseQuery, SearchQueryMixin):
     pass
 
 class MoviesQuery(BaseQuery, SearchQueryMixin):
@@ -44,14 +61,8 @@ class ShowsQuery(BaseQuery, SearchQueryMixin):
 class CreatorsQuery(BaseQuery, SearchQueryMixin):
     pass
 
-class AmbiguiousQuery(BaseQuery, SearchQueryMixin):
+class ComicsQuery(BaseQuery, SearchQueryMixin):
     pass
-
-"""
-The Models module. 
-
-pydoc -w models
-"""
 
 #-----------
 # Characters
@@ -66,9 +77,8 @@ class Character(db.Model, Base):
     DC characters with attributes title, hero/villain alias, an image,
     their alignment, and other information
     """
-    query_class = CharacterQuery
     __tablename__ = 'characters'
-
+    query_class = CharacterQuery
     title = db.Column(db.String(50), primary_key=True)
     image = db.Column(db.String(250))
     universes = db.Column(ARRAY(db.String(100)))
@@ -81,7 +91,7 @@ class Character(db.Model, Base):
     affiliation = db.Column(ARRAY(db.String(100)))
     alignment = db.Column(db.String(50))
     category = db.Column(db.String(50))
-    search_vector = db.Column(TSVectorType('title', 'universes', 'gender', 'aliases', 'creators', 'identity', 'real_name', 'debut', 'affiliation', 'alignment'))
+    search_vector = db.Column(TSVectorType('title', 'image', 'universes', 'gender', 'aliases', 'creators', 'identity', 'real_name', 'debut', 'affiliation', 'alignment', 'category'))
 
     def __init__(self, title="", alias=[], image="", alignment="", creators=[], identity="", real_name="", universe=[], status="", gender="", debut="", aliases=[], affiliation=[]):
         """
@@ -100,29 +110,6 @@ class Character(db.Model, Base):
         self.affiliation = affiliation
 
 
-#-----------
-# Ambiguious
-#-----------
-
-class Ambiguious(db.Model, Base):
-
-    """
-    Ambiguious pages that could represent multiple articles in the database
-    """
-
-    __tablename__ = 'ambiguious'
-
-    title = db.Column(db.String(50), primary_key=True)
-    related= db.Column(ARRAY(db.String(100)))
-    category = db.Column(db.String(50))
-    search_vector = db.Column(TSVectorType('title', 'related'))
-    
-    def __init__(self,title,related):
-        """
-        Initialize the page
-        """
-        self.title = title
-        sele.related = related
 
 
 #-----------
@@ -130,15 +117,14 @@ class Ambiguious(db.Model, Base):
 #-----------
 
 
-class Teams(db.Model):
+class Teams(db.Model, Base):
 
     """
     DC teams with attributes title, first comic appeared in,
     and other information
     """
-    query_class = TeamsQuery
     __tablename__ = 'teams'
-
+    query_class = TeamsQuery
     title = db.Column(db.String(100), primary_key=True)
     image = db.Column(db.String(250))
     debut = db.Column(db.String(100))
@@ -149,7 +135,7 @@ class Teams(db.Model):
     team_leaders = db.Column(ARRAY(db.String(100)))
     enemies = db.Column(ARRAY(db.String(100)))
     category = db.Column(db.String(50))
-    search_vector = db.Column(TSVectorType('title','creators', 'identity', 'debut', 'enemies', 'universes', 'team_leaders', 'status'))
+    search_vector = db.Column(TSVectorType('title', 'image', 'debut', 'identity', 'status', 'creators', 'universes', 'team_leaders', 'enemies', 'category'))
 
     def __init__(self, title, image, debut, identity, status, creators, universe, team_leaders, enemies):
         """
@@ -176,9 +162,8 @@ class Comics(db.Model):
     DC comics with attributes title, issue number, writer, date
     published, and other information
     """
-    query_class = ComicsQuery
     __tablename__ = 'comics'
-
+    query_class = ComicsQuery
     image = db.Column(db.String(250))
     title = db.Column(db.String(100), primary_key=True)
     release_date = db.Column(db.String(50))
@@ -186,7 +171,7 @@ class Comics(db.Model):
     featured_characters = db.Column(ARRAY(db.String(100)))
     creators = db.Column(ARRAY(db.String(100)))
     category = db.Column(db.String(50))
-    search_vector = db.Column(TSVectorType('title', 'release_date', 'locations', 'featured_characters', 'creators'))
+    search_vector = db.Column(TSVectorType('title', 'image', 'release_date', 'locations', 'featured_characters', 'creators', 'category'))
 
     def __init__(self, image, title, release_date, locations, featured_characters, creators):
         """
@@ -211,9 +196,8 @@ class Movies(db.Model):
     DC movies with attributes title, director, date released,
     and other information
     """
-    query_class = MoviesQuery
     __tablename__ = 'movies'
-
+    query_class = MoviesQuery
     image = db.Column(db.String(250))
     title = db.Column(db.String(100), primary_key=True)
     release_date = db.Column(db.String(50))
@@ -222,7 +206,7 @@ class Movies(db.Model):
     creators = db.Column(ARRAY(db.String(50)))
     featured_characters = db.Column(ARRAY(db.String(100)))
     category = db.Column(db.String(50))
-    search_vector = db.Column(TSVectorType('title', 'release_date', 'running_time', 'budget', 'creators', 'featured_characters'))
+    search_vector = db.Column(TSVectorType('title', 'image', 'release_date', 'running_time', 'budget', 'creators', 'featured_characters', 'category'))
 
     def __init__(self, image, title, date, running_time, budget, creators, featured_characters):
         """
@@ -248,9 +232,8 @@ class Shows(db.Model):
     DC shows with attributes title, network aired on, date first
     aired on, and other information
     """
-    query_class = ShowsQuery
     __tablename__ = 'shows'
-
+    query_class = ShowsQuery
     title = db.Column(db.String(100), primary_key=True)
     last_air_date = db.Column(db.String(250))
     running_time = db.Column(db.String(250))
@@ -259,7 +242,8 @@ class Shows(db.Model):
     creators = db.Column(ARRAY(db.String(100)))
     featured_characters = db.Column(ARRAY(db.String(100)))
     category = db.Column(db.String(50))
-    search_vector = db.Column(TSVectorType('title', 'release_date', 'running_time', 'first_air_date', 'creators', 'featured_characters', 'last_air_date'))
+    search_vector = db.Column(TSVectorType('title', 'image', 'first_air_date', 'last_air_date','running_time', 'creators', 'featured_characters', 'category'))
+
 
     def __init__(self, image, title, running_time, first_air_date, creators, featured_characters, last_air_date):
         """
@@ -285,9 +269,8 @@ class Creators(db.Model):
     DC creators with attirubtes title, occupation, birth date, birth place
     first publication made (if applicable), and other information
     """
-    query_class = CreatorsQuery
     __tablename__ = 'creators'
-
+    query_class = CreatorsQuery
     title = db.Column(db.String(50), primary_key=True)
     image = db.Column(String(50))
     job_titles = db.Column(ARRAY(db.String(50)))
@@ -297,7 +280,8 @@ class Creators(db.Model):
     employers = db.Column(ARRAY(db.String(100)))
     creations = db.Column(ARRAY(db.String(100)))
     category = db.Column(db.String(50))
-    search_vector = db.Column(TSVectorType('title', 'job_titles', 'gender', 'birth_date', 'first_publication', 'employers', 'last_air_date'))
+    search_vector = db.Column(TSVectorType('title', 'image', 'job_titles', 'gender', 'birth_date', 'first_publication', 'employers', 'creations', 'category'))
+
 
     def __init__(self, title, occupations, birth_date, first_publication, employers, creations):
         """
@@ -330,9 +314,9 @@ class CharacterSchema(Schema):
     alignment = fields.Str()
     category = fields.Str()
 
-class AmbiguiousrSchema(Schema):
+class AmbiguousSchema(Schema):
     """
-    Schema the ambiguious table must conform to.
+    Schema the ambiguous table must conform to.
     """
     title = fields.Str(dump_only=True)
     category = fields.Str()
@@ -433,7 +417,7 @@ comics_schema = ComicsSchema(many=True)
 movies_schema = MoviesSchema(many=True)
 shows_schema = ShowsSchema(many=True)
 creators_schema = CreatorsSchema(many=True)
-ambiguious_schema = AmbiguiousSchema(many=True)
+ambiguous_schema = AmbiguousSchema(many=True)
 
 
 character_schema = CharacterSchema()
@@ -442,4 +426,4 @@ comic_schema = ComicsSchema()
 movie_schema = MoviesSchema()
 show_schema = ShowsSchema()
 creator_schema = CreatorsSchema()
-ambiguious_schema = AmbiguiousSchema()
+ambiguous_schema = AmbiguousSchema()

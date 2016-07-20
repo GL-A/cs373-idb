@@ -1,12 +1,15 @@
 import os
 import sys
-from models import Character, Teams, Shows, Movies, Comics, Creators, db
+from models import Character, Teams, Shows, Movies, Comics, Creators, db, session
 from models import characters_schema, teams_schema, movies_schema, shows_schema, comics_schema, creators_schema
 from models import character_schema, team_schema, movie_schema, show_schema, comic_schema, creator_schema
 from sqlalchemy.exc import IntegrityError
 from flask_restful import Api, Resource
 from flask import jsonify
 from dc import api
+from sqlalchemy_fulltext import FullText, FullTextSearch
+from sqlalchemy_searchable import search
+
 
 
 # The following class will be used for GET and POST requests to /users
@@ -175,35 +178,26 @@ class CreatorsUpdate(Resource):
         return jsonify(result.data)
 
 #Search_text dependant on what html sends (possibly temporary)
-class search(Resource):
+class searchDB(Resource):
     def get(self, search_text):
-        #AND search
-        character_query = Character.query.search(search_text)
-        teams_query = Teams.query.search(search_text)
-        comics_query = Comics.query.search(search_text)
-        movies_query = Movies.query.search(search_text)
-        shows_query = Shows.query.search(search_text)
-        creators_query = Creators.query.search(search_text)
-        result = character_schema.dump(character_query).data
-        result += team_schema.dump(teams_query).data
-        result += creator_schema.dump(creators_query).data
-        result += comic_schema.dump(comics_query).data
-        result += show_schema.dump(shows_query).data
-        result += movie_schema.dump(movies_query).data
-        #OR search
-        parsed_search = search_text.split()
-        or_search = parsed_search.next()
-        or_search = [or_search += " or " + x for x in parsed_search]
-        character_query_or = Character.query.search(or_search)
-        teams_query_or = Teams.query.search(or_search)
-        comics_query_or = Comics.query.search(or_search)
-        movies_query_or = Movies.query.search(or_search)
-        shows_query_or = Shows.query.search(or_search)
-        creators_query_or = Creators.query.search(or_search)
-        result += character_schema.dump(character_query_or).data
-        result += team_schema.dump(teams_query_or).data
-        result += creator_schema.dump(creators_query_or).data
-        result += comic_schema.dump(comics_query_or).data
-        result += show_schema.dump(shows_query_or).data
-        result += movie_schema.dump(movies_query_or).data
-        return jsonify(result)
+        # Query the database and return all users
+        character_query = Character.query.search(search_text).limit(100).all()
+        team_query = Teams.query.search(search_text).limit(100).all()
+        comic_query = Comics.query.search(search_text).limit(100).all()
+        creator_query = Creators.query.search(search_text).limit(100).all()
+        movie_query = Movies.query.search(search_text).limit(100).all()
+        shows_query = Shows.query.search(search_text).limit(100).all()
+        # Serialize the query results in the JSON API format
+        char_scheme = characters_schema.dump(character_query)
+        team_scheme = teams_schema.dump(team_query)
+        comic_scheme = comics_schema.dump(comic_query)
+        creator_sheme = creators_schema.dump(creator_query)
+        movie_scheme = movies_schema.dump(movie_query)
+        show_scheme = shows_schema.dump(shows_query)
+        return jsonify(char_scheme.data, team_scheme.data, comic_scheme.data, creator_sheme.data, movie_scheme.data, show_scheme.data)
+
+
+
+
+
+

@@ -7,23 +7,8 @@ from flask import Flask, send_file, send_from_directory, safe_join, request, Res
 app = Flask(__name__)
 api = Api(app)
 app._static_folder = "/var/www/dc/dc/static/"
+
 from rest import *
-
-
-
-
-@app.route('/', defaults={'path':''})
-@app.route('/<path:path>')
-def index(**kwargs):
-    return send_file('index.html')
-
-
-@app.route('/tests', methods=['GET'])
-def tests():
-	return subprocess.check_output("python3 /home/gitrepo/cs373-idb/app/tests.py", stderr=subprocess.STDOUT, shell=True)
-
-
-
 
 #Define API endpoints
 #Map classes to API endpoints
@@ -39,7 +24,26 @@ api.add_resource(ShowsUpdate, '/shows/<string:id>.json')
 api.add_resource(MoviesUpdate, '/movies/<string:id>.json')
 api.add_resource(ComicsUpdate, '/comics/<string:id>.json')
 api.add_resource(CreatorsUpdate, '/creators/<string:id>.json')
-api.add_resource(search, '/search/<string:search_text>')
+api.add_resource(searchDB, '/search/<string:search_text>.json')
+
+
+
+
+@app.route('/', defaults={'path':''})
+@app.route('/<path:path>')
+def index(**kwargs):
+    return send_file('index.html')
+
+
+@app.route('/tests', methods=['GET'])
+def tests():
+    return subprocess.check_output("python3 /home/gitrepo/cs373-idb/app/tests.py", stderr=subprocess.STDOUT, shell=True)
+
+
+@app.route('/downingAPI', methods=['GET'])
+def downingRocksAPI():
+    return send_file("static/partials/DowningRocksApi.html")	
+
 
 if __name__ == "__main__":
     app.run()
