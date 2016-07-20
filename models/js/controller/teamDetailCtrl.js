@@ -1,4 +1,4 @@
-app.controller('teamDetailCtrl',function($scope,$http,$stateParams) {
+app.controller('teamDetailCtrl',function($state,$scope,$http,$stateParams) {
     var url = "http://dcdatabase.me/teams/"+$stateParams.name.replace(/ /g,'_')+".json";
 	// // $scope.test = url;
     $http.get(url)
@@ -12,6 +12,9 @@ app.controller('teamDetailCtrl',function($scope,$http,$stateParams) {
 			$scope.enemies = response.data.enemies;
 			$scope.creators = response.data.creators;
 
+			if($scope.name == null){
+			$state.go('root.404');
+			}
    });
 
 });

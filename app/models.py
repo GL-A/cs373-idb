@@ -255,7 +255,7 @@ class Shows(db.Model):
         self.running_time = running_time
         self.first_air_date = first_air_date
         self.creators = creators
-        self.featured_character = featured_characters
+        self.featured_characters = featured_characters
 
 
 #-----------

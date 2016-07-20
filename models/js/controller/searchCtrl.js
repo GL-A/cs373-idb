@@ -1,6 +1,6 @@
-app.controller('searchCtrl',['$scope', '$http', function($scope, $http) {
+app.controller('searchCtrl', function($scope, $http, $stateParams) {
 
-
+  $scope.haveResult= true;
   $scope.searchOptions = {
     paginationPageSize: 10,
     minRowsToShow: 4,
@@ -12,31 +12,45 @@ app.controller('searchCtrl',['$scope', '$http', function($scope, $http) {
                 displayName:'Image',
                 cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{ COL_FIELD }}" /></div>'
             },
+	    {
+                field:'category', 
+                displayName:'Type'
+            },
             {
                 field:'title', 
                 displayName:'Article',
-                cellTemplate: '<a href="/#/comics/{{ COL_FIELD }}">{{ COL_FIELD }}</a>'
-            },
-            {
-                field:'context',
-                displayName:'Context',
-                cellTemplate: '<div ng-repeat="affil in COL_FIELD"><a href="/#/characters/{{ affil }}">{{ affil }}</a>'
+                cellTemplate: '<a ng-href="/#/{{grid.getCellValue(row, col)}}/{{ COL_FIELD }}">{{ COL_FIELD }} </a>'
             }
         ]
   };
-  //Need to figure out how to access search query results 
-  // var getPage = function() {
-  //   // var url = host + "/data/characters";
-  //   var url = '/comics.json';
-  //   $http.get(url, {cache: true})
-  //   .success(function (data) {
-  //     $scope.comicsOptions.data = data;
-  //   });
-  // };
 
-  // getPage();
+   var url = '/search/' + $stateParams.name + '.json';
+  // // $scope.test = url;
+    $http.get(url)
+      .then(function (response) {
+       var datalist;
+       for(i = 0; i<response.data.length; ++i){
+	    if(response.data[i].length>0){
+	    // Array.prototype.push.apply(datalist, data[i]);
+	   datalist = response.data[i];
+	    break;
+	    }
+	  }
+        ++i;
+       for(; i<response.data.length; ++i){
+	    if(response.data[i].length>0){
+	   Array.prototype.push.apply(datalist, response.data[i]);
+	   //datalist +=data[i];
+	    }
+	  }
+	if(datalist == null)
+		  $scope.haveResult= false;
+	$scope.searchOptions.data = datalist;
+       //$scope.searchOptions.data = data;
+   });
+
 }
-]);
+);
 
 
 

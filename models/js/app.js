@@ -18,7 +18,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             abstract: true,
             views: {
                 'navbar': {
-                    templateUrl: 'static/partials/shared/navbar.html'
+                    templateUrl: 'static/partials/shared/navbar.html',
+		    controller: 'navbarCtrl'
                 }
             }
         })
@@ -31,10 +32,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         })
         .state('root.search', {
-            url: "/search/:search-text",
+            url: "/search/:name",
             views : { 
                 '@' : {
-                    templateUrl: 'static/partials/search.html'
+                    templateUrl: 'static/partials/search.html',
                     controller: 'searchCtrl'
                 }
             }
@@ -44,7 +45,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
             views : { 
                 '@' : {
                     templateUrl: 'static/partials/about.html'
-                    controller: 'aboutCtrl'
                 }
             }
         })
@@ -157,6 +157,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 '@' : {
                     templateUrl: 'static/partials/shows.html',
 		    controller: 'showsCtrl'
+                }
+            }
+        })
+        .state('root.404', {
+            url: "/404",
+            views : { 
+                '@' : {
+                    templateUrl: 'static/partials/404.html'
                 }
             }
         })

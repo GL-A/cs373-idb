@@ -1,4 +1,4 @@
-app.controller('creatorDetailCtrl',function($scope,$http,$stateParams) {
+app.controller('creatorDetailCtrl',function($state,$scope,$http,$stateParams) {
     var url = "http://dcdatabase.me/creators/"+$stateParams.name.replace(/ /g,'_')+".json";
   // // $scope.test = url;
     $http.get(url)
@@ -11,6 +11,9 @@ app.controller('creatorDetailCtrl',function($scope,$http,$stateParams) {
       $scope.employers = response.data.employers;
       $scope.job_titles = response.data.job_titles;
       $scope.creations = response.data.creations;
+      
+      if($scope.name == null){
+			$state.go('root.404');}
 
    });
 

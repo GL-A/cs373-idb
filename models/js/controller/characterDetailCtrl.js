@@ -1,4 +1,4 @@
-app.controller('characterDetailCtrl',function($scope,$http,$stateParams) {
+app.controller('characterDetailCtrl',function($state,$scope,$http,$stateParams) {
     var url = "http://dcdatabase.me/characters/"+$stateParams.name.replace(/ /g,'_')+".json";
 	// // $scope.test = url;
     $http.get(url)
@@ -12,7 +12,12 @@ app.controller('characterDetailCtrl',function($scope,$http,$stateParams) {
 			$scope.affiliation = response.data.affiliation;
 			$scope.creators = response.data.creators;
 
+		if($scope.name==null){
+    		$state.go('root.404');
+    	        }
+
    });
+
 
 });
 

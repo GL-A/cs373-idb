@@ -1,4 +1,4 @@
-app.controller('showDetailCtrl',function($scope,$http,$stateParams) {
+app.controller('showDetailCtrl',function($state,$scope,$http,$stateParams) {
     var url = "http://dcdatabase.me/shows/"+$stateParams.name.replace(/ /g,'_')+".json";
 	// // $scope.test = url;
     $http.get(url)
@@ -10,6 +10,9 @@ app.controller('showDetailCtrl',function($scope,$http,$stateParams) {
 			$scope.last_air_date = response.data.last_air_date;
 			$scope.running_time = response.data.running_time;
 			$scope.featured_characters = response.data.featured_characters;
+			
+			if($scope.name == null){
+			$state.go('root.404');}
 
    });
 

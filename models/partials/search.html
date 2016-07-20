@@ -1,6 +1,7 @@
 <!-- Table -->
 <div class = "container">
   <h2 class="section-heading">Search Results</h2>
-  <div style="height:auto" ui-grid="searchOptions" ui-grid-pagination class="grid">
+  <div  ng-show="haveResult"style="height:auto" ui-grid="searchOptions" ui-grid-pagination class="grid">
   </div>
+  <h2 ng-show="!haveResult"> Not Found </h2>
 </div>
